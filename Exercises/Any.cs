@@ -20,7 +20,7 @@ namespace Exercises
         public static bool AreThereAnyBigCats(IEnumerable<Pet> pets)
         {
             //TODO you code goes here
-            throw new NotImplementedException();
+            return pets.Any(pet => pet.Weight > 2 && pet.PetType == PetType.Cat);
         }
 
         //Refactoring challenge
