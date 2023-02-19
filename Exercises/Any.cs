@@ -11,8 +11,7 @@ namespace Exercises
         //if any number in the collection is smaller than 0.
         public static bool IsAnyNumberNegative(IEnumerable<int> numbers)
         {
-            //TODO you code goes here
-            throw new NotImplementedException();
+               return numbers.Any(num => num < 0);
         }
 
         //Coding Exercise 2
