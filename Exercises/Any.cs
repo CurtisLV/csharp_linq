@@ -28,7 +28,7 @@ namespace Exercises
         public static bool AreAllNamesValid_Refactored(string[] names)
         {
             //TODO your code goes here
-            return names.Any(name => char.IsLower(name[0]) == true && name.Length < 2 && name.Length > 25);
+            return !names.Any(name => char.IsLower(name[0]) == true || name.Length < 2 || name.Length > 25);
         }
 
         //do not modify this method
