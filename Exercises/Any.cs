@@ -23,7 +23,7 @@ namespace Exercises
             return pets.Any(pet => pet.Weight > 2 && pet.PetType == PetType.Cat);
         }
 
-        //Refactoring challenge
+        //Refactoring challenges
         //TODO implement this method
         public static bool AreAllNamesValid_Refactored(string[] names)
         {
