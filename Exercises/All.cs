@@ -29,7 +29,7 @@ namespace Exercises
         public static bool AreAllWordsOfTheSameLength_Refactored(List<string> words)
         {
             //TODO your code goes here
-            //
+            return words.All(word => word.Length == words.First().Length);
         }
 
         //do not modify this method
