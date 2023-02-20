@@ -21,7 +21,8 @@ namespace Exercises
         public static bool AreAllPetsOfTheSameType(IEnumerable<Pet> pets)
         {
             //TODO your code goes here
-            //
+            
+            return pets.All(pet => pet.PetType == pets.First().PetType);
         }
 
         //Refactoring challenge
