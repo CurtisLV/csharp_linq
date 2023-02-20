@@ -12,7 +12,7 @@ namespace Exercises
         public static bool AreAllNumbersDivisibleBy10(int[] numbers)
         {
             //TODO your code goes here
-            //
+            return numbers.All(x => x % 10 == 0);
         }
 
         //Coding Exercise 2
