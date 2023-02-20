@@ -21,7 +21,6 @@ namespace Exercises
         public static bool AreAllPetsOfTheSameType(IEnumerable<Pet> pets)
         {
             //TODO your code goes here
-            
             return pets.All(pet => pet.PetType == pets.First().PetType);
         }
 
@@ -30,7 +29,7 @@ namespace Exercises
         public static bool AreAllWordsOfTheSameLength_Refactored(List<string> words)
         {
             //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //do not modify this method
