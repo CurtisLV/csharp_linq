@@ -11,7 +11,7 @@ namespace Exercises
         //if any number in the collection is smaller than 0.
         public static bool IsAnyNumberNegative(IEnumerable<int> numbers)
         {
-               return numbers.Any(num => num < 0);
+            return numbers.Any(num => num < 0);
         }
 
         //Coding Exercise 2
@@ -28,7 +28,9 @@ namespace Exercises
         public static bool AreAllNamesValid_Refactored(string[] names)
         {
             //TODO your code goes here
-            return !names.Any(name => char.IsLower(name[0]) == true || name.Length < 2 || name.Length > 25);
+            return !names.Any(
+                name => char.IsLower(name[0]) == true || name.Length < 2 || name.Length > 25
+            );
         }
 
         //do not modify this method
