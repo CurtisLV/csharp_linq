@@ -21,7 +21,7 @@ namespace Exercises
         public static bool AreAllPetsOfTheSameType(IEnumerable<Pet> pets)
         {
             //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring challenge
