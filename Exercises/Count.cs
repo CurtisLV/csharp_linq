@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 namespace Exercises
@@ -42,7 +43,7 @@ namespace Exercises
         public static bool IsAnySequenceTooLong_Refactored(IEnumerable<IEnumerable<int>> numberSequences, int maxLength)
         {
             //TODO your code goes here
-            //
+            return numberSequences.Any(num => num.Count() > maxLength);
         }
 
         //do not modify this method
