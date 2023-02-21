@@ -12,7 +12,7 @@ namespace Exercises
         public static int CountAllLongWords(IEnumerable<string> words)
         {
             //TODO your code goes here
-            //
+            return words.Count(word => word.Length > 10);
         }
 
         //Coding Exercise 2
