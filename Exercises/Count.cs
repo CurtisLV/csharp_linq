@@ -42,7 +42,7 @@ namespace Exercises
         public static bool IsAnySequenceTooLong_Refactored(IEnumerable<IEnumerable<int>> numberSequences, int maxLength)
         {
             //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //do not modify this method
