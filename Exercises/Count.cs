@@ -31,7 +31,10 @@ namespace Exercises
         public static bool AreThereFewerOddThanEvenNumbers(IEnumerable<int> numbers)
         {
             //TODO your code goes here
-            //
+            var even = numbers.Count(num => num % 2 == 0);
+            var odd = numbers.Count(num => num % 2 != 0);
+
+            return odd < even;
         }
 
         //Refactoring challenge
