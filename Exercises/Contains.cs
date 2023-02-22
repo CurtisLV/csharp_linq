@@ -33,7 +33,7 @@ namespace Exercises
         )
         {
             //TODO your code goes here
-            //
+            return !existingAppointmentDates.Contains(date);
         }
 
         //Coding Exercise 2
