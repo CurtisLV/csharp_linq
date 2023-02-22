@@ -68,6 +68,7 @@ namespace Exercises
         )
         {
             //TODO your code goes here
+            return bannedWords.Any(word => words.Contains(word));
         }
 
         //do not modify this method
