@@ -57,7 +57,7 @@ namespace Exercises
         public static int CountFriendsOf(Friend friend, IEnumerable<Person> people)
         {
             //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring challenge
