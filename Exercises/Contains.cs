@@ -57,7 +57,7 @@ namespace Exercises
         public static int CountFriendsOf(Friend friend, IEnumerable<Person> people)
         {
             //TODO your code goes here
-            //
+            return people.Count(person => person.Friends.Contains(friend));
         }
 
         //Refactoring challenge
@@ -68,7 +68,7 @@ namespace Exercises
         )
         {
             //TODO your code goes here
-            //
+            throw new NotImplementedException();
         }
 
         //do not modify this method
