@@ -43,7 +43,7 @@ namespace Exercises
         public static IEnumerable<DateTime> OrderByMonth_Refactored(List<DateTime> dates)
         {
             //TODO your code goes here
-            //
+            return dates.OrderBy(x => x.Month);
         }
 
         //do not modify this method
