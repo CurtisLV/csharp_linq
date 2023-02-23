@@ -18,8 +18,7 @@ internal class Program
             //TODO your code goes here
             List<int> result = new List<int>();
 
-            result.AddRange(numbers.OrderByDescending(x => x % 2 == 0));
-            result.AddRange(numbers.OrderByDescending(x => x % 2 == 1));
+            result.AddRange(numbers.Reverse().OrderByDescending(x => x % 2 == 0));
 
             return result.ToArray();
         }
