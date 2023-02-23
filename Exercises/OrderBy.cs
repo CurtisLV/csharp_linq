@@ -31,7 +31,12 @@ namespace Exercises
         public static IEnumerable<int> FirstEvenThenOddDescending(IEnumerable<int> numbers)
         {
             //TODO your code goes here
-            //
+            List<int> result = new List<int>();
+
+            result.AddRange(numbers.OrderByDescending(x => x % 2 == 0));
+            result.AddRange(numbers.OrderByDescending(x => x % 2 == 1));
+
+            return result;
         }
 
         //Refactoring challenge
