@@ -8,7 +8,7 @@ namespace Exercises
     {
         //Coding Exercise 1
         /*
-        Implement the OrderFromLongestToShortest method, which given a collection of 
+        Implement the OrderFromLongestToShortest method, which given a collection of
         TimeSpans will order them from longest to shortest. Use LINQ's query syntax.
 
         For example, for the following timespans:
@@ -21,9 +21,9 @@ namespace Exercises
             *TimeSpan.FromSeconds(16)
             *TimeSpan.FromSeconds(5)
          */
-        public static IEnumerable<TimeSpan>
-            OrderFromLongestToShortest(
-                IEnumerable<TimeSpan> timeSpans)
+        public static IEnumerable<TimeSpan> OrderFromLongestToShortest(
+            IEnumerable<TimeSpan> timeSpans
+        )
         {
             //TODO your code goes here
             throw new NotImplementedException();
@@ -31,7 +31,7 @@ namespace Exercises
 
         //Coding Exercise 2
         /*
-        Implement the OrderPoints method using LINQ's query syntax. 
+        Implement the OrderPoints method using LINQ's query syntax.
         This method shall order points first by X, and then by Y.
 
         For example, for the following points:
@@ -48,11 +48,10 @@ namespace Exercises
             *X=10, Y = 7
             *X=11, Y = 5
         
-        As you can see there are 3 points with X=10, so those points are ordered by Y 
+        As you can see there are 3 points with X=10, so those points are ordered by Y
         in the result.
          */
-        public static IEnumerable<Point> OrderPoints(
-             IEnumerable<Point> points)
+        public static IEnumerable<Point> OrderPoints(IEnumerable<Point> points)
         {
             //TODO your code goes here
             throw new NotImplementedException();
@@ -60,24 +59,24 @@ namespace Exercises
 
         //Refactoring challenge
         //TODO implement this method
-        public static IEnumerable<DateTime>
-            OrderDatesByDayOfWeek_Refactored(
-                IEnumerable<DateTime> dates)
+        public static IEnumerable<DateTime> OrderDatesByDayOfWeek_Refactored(
+            IEnumerable<DateTime> dates
+        )
         {
             //TODO your code goes here
             throw new NotImplementedException();
         }
 
         //do not modify this method
-        public static IEnumerable<DateTime>
-            OrderDatesByDayOfWeek(
-                IEnumerable<DateTime> dates)
+        public static IEnumerable<DateTime> OrderDatesByDayOfWeek(IEnumerable<DateTime> dates)
         {
             var result = dates.ToList();
-            result.Sort((left, right) =>
-            {
-                return left.DayOfWeek.CompareTo(right.DayOfWeek);
-            });
+            result.Sort(
+                (left, right) =>
+                {
+                    return left.DayOfWeek.CompareTo(right.DayOfWeek);
+                }
+            );
             return result;
         }
 
