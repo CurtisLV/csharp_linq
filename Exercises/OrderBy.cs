@@ -36,7 +36,7 @@ namespace Exercises
             result.AddRange(numbers.OrderByDescending(x => x % 2 == 0));
             result.AddRange(numbers.OrderByDescending(x => x % 2 == 1));
 
-            return result;
+            return result.ToArray();
         }
 
         //Refactoring challenge
