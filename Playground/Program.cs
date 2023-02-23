@@ -7,6 +7,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        // 23.02.
         var numbers = new[] { 1, 2, 3, 4, 5, 6, 7 };
         var numbers2 = new[] { 1, 2, 3, 4 };
 
