@@ -16,7 +16,7 @@ namespace Exercises
         public static IEnumerable<string> OrderFromLongestToShortest(IEnumerable<string> words)
         {
             //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Coding Exercise 2
