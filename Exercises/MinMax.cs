@@ -53,7 +53,7 @@ namespace Exercises
         public static int CountOfDogsOfTheOwnerWithMostDogs_Refactored(IEnumerable<Person> owners)
         {
             //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //do not modify this method
