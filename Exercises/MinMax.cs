@@ -40,7 +40,6 @@ namespace Exercises
         {
             //TODO your code goes here
             var maxNum = numbers.Max();
-
             return numbers.Count(x => x == maxNum);
         }
 
