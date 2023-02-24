@@ -42,8 +42,10 @@ namespace Exercises
         public static int CountOfLargestNumbers(IEnumerable<int> numbers)
         {
             //TODO your code goes here
-            var maxNum = numbers.Max();
-            return numbers.Count(x => x == maxNum);
+            if (!numbers.Any())
+                return 0;
+
+            return numbers.Count(x => x == numbers.Max());
         }
 
         //Refactoring challenge
