@@ -53,7 +53,7 @@ namespace Exercises
         public static int CountOfDogsOfTheOwnerWithMostDogs_Refactored(IEnumerable<Person> owners)
         {
             //TODO your code goes here
-            return owners.Max(x => x.Pets.Count(y => y.PetType == PetType.Cat));
+            return owners.Max(owner => owner.Pets.Count(pet => pet.PetType == PetType.Cat));
         }
 
         //do not modify this method
