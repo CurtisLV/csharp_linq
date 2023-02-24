@@ -20,7 +20,10 @@ namespace Exercises
         public static int? LengthOfTheShortestWord(IEnumerable<string> words)
         {
             //TODO your code goes here
-            //
+            if (!words.Any())
+                return null;
+
+            return words.Min(word => word.Length);
         }
 
         //Coding Exercise 2
