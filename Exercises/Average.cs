@@ -23,8 +23,12 @@ namespace Exercises
         */
         public static float? AverageSnowFall(SnowFallData snowFallData)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            if (snowFallData == null || !snowFallData.MonthlySnowFallDataItems.Any())
+            {
+                return null;
+            }
+
+            return 0;
         }
 
         //Coding Exercise 2
