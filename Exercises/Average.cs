@@ -80,8 +80,20 @@ namespace Exercises
             float defaultIfNull
         )
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            if (heights == null || heights.Count == 0)
+            {
+                return 0;
+            }
+
+            return (float)
+                heights.Average(x =>
+                {
+                    if (x == null)
+                    {
+                        x = defaultIfNull;
+                    }
+                    return x.Value;
+                });
         }
 
         //do not modify this method
