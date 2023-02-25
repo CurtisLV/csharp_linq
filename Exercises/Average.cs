@@ -32,7 +32,7 @@ namespace Exercises
                 return null;
             }
 
-            return 0;
+            return snowFallData.MonthlySnowFallDataItems.Average(s => s.SnowfallInCentimeters);
         }
 
         //Coding Exercise 2
