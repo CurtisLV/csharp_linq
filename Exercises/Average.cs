@@ -48,8 +48,10 @@ namespace Exercises
          */
         public static double MaxAverageOfMarks(IEnumerable<Student> students)
         {
-            //TODO your code goes here
-            //
+            if (!students.Any())
+                return 0;
+
+            return (double)students.Max(x => x.Marks.Average());
         }
 
         //Refactoring challenge
