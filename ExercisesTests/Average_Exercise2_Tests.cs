@@ -73,16 +73,10 @@ namespace ExercisesTests
             {
                 new Student
                 {
-                    Marks = new List<int> { 4, 5, 5 }
+                    Marks = new List<int> { 2, 4, 5 }
                 },
-                new Student
-                {
-                    Marks = new List<int> { 5, 6, 5 }
-                },
-                new Student
-                {
-                    Marks = new List<int> { 4, 4, 5 }
-                },
+                new Student { Marks = new List<int> { } },
+                new Student { Marks = new List<int> { } },
             };
             try
             {
