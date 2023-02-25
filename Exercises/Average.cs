@@ -51,7 +51,7 @@ namespace Exercises
             if (!students.Any())
                 return 0;
 
-            return students.Average(x => x.Marks).Max();
+            return (double)students.Max(x => x.Marks.Average());
         }
 
         //Refactoring challenge
