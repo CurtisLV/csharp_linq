@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 
 namespace Exercises
 {
@@ -56,12 +57,20 @@ namespace Exercises
          */
         public static double MaxAverageOfMarks(IEnumerable<Student> students)
         {
-            if (!students.Any() || students.Any(s => !s.Marks.Any()))
+            if (!students.Any() || students.All(s => !s.Marks.Any()))
             {
                 return 0;
             }
 
-            return (double)students.Max(x => x.Marks.Average());
+            return (double)
+                students.Max(x =>
+                {
+                    if (x.Marks.Any())
+                    {
+                        return x.Marks.Average();
+                    }
+                    return 0;
+                });
         }
 
         //Refactoring challenge

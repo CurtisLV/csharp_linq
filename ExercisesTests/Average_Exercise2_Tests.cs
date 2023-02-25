@@ -67,7 +67,7 @@ namespace ExercisesTests
         }
 
         [Test]
-        public void NonEmpty_NoMarks()
+        public void NonEmpty_NoMarksForSome()
         {
             var students = new List<Student>
             {
