@@ -82,10 +82,10 @@ namespace ExercisesTests
             {
                 var result = Average.MaxAverageOfMarks(students);
                 Assert.AreEqual(
-                    5.333,
+                    3.66,
                     result,
                     0.1,
-                    $"For students with marks (4,5,5), (5,6,5), (4,4,5) max average mark is 5.33"
+                    $"When only one student has marks (2, 4, 5) then average is 3.66"
                 );
             }
             catch (Exception ex)
