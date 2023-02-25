@@ -48,7 +48,7 @@ namespace Exercises
          */
         public static double MaxAverageOfMarks(IEnumerable<Student> students)
         {
-            if (!students.Any() || !students.Any(s => !s.Marks.Any()))
+            if (!students.Any() || students.Any(s => !s.Marks.Any()))
             {
                 return 0;
             }
