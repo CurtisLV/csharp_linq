@@ -49,7 +49,7 @@ namespace Exercises
         public static double MaxAverageOfMarks(IEnumerable<Student> students)
         {
             //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring challenge
