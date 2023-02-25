@@ -85,15 +85,17 @@ namespace Exercises
                 return 0;
             }
 
-            return (float)
-                heights.Average(x =>
-                {
-                    if (x == null)
-                    {
-                        x = defaultIfNull;
-                    }
-                    return x.Value;
-                });
+            //return (float)
+            //    heights.Average(x =>
+            //    {
+            //        if (x == null)
+            //        {
+            //            x = defaultIfNull;
+            //        }
+            //        return x.Value;
+            //    });
+
+            return (float)heights.Average(height => height ?? defaultIfNull);
         }
 
         //do not modify this method
