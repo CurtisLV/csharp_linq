@@ -23,7 +23,11 @@ namespace Exercises
         */
         public static float? AverageSnowFall(SnowFallData snowFallData)
         {
-            if (snowFallData == null || !snowFallData.MonthlySnowFallDataItems.Any())
+            if (
+                snowFallData == null
+                || snowFallData.MonthlySnowFallDataItems == null
+                || !snowFallData.MonthlySnowFallDataItems.Any()
+            )
             {
                 return null;
             }
