@@ -36,7 +36,7 @@ namespace Exercises
          */
         public static double AverageSum(IEnumerable<IEnumerable<int>> collectionsOfNumbers)
         {
-            //
+            return (double)collectionsOfNumbers.Average(nums => nums.Sum());
         }
 
         //Refactoring challenge
