@@ -21,9 +21,10 @@ namespace ExercisesTests
 
             Assert.False(
                 Any.AreThereAnyBigCats(pets),
-                $"AreThereAnyBigCats should return False for Pets: " +
-                $"{EnumerableToString(pets, ";")}, as there is no Pet of type Cat" +
-                $" and Weight over 2 kilos in this collection");
+                $"AreThereAnyBigCats should return False for Pets: "
+                    + $"{EnumerableToString(pets, ";")}, as there is no Pet of type Cat"
+                    + $" and Weight over 2 kilos in this collection"
+            );
         }
 
         [Test]
@@ -37,9 +38,10 @@ namespace ExercisesTests
 
             Assert.False(
                 Any.AreThereAnyBigCats(pets),
-                $"AreThereAnyBigCats should return False for Pets: " +
-                $"{EnumerableToString(pets, ";")}, as there is no Pet of type Cat " +
-                $"and Weight over 2 kilos in this collection");
+                $"AreThereAnyBigCats should return False for Pets: "
+                    + $"{EnumerableToString(pets, ";")}, as there is no Pet of type Cat "
+                    + $"and Weight over 2 kilos in this collection"
+            );
         }
 
         [Test]
@@ -54,9 +56,10 @@ namespace ExercisesTests
 
             Assert.True(
                 Any.AreThereAnyBigCats(pets),
-                $"AreThereAnyBigCats should return True for Pets: " +
-                $"{EnumerableToString(pets, ";")}, as Big Foot is a Cat " +
-                $"and it weighs over 2 kilos");
+                $"AreThereAnyBigCats should return True for Pets: "
+                    + $"{EnumerableToString(pets, ";")}, as Big Foot is a Cat "
+                    + $"and it weighs over 2 kilos"
+            );
         }
     }
 }
