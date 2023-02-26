@@ -45,8 +45,7 @@ namespace Exercises
             IEnumerable<Student> students
         )
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            return students.Any(student => student.Marks.Sum() > 100);
         }
 
         //do not modify this method
