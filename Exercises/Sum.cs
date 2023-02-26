@@ -36,8 +36,7 @@ namespace Exercises
          */
         public static double AverageSum(IEnumerable<IEnumerable<int>> collectionsOfNumbers)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring challenge
