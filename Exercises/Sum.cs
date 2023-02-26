@@ -16,7 +16,7 @@ namespace Exercises
          */
         public static int TotalLength(IEnumerable<string> words)
         {
-            //
+            return words.Sum(word => word.Length);
         }
 
         //Coding Exercise 2
