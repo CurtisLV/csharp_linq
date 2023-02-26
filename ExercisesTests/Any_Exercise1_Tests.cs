@@ -13,7 +13,8 @@ namespace ExercisesTests
             var input = new[] { 10, -1, 1, 12 };
             Assert.True(
                 Any.IsAnyNumberNegative(new[] { 10, -1, 1, 12 }),
-                $"The result should be True for numbers: {EnumerableToString(input)}");
+                $"The result should be True for numbers: {EnumerableToString(input)}"
+            );
         }
 
         [Test]
@@ -21,8 +22,10 @@ namespace ExercisesTests
         {
             var input = new[] { 10, 1, 12 };
 
-            Assert.False(Any.IsAnyNumberNegative(new[] { 10, 1, 12 }),
-            $"The result should be False for numbers: {EnumerableToString(input)}");
+            Assert.False(
+                Any.IsAnyNumberNegative(new[] { 10, 1, 12 }),
+                $"The result should be False for numbers: {EnumerableToString(input)}"
+            );
         }
     }
 }
