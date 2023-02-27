@@ -50,8 +50,7 @@ namespace Exercises
         //TODO implement this method
         public static bool IsEmptyAtIndex_Refactored(IEnumerable<string> words, int index)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            return (words.ElementAtOrDefault(index) == null) ? true : false;
         }
 
         //do not modify this method
