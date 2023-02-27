@@ -22,8 +22,7 @@ namespace Exercises
          */
         public static bool IsTheNumberAtIndexTheLargest(IEnumerable<int> numbers, int index)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Coding Exercise 2
