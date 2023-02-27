@@ -22,7 +22,7 @@ namespace Exercises
          */
         public static bool IsTheNumberAtIndexTheLargest(IEnumerable<int> numbers, int index)
         {
-            if (index < 0 || !numbers.Any())
+            if (index < 0 || index >= numbers.Count())
             {
                 return false;
             }
