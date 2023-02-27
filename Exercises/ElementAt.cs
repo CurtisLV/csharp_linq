@@ -40,7 +40,8 @@ namespace Exercises
          */
         public static string FormatPetDataAtIndex(IEnumerable<Pet> pets, int index)
         {
-            return pets.ElementAt(index) != null
+            var pet = pets.ElementAtOrDefault(index);
+            return pet != null
                 ? $"Pet name: {pets.ElementAt(index).Name}"
                 : $"Pet data is missing for index {index}";
         }
