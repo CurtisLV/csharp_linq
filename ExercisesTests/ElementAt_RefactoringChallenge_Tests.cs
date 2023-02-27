@@ -11,7 +11,10 @@ namespace ExercisesTests
         {
             var words = new[] { "aaa", null, "bbb" };
             var result = ElementAt.IsEmptyAtIndex(words, 1);
-            Assert.True(result, $"For the collection (aaa, null, bbb) the value at index 1 is null or empty");
+            Assert.True(
+                result,
+                $"For the collection (aaa, null, bbb) the value at index 1 is null or empty"
+            );
         }
 
         [Test]
@@ -19,7 +22,10 @@ namespace ExercisesTests
         {
             var words = new[] { "aaa", null, "bbb" };
             var result = ElementAt.IsEmptyAtIndex_Refactored(words, 1);
-            Assert.True(result, $"For the collection (aaa, null, bbb) the value at index 1 is null or empty");
+            Assert.True(
+                result,
+                $"For the collection (aaa, null, bbb) the value at index 1 is null or empty"
+            );
         }
 
         [Test]
@@ -27,7 +33,10 @@ namespace ExercisesTests
         {
             var words = new[] { "aaa", "bbb", "ccc" };
             var result = ElementAt.IsEmptyAtIndex(words, 1);
-            Assert.False(result, $"For the collection (aaa, bbb, ccc) the value at index 1 is not empty");
+            Assert.False(
+                result,
+                $"For the collection (aaa, bbb, ccc) the value at index 1 is not empty"
+            );
         }
 
         [Test]
@@ -35,7 +44,10 @@ namespace ExercisesTests
         {
             var words = new[] { "aaa", "bbb", "ccc" };
             var result = ElementAt.IsEmptyAtIndex_Refactored(words, 1);
-            Assert.False(result, $"For the collection (aaa, bbb, ccc) the value at index 1 is not empty");
+            Assert.False(
+                result,
+                $"For the collection (aaa, bbb, ccc) the value at index 1 is not empty"
+            );
         }
 
         [Test]
@@ -43,7 +55,10 @@ namespace ExercisesTests
         {
             var words = new[] { "aaa", "bbb", "ccc" };
             var result = ElementAt.IsEmptyAtIndex(words, -1);
-            Assert.True(result, $"For the collection (aaa, bbb, ccc) the index -1 is not valid, and in this case we want to return True");
+            Assert.True(
+                result,
+                $"For the collection (aaa, bbb, ccc) the index -1 is not valid, and in this case we want to return True"
+            );
         }
 
         [Test]
@@ -51,7 +66,10 @@ namespace ExercisesTests
         {
             var words = new[] { "aaa", "bbb", "ccc" };
             var result = ElementAt.IsEmptyAtIndex_Refactored(words, -1);
-            Assert.True(result, $"For the collection (aaa, bbb, ccc) the index -1 is not valid, and in this case we want to return True");
+            Assert.True(
+                result,
+                $"For the collection (aaa, bbb, ccc) the index -1 is not valid, and in this case we want to return True"
+            );
         }
     }
 }
