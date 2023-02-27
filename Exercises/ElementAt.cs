@@ -40,8 +40,7 @@ namespace Exercises
          */
         public static string FormatPetDataAtIndex(IEnumerable<Pet> pets, int index)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring challenge
