@@ -19,7 +19,9 @@ namespace Exercises
          */
         public static string FindFirstNameInTheCollection(IEnumerable<string> words)
         {
-            //
+            return words.FirstOrDefault(
+                word => (word.Length > 1 && char.IsUpper(word.ElementAt(0)))
+            );
         }
 
         //Coding Exercise 2
