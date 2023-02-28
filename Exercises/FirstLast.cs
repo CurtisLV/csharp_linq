@@ -19,8 +19,7 @@ namespace Exercises
          */
         public static string FindFirstNameInTheCollection(IEnumerable<string> words)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Coding Exercise 2
