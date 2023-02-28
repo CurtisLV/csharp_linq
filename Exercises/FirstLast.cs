@@ -20,7 +20,12 @@ namespace Exercises
         public static string FindFirstNameInTheCollection(IEnumerable<string> words)
         {
             return words.FirstOrDefault(
-                word => (word.Length > 1 && char.IsUpper(word.ElementAt(0)))
+                word =>
+                    (
+                        word.Length > 1
+                        && char.IsUpper(word.First())
+                        && word.Count(chr => char.IsUpper(chr)) == 1
+                    )
             );
         }
 
