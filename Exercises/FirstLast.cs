@@ -8,9 +8,9 @@ namespace Exercises
     {
         //Coding Exercise 1
         /*
-         Implement the FindFirstNameInTheCollection method, which takes a collection of 
-        strings as a parameter, and as a result, it returns the first valid name 
-        from this collection. 
+         Implement the FindFirstNameInTheCollection method, which takes a collection of
+        strings as a parameter, and as a result, it returns the first valid name
+        from this collection.
         A string is a valid name if:
             *it consists of at least two letters
             *it starts with an upper case character
@@ -25,8 +25,8 @@ namespace Exercises
 
         //Coding Exercise 2
         /*
-        Implement the GetYoungest method, which, given a collection of people, 
-        will return the youngest person from this collection. 
+        Implement the GetYoungest method, which, given a collection of people,
+        will return the youngest person from this collection.
         
         If the collection is empty, the result should be null.
          */
