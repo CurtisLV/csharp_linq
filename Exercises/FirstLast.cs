@@ -45,7 +45,8 @@ namespace Exercises
         //TODO implement this method
         public static Person FindOwnerOf_Refactored(Pet pet, IEnumerable<Person> people)
         {
-            return people.FirstOrDefault(person => person.Pets.FirstOrDefault() == pet);
+            // return people.FirstOrDefault(person => person.Pets.FirstOrDefault() == pet);
+            return people.FirstOrDefault(person => person.Pets.Contains(pet));
         }
 
         //do not modify this method
