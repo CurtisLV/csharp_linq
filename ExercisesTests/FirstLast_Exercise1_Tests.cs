@@ -9,6 +9,7 @@ namespace ExercisesTests
         [TestFixture]
         public class FirstTestSuite
         {
+            [Test]
             public void NameIsPresent()
             {
                 var words = new[] { "abc", "K", "MArtin", "John", "Jack", "bbb" };
