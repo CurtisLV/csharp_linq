@@ -38,7 +38,7 @@ namespace Exercises
          */
         public static Person GetYoungest(IEnumerable<Person> people)
         {
-            return people.OrderBy(p => p.DateOfBirth).First();
+            return people.OrderByDescending(p => p.DateOfBirth).FirstOrDefault();
         }
 
         //Refactoring challenge
