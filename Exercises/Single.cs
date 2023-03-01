@@ -69,7 +69,9 @@ namespace Exercises
             DayOfWeek dayOfWeek
         )
         {
-            return dates.SingleOrDefault(date => dates.Count(d => d.DayOfWeek == dayOfWeek) == 1);
+            return dates.Count(date => date.DayOfWeek == dayOfWeek) == 1
+                ? dates.SingleOrDefault(date => date.DayOfWeek == dayOfWeek)
+                : null;
         }
 
         //do not modify this method
