@@ -22,8 +22,7 @@ namespace Exercises
          */
         public static string GetTheOnlyUpperCaseWord(IEnumerable<string> words)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         /*
