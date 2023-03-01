@@ -59,7 +59,7 @@ namespace Exercises
             IEnumerable<IEnumerable<int>> numberCollections
         )
         {
-            //
+            return numberCollections.Single(collection => collection.Count() == 1);
         }
 
         //Refactoring challenge
