@@ -13,7 +13,11 @@ namespace ExercisesTests
         {
             var words = new List<string> { "aaa", "BBB", "CcC" };
             var result = Single.GetTheOnlyUpperCaseWord(words);
-            Assert.AreEqual("BBB", result, $"The only upper case word in (aaa, BBB, CcC) is BBB, but the result was {result}");
+            Assert.AreEqual(
+                "BBB",
+                result,
+                $"The only upper case word in (aaa, BBB, CcC) is BBB, but the result was {result}"
+            );
         }
 
         [Test]
@@ -21,14 +25,21 @@ namespace ExercisesTests
         {
             var words = new List<string> { "aaa", "bbB", "CcC" };
             var result = Single.GetTheOnlyUpperCaseWord(words);
-            Assert.AreEqual(null, result, $"No word in (aaa, bbB, CcC) is upper case, so the result should be null, but the result was {result}");
+            Assert.AreEqual(
+                null,
+                result,
+                $"No word in (aaa, bbB, CcC) is upper case, so the result should be null, but the result was {result}"
+            );
         }
 
         [Test]
         public void MoreThanOneUppercaseWordIsPresent()
         {
             var words = new List<string> { "aaa", "BBB", "CcC", "DDD" };
-            Assert.Throws<InvalidOperationException>(() => Single.GetTheOnlyUpperCaseWord(words), $"There two upper case words in (aaa, BBB, CcC, DDD) so an InvalidOperationException should be thrown");
+            Assert.Throws<InvalidOperationException>(
+                () => Single.GetTheOnlyUpperCaseWord(words),
+                $"There two upper case words in (aaa, BBB, CcC, DDD) so an InvalidOperationException should be thrown"
+            );
         }
     }
 }
