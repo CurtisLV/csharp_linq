@@ -59,8 +59,7 @@ namespace Exercises
             IEnumerable<IEnumerable<int>> numberCollections
         )
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring challenge
