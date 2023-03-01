@@ -12,7 +12,7 @@ namespace ExercisesTests
         {
             var days = new[]
             {
-                new DateTime(2021, 9, 30),//thursday
+                new DateTime(2021, 9, 30), //thursday
                 new DateTime(2021, 9, 29), //wednesday
             };
             var asString = string.Join(", ", days);
@@ -25,13 +25,17 @@ namespace ExercisesTests
         {
             var days = new[]
             {
-                new DateTime(2021, 9, 23),//thursday
-                new DateTime(2021, 9, 30),//thursday
+                new DateTime(2021, 9, 23), //thursday
+                new DateTime(2021, 9, 30), //thursday
                 new DateTime(2021, 9, 29), //wednesday
             };
             var asString = string.Join(", ", days);
             var result = Single.GetSingleDay(days, DayOfWeek.Thursday);
-            Assert.AreEqual(null, result, $"Days {asString} contain two Thursdays, so null should be returned");
+            Assert.AreEqual(
+                null,
+                result,
+                $"Days {asString} contain two Thursdays, so null should be returned"
+            );
         }
 
         [Test]
@@ -39,12 +43,16 @@ namespace ExercisesTests
         {
             var days = new[]
             {
-                new DateTime(2021, 9, 24),//friday
+                new DateTime(2021, 9, 24), //friday
                 new DateTime(2021, 9, 29), //wednesday
             };
             var asString = string.Join(", ", days);
             var result = Single.GetSingleDay(days, DayOfWeek.Thursday);
-            Assert.AreEqual(null, result, $"Days {asString} contain no Thursdays, so null should be returned");
+            Assert.AreEqual(
+                null,
+                result,
+                $"Days {asString} contain no Thursdays, so null should be returned"
+            );
         }
 
         [Test]
@@ -52,7 +60,7 @@ namespace ExercisesTests
         {
             var days = new[]
             {
-                new DateTime(2021, 9, 30),//thursday
+                new DateTime(2021, 9, 30), //thursday
                 new DateTime(2021, 9, 29), //wednesday
             };
             var asString = string.Join(", ", days);
@@ -65,13 +73,17 @@ namespace ExercisesTests
         {
             var days = new[]
             {
-                new DateTime(2021, 9, 23),//thursday
-                new DateTime(2021, 9, 30),//thursday
+                new DateTime(2021, 9, 23), //thursday
+                new DateTime(2021, 9, 30), //thursday
                 new DateTime(2021, 9, 29), //wednesday
             };
             var asString = string.Join(", ", days);
             var result = Single.GetSingleDay_Refactored(days, DayOfWeek.Thursday);
-            Assert.AreEqual(null, result, $"Days {asString} contain two Thursdays, so null should be returned");
+            Assert.AreEqual(
+                null,
+                result,
+                $"Days {asString} contain two Thursdays, so null should be returned"
+            );
         }
 
         [Test]
@@ -79,12 +91,16 @@ namespace ExercisesTests
         {
             var days = new[]
             {
-                new DateTime(2021, 9, 24),//friday
+                new DateTime(2021, 9, 24), //friday
                 new DateTime(2021, 9, 29), //wednesday
             };
             var asString = string.Join(", ", days);
             var result = Single.GetSingleDay_Refactored(days, DayOfWeek.Thursday);
-            Assert.AreEqual(null, result, $"Days {asString} contain no Thursdays, so null should be returned");
+            Assert.AreEqual(
+                null,
+                result,
+                $"Days {asString} contain no Thursdays, so null should be returned"
+            );
         }
     }
 }
