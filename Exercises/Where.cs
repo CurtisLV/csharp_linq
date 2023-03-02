@@ -63,7 +63,7 @@ namespace Exercises
             IEnumerable<Person> people
         )
         {
-            //
+            return people.Where(p => p.Pets.Count(x => x.PetType == PetType.Fish) > 1);
         }
 
         //do not modify this method
