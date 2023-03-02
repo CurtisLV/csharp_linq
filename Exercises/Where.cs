@@ -54,7 +54,7 @@ namespace Exercises
          */
         public static IEnumerable<string> GetProperlyIndexedWords(IEnumerable<string> words)
         {
-            //
+            return words.Where((word, index) => word.StartsWith($"{index + 1}"));
         }
 
         //Refactoring challenge
