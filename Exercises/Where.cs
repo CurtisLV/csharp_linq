@@ -63,8 +63,7 @@ namespace Exercises
             IEnumerable<Person> people
         )
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //do not modify this method
