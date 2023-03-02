@@ -28,7 +28,9 @@ namespace Exercises
          */
         public static IEnumerable<Student> GetScholarshipCandidates(IEnumerable<Student> students)
         {
-            return students.Where(student => student.Marks.Average() > 4.6);
+            return students.Where(
+                student => (student.Marks.Any() ? student.Marks.Average() : 0) > 4.6
+            );
         }
 
         //Coding Exercise 2
