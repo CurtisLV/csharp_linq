@@ -54,8 +54,7 @@ namespace Exercises
          */
         public static IEnumerable<string> GetProperlyIndexedWords(IEnumerable<string> words)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring challenge
