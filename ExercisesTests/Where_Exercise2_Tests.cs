@@ -17,7 +17,11 @@ namespace ExercisesTests
             var wordsAsString = string.Join(", ", words);
             var result = Where.GetProperlyIndexedWords(words);
             var resultAsString = result.Any() ? string.Join(", ", result) : "empty";
-            Assert.AreEqual(expectedWords, result, $"The input collection was: {wordsAsString}, the result was {resultAsString}, expectedResult is: {expectedResultAsString}");
+            Assert.AreEqual(
+                expectedWords,
+                result,
+                $"The input collection was: {wordsAsString}, the result was {resultAsString}, expectedResult is: {expectedResultAsString}"
+            );
         }
 
         [Test]
@@ -30,7 +34,11 @@ namespace ExercisesTests
             var wordsAsString = string.Join(", ", words);
             var result = Where.GetProperlyIndexedWords(words);
             var resultAsString = result.Any() ? string.Join(", ", result) : "empty";
-            Assert.AreEqual(expectedWords, result, $"The input collection was: {wordsAsString}, the result was {resultAsString}, expectedResult is: {expectedResultAsString}");
+            Assert.AreEqual(
+                expectedWords,
+                result,
+                $"The input collection was: {wordsAsString}, the result was {resultAsString}, expectedResult is: {expectedResultAsString}"
+            );
         }
 
         [Test]
@@ -43,7 +51,11 @@ namespace ExercisesTests
             var wordsAsString = string.Join(", ", words);
             var result = Where.GetProperlyIndexedWords(words);
             var resultAsString = result.Any() ? string.Join(", ", result) : "empty";
-            Assert.AreEqual(expectedWords, result, $"The input collection was: {wordsAsString}, the result was {resultAsString}, expectedResult is: {expectedResultAsString}");
+            Assert.AreEqual(
+                expectedWords,
+                result,
+                $"The input collection was: {wordsAsString}, the result was {resultAsString}, expectedResult is: {expectedResultAsString}"
+            );
         }
     }
 }
