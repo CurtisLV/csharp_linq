@@ -49,8 +49,7 @@ namespace Exercises
             int percent
         )
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring challenge
