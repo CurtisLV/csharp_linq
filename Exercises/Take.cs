@@ -58,8 +58,7 @@ namespace Exercises
             IEnumerable<DateTime> dates
         )
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //do not modify this method
