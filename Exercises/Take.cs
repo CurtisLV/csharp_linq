@@ -58,7 +58,7 @@ namespace Exercises
             IEnumerable<DateTime> dates
         )
         {
-            //
+            return dates.TakeWhile(date => date.Year < 1901);
         }
 
         //do not modify this method
