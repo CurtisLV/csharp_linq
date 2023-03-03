@@ -10,15 +10,14 @@ namespace ExercisesTests
         [Test]
         public void FiftyPercent_ShallReturnHalfOfAllPets()
         {
-            var pets =
-            new[]
+            var pets = new[]
             {
-                new Pet("Hannibal",  1.1f),
-                new Pet("Anthony",  2f),
-                new Pet("Ed",  0.7f),
+                new Pet("Hannibal", 1.1f),
+                new Pet("Anthony", 2f),
+                new Pet("Ed", 0.7f),
                 new Pet("Taiga", 35f),
-                new Pet("Rex",  40f),
-                new Pet("Lucky",  5f)
+                new Pet("Rex", 40f),
+                new Pet("Lucky", 5f)
             };
 
             var result = Take.GetGivenPercentOfHeaviestPets(pets, 50);
@@ -28,15 +27,14 @@ namespace ExercisesTests
 
         public void TwentyPercent_ShallReturnOneOfSixPets()
         {
-            var pets =
-            new[]
+            var pets = new[]
             {
-                new Pet("Hannibal",  1.1f),
-                new Pet("Anthony",  2f),
-                new Pet("Ed",  0.7f),
+                new Pet("Hannibal", 1.1f),
+                new Pet("Anthony", 2f),
+                new Pet("Ed", 0.7f),
                 new Pet("Taiga", 35f),
-                new Pet("Rex",  40f),
-                new Pet("Lucky",  5f)
+                new Pet("Rex", 40f),
+                new Pet("Lucky", 5f)
             };
 
             var result = Take.GetGivenPercentOfHeaviestPets(pets, 20);
@@ -46,12 +44,11 @@ namespace ExercisesTests
 
         public void ThirtyPercent_ShallReturnOneOfFourPets()
         {
-            var pets =
-            new[]
+            var pets = new[]
             {
-                new Pet("Hannibal",  50f),
-                new Pet("Anthony",  5f),
-                new Pet("Ed",  6f),
+                new Pet("Hannibal", 50f),
+                new Pet("Anthony", 5f),
+                new Pet("Ed", 6f),
                 new Pet("Taiga", 25f)
             };
 
