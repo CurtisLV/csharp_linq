@@ -20,7 +20,11 @@ namespace Exercises
          */
         public static IEnumerable<int> TakeSome(IEnumerable<int> numbers)
         {
-            //
+            return numbers.Count() < 10
+                ? numbers.Take(3)
+                : numbers.Count() >= 100
+                    ? numbers.Take(numbers.Count())
+                    : numbers.Take(30);
         }
 
         //Coding Exercise 2
