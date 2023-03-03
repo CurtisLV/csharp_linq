@@ -25,6 +25,7 @@ namespace ExercisesTests
             CollectionAssert.AreEquivalent(expectedResult, result);
         }
 
+        [Test]
         public void TwentyPercent_ShallReturnOneOfSixPets()
         {
             var pets = new[]
@@ -42,6 +43,7 @@ namespace ExercisesTests
             CollectionAssert.AreEquivalent(expectedResult, result);
         }
 
+        [Test]
         public void ThirtyPercent_ShallReturnOneOfFourPets()
         {
             var pets = new[]
