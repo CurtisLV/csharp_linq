@@ -49,7 +49,7 @@ namespace Exercises
             int percent
         )
         {
-            return pets.OrderByDescending(pet => pet.Weight).Take(pets.Count() * percent / 100);
+            return pets.OrderBy(pet => pet.Weight).TakeLast(pets.Count() * percent / 100);
         }
 
         //Refactoring challenge
