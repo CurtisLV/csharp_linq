@@ -13,7 +13,11 @@ namespace ExercisesTests
             var input = Enumerable.Range(0, 5);
             var result = Take.TakeSome(input);
             var expectedResult = input.Take(3);
-            CollectionAssert.AreEqual(expectedResult, result, $"For INPUT of size {input.Count()} EXPECTED the count of the result to be {expectedResult.Count()}, but IT WAS {result.Count()}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For INPUT of size {input.Count()} EXPECTED the count of the result to be {expectedResult.Count()}, but IT WAS {result.Count()}"
+            );
         }
 
         [Test]
@@ -22,7 +26,11 @@ namespace ExercisesTests
             var input = Enumerable.Range(0, 25);
             var result = Take.TakeSome(input);
             var expectedResult = input.Take(30);
-            CollectionAssert.AreEqual(expectedResult, result, $"For INPUT of size {input.Count()} EXPECTED the count of the result to be {expectedResult.Count()}, but IT WAS {result.Count()}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For INPUT of size {input.Count()} EXPECTED the count of the result to be {expectedResult.Count()}, but IT WAS {result.Count()}"
+            );
         }
 
         [Test]
@@ -31,7 +39,11 @@ namespace ExercisesTests
             var input = Enumerable.Range(0, 50);
             var result = Take.TakeSome(input);
             var expectedResult = input.Take(30);
-            CollectionAssert.AreEqual(expectedResult, result, $"For INPUT of size {input.Count()} EXPECTED the count of the result to be {expectedResult.Count()}, but IT WAS {result.Count()}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For INPUT of size {input.Count()} EXPECTED the count of the result to be {expectedResult.Count()}, but IT WAS {result.Count()}"
+            );
         }
 
         [Test]
@@ -40,7 +52,11 @@ namespace ExercisesTests
             var input = Enumerable.Range(0, 99);
             var result = Take.TakeSome(input);
             var expectedResult = input.Take(30);
-            CollectionAssert.AreEqual(expectedResult, result, $"For INPUT of size {input.Count()} EXPECTED the count of the result to be {expectedResult.Count()}, but IT WAS {result.Count()}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For INPUT of size {input.Count()} EXPECTED the count of the result to be {expectedResult.Count()}, but IT WAS {result.Count()}"
+            );
         }
 
         [Test]
@@ -49,7 +65,11 @@ namespace ExercisesTests
             var input = Enumerable.Range(0, 100);
             var result = Take.TakeSome(input);
             var expectedResult = input.Take(100);
-            CollectionAssert.AreEqual(expectedResult, result, $"For INPUT of size {input.Count()} EXPECTED the count of the result to be {expectedResult.Count()}, but IT WAS {result.Count()}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For INPUT of size {input.Count()} EXPECTED the count of the result to be {expectedResult.Count()}, but IT WAS {result.Count()}"
+            );
         }
 
         [Test]
@@ -58,7 +78,11 @@ namespace ExercisesTests
             var input = Enumerable.Range(0, 125);
             var result = Take.TakeSome(input);
             var expectedResult = input;
-            CollectionAssert.AreEqual(expectedResult, result, $"For INPUT of size {input.Count()} EXPECTED the count of the result to be {expectedResult.Count()}, but IT WAS {result.Count()}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For INPUT of size {input.Count()} EXPECTED the count of the result to be {expectedResult.Count()}, but IT WAS {result.Count()}"
+            );
         }
     }
 }
