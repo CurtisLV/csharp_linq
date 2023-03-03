@@ -23,7 +23,7 @@ namespace Exercises
             return numbers.Count() < 10
                 ? numbers.Take(3)
                 : numbers.Count() >= 100
-                    ? numbers.Take(numbers.Count())
+                    ? numbers
                     : numbers.Take(30);
         }
 
