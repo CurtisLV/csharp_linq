@@ -16,7 +16,11 @@ namespace ExercisesTests
             var wordsAsString = string.Join(", ", words);
             var expectedResultAsString = string.Join(", ", expectedResult);
             var resultAsString = string.Join(", ", result);
-            CollectionAssert.AreEqual(expectedResult, result, $"For words ({wordsAsString}), expected result is ({expectedResultAsString}), but the result is {resultAsString}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For words ({wordsAsString}), expected result is ({expectedResultAsString}), but the result is {resultAsString}"
+            );
         }
 
         [Test]
@@ -28,7 +32,11 @@ namespace ExercisesTests
             var wordsAsString = string.Join(", ", words);
             var expectedResultAsString = string.Join(", ", expectedResult);
             var resultAsString = string.Join(", ", result);
-            CollectionAssert.AreEqual(expectedResult, result, $"For words ({wordsAsString}), expected result is ({expectedResultAsString}), but the result is {resultAsString}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For words ({wordsAsString}), expected result is ({expectedResultAsString}), but the result is {resultAsString}"
+            );
         }
 
         [Test]
@@ -40,7 +48,11 @@ namespace ExercisesTests
             var wordsAsString = string.Join(", ", words);
             var expectedResultAsString = string.Join(", ", expectedResult);
             var resultAsString = string.Join(", ", result);
-            CollectionAssert.AreEqual(expectedResult, result, $"For words ({wordsAsString}), expected result is should be empty (because there is no END word in the collection), but the result is {resultAsString}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For words ({wordsAsString}), expected result is should be empty (because there is no END word in the collection), but the result is {resultAsString}"
+            );
         }
 
         [Test]
@@ -52,7 +64,11 @@ namespace ExercisesTests
             var wordsAsString = string.Join(", ", words);
             var expectedResultAsString = string.Join(", ", expectedResult);
             var resultAsString = string.Join(", ", result);
-            CollectionAssert.AreEqual(expectedResult, result, $"For words ({wordsAsString}), expected result is should be empty (because there is no START word in the collection), but the result is {resultAsString}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For words ({wordsAsString}), expected result is should be empty (because there is no START word in the collection), but the result is {resultAsString}"
+            );
         }
 
         [Test]
@@ -64,7 +80,11 @@ namespace ExercisesTests
             var wordsAsString = string.Join(", ", words);
             var expectedResultAsString = string.Join(", ", expectedResult);
             var resultAsString = string.Join(", ", result);
-            CollectionAssert.AreEqual(expectedResult, result, $"For words ({wordsAsString}), expected result is should be empty (because START is after the END), but the result is {resultAsString}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For words ({wordsAsString}), expected result is should be empty (because START is after the END), but the result is {resultAsString}"
+            );
         }
 
         [Test]
@@ -76,7 +96,11 @@ namespace ExercisesTests
             var wordsAsString = string.Join(", ", words);
             var expectedResultAsString = string.Join(", ", expectedResult);
             var resultAsString = string.Join(", ", result);
-            CollectionAssert.AreEqual(expectedResult, result, $"For words ({wordsAsString}), expected result is should be empty (because there are multiple START words), but the result is {resultAsString}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For words ({wordsAsString}), expected result is should be empty (because there are multiple START words), but the result is {resultAsString}"
+            );
         }
 
         [Test]
@@ -88,7 +112,11 @@ namespace ExercisesTests
             var wordsAsString = string.Join(", ", words);
             var expectedResultAsString = string.Join(", ", expectedResult);
             var resultAsString = string.Join(", ", result);
-            CollectionAssert.AreEqual(expectedResult, result, $"For words ({wordsAsString}), expected result is should be empty (because there are multiple END words), but the result is {resultAsString}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For words ({wordsAsString}), expected result is should be empty (because there are multiple END words), but the result is {resultAsString}"
+            );
         }
     }
 }
