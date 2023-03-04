@@ -55,7 +55,18 @@ namespace Exercises
          */
         public static IEnumerable<string> GetWordsBetweenStartAndEnd(List<string> words)
         {
-            //
+            if (
+                !words.Contains("START")
+                || !words.Contains("END")
+                || words.IndexOf("END") < words.IndexOf("START")
+                || words.Count(word => word == "START") > 1
+                || words.Count(word => word == "END") > 1
+            )
+            {
+                return new string[] { };
+            }
+
+            return words;
         }
 
         //Refactoring challenge
