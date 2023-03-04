@@ -23,7 +23,12 @@ namespace Exercises
          */
         public static double CalculateAverageMark(Student student)
         {
-            return student.Marks.Skip(1).SkipLast(1).Average();
+            if (student.Marks.Count() < 3 || !student.Marks.All())
+            {
+                return 0;
+            }
+
+            return student.Marks.OrderBy(mark => mark).Skip(1).SkipLast(1).Average();
         }
 
         //Coding Exercise 2
