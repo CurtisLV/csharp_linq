@@ -55,8 +55,7 @@ namespace Exercises
          */
         public static IEnumerable<string> GetWordsBetweenStartAndEnd(List<string> words)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring challenge
