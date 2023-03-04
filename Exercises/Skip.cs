@@ -78,7 +78,7 @@ namespace Exercises
             IEnumerable<int> numbers
         )
         {
-            //
+            return numbers.SkipWhile(x => x % 100 != 0);
         }
 
         //do not modify this method
