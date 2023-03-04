@@ -66,7 +66,10 @@ namespace Exercises
                 return new string[] { };
             }
 
-            return words;
+            int wordCount = words.Count();
+            return words
+                .Skip(wordCount - words.IndexOf("START"))
+                .SkipLast(wordCount - words.IndexOf("END"));
         }
 
         //Refactoring challenge
