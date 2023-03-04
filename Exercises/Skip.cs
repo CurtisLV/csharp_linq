@@ -7,15 +7,15 @@ namespace Exercises
     {
         //Coding Exercise 1
         /*
-        Let's define a Student class. A student has a collection of Marks, 
-        which are numbers. Implement the CalculateAverageMark method, 
-        which will calculate the average mark for a student, 
-        but it will ignore the lowest and the highest mark. 
+        Let's define a Student class. A student has a collection of Marks,
+        which are numbers. Implement the CalculateAverageMark method,
+        which will calculate the average mark for a student,
+        but it will ignore the lowest and the highest mark.
         Let's assume a student with less than 3 marks has an average mark of 0.
 
         For example:
-            *John has the following marks: 3,4,6,6,2,5. 
-                We want to ignore one highest mark (6) and one lowest mark (2). 
+            *John has the following marks: 3,4,6,6,2,5.
+                We want to ignore one highest mark (6) and one lowest mark (2).
                 That means, we want to calculate the average of 3,4,6,5, which is 4.5
         
         Assume the marks of the student are not null.
@@ -28,16 +28,16 @@ namespace Exercises
 
         //Coding Exercise 2
         /*
-        Using LINQ, implement the GetWordsBetweenStartAndEnd method which given 
-        a list of words, will return all words that lay between words "START" and "END". 
+        Using LINQ, implement the GetWordsBetweenStartAndEnd method which given
+        a list of words, will return all words that lay between words "START" and "END".
 
         For example:
-            *for words {"aaa", "START", "bbb", "ccc", "END", "ddd"} 
+            *for words {"aaa", "START", "bbb", "ccc", "END", "ddd"}
                 the result shall be { "bbb", "ccc"}
             *for words {"aaa", "START", "END", "ddd"} the result shall be empty
             
         The result shall also be empty if any of those conditions are met:
-            *"START" or "END" words are not present in this collection, 
+            *"START" or "END" words are not present in this collection,
                 or they occur more than once
         "START" is placed after "END"
         
@@ -57,7 +57,8 @@ namespace Exercises
         //Refactoring challenge
         //TODO implement this method
         public static IEnumerable<int> GetAllAfterFirstDividableBy100_Refactored(
-            IEnumerable<int> numbers)
+            IEnumerable<int> numbers
+        )
         {
             //TODO your code goes here
             throw new NotImplementedException();
