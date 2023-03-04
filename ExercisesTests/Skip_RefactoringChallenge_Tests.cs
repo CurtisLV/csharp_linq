@@ -16,7 +16,11 @@ namespace ExercisesTests
             var numbersAsString = string.Join(", ", numbers);
             var resultAsString = string.Join(", ", result);
             var expectedResultAsString = string.Join(", ", expectedResult);
-            CollectionAssert.AreEqual(expectedResult, result, $"The test failed, because for numbers ({numbersAsString}) the expected result is ({expectedResultAsString}), but it was ({resultAsString})");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"The test failed, because for numbers ({numbersAsString}) the expected result is ({expectedResultAsString}), but it was ({resultAsString})"
+            );
         }
 
         [Test]
@@ -28,7 +32,11 @@ namespace ExercisesTests
             var numbersAsString = string.Join(", ", numbers);
             var resultAsString = string.Join(", ", result);
             var expectedResultAsString = string.Join(", ", expectedResult);
-            CollectionAssert.AreEqual(expectedResult, result, $"The test failed, because for numbers ({numbersAsString}) the expected result is ({expectedResultAsString}), but it was ({resultAsString})");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"The test failed, because for numbers ({numbersAsString}) the expected result is ({expectedResultAsString}), but it was ({resultAsString})"
+            );
         }
 
         [Test]
@@ -39,7 +47,11 @@ namespace ExercisesTests
             var expectedResult = new int[] { };
             var numbersAsString = string.Join(", ", numbers);
             var resultAsString = string.Join(", ", result);
-            CollectionAssert.AreEqual(expectedResult, result, $"The test failed, because for numbers ({numbersAsString}) the expected result is empty, but it was ({resultAsString})");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"The test failed, because for numbers ({numbersAsString}) the expected result is empty, but it was ({resultAsString})"
+            );
         }
 
         [Test]
@@ -50,7 +62,11 @@ namespace ExercisesTests
             var expectedResult = new int[] { };
             var numbersAsString = string.Join(", ", numbers);
             var resultAsString = string.Join(", ", result);
-            CollectionAssert.AreEqual(expectedResult, result, $"The test failed, because for numbers ({numbersAsString}) the expected result is empty, but it was ({resultAsString})");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"The test failed, because for numbers ({numbersAsString}) the expected result is empty, but it was ({resultAsString})"
+            );
         }
     }
 }
