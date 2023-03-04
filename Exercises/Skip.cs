@@ -23,7 +23,7 @@ namespace Exercises
          */
         public static double CalculateAverageMark(Student student)
         {
-            if (student.Marks.Count() < 3 || !student.Marks.All())
+            if (student.Marks.Count() < 3)
             {
                 return 0;
             }
