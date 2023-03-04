@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Exercises
 {
@@ -22,8 +23,7 @@ namespace Exercises
          */
         public static double CalculateAverageMark(Student student)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            return student.Marks.Skip(1).SkipLast(1).Average();
         }
 
         //Coding Exercise 2
