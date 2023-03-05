@@ -28,12 +28,7 @@ namespace LinqTutorial
             Printer.Print(strings, nameof(strings));
 
             //it's often used when operating on multiple types with one interface
-            var flyables = new List<IFlyable>()
-            {
-                new Bird(),
-                new Plane(),
-                new Helicopter()
-            };
+            var flyables = new List<IFlyable>() { new Bird(), new Plane(), new Helicopter() };
 
             var birds = flyables.OfType<Bird>();
             Printer.Print(birds, nameof(birds));
