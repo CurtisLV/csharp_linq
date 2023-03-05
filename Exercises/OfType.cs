@@ -21,7 +21,9 @@ namespace Exercises
         //If there is no string at all in this collection, the result should be true.
         public static bool AreAllStringsUpperCase(IEnumerable<object> objects)
         {
-            //
+            return objects
+                .OfType<string>()
+                .All(word => word.Count(x => char.IsUpper(x)) == word.Count());
         }
 
         //Refactoring challenge
