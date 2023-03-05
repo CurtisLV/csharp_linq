@@ -30,7 +30,7 @@ namespace Exercises
         //TODO implement this method
         public static DateTime? GetTheLatestDate_Refactored(IEnumerable<object> objects)
         {
-            //
+            return objects.OfType<DateTime?>().OrderBy(x => x).FirstOrDefault();
         }
 
         //do not modify this method
