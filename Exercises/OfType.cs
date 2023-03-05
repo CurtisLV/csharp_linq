@@ -12,7 +12,7 @@ namespace Exercises
         //If no integer is present, it shall return null.
         public static int? GetTheFirstInteger(IEnumerable<object> objects)
         {
-            return objects.OfType<int>().FirstOrDefault();
+            return objects.OfType<int?>().FirstOrDefault();
         }
 
         //Coding Exercise 2
