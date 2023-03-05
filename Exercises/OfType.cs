@@ -30,8 +30,7 @@ namespace Exercises
         //TODO implement this method
         public static DateTime? GetTheLatestDate_Refactored(IEnumerable<object> objects)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //do not modify this method
