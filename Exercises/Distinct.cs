@@ -18,8 +18,7 @@ namespace Exercises
          */
         public static bool AreAllUnique<T>(IEnumerable<T> collection)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Coding Exercise 2
