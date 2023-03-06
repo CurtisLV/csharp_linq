@@ -44,6 +44,11 @@ namespace Exercises
             IEnumerable<IEnumerable<T>> collections
         )
         {
+            if (collections.All(x => x == null))
+            {
+                return null;
+            }
+
             return collections
                 .OrderByDescending(collection => collection.Count() - collection.Distinct().Count())
                 .First();
