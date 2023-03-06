@@ -44,8 +44,7 @@ namespace Exercises
             IEnumerable<IEnumerable<T>> collections
         )
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring challenge
