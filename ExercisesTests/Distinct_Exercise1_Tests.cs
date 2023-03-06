@@ -11,8 +11,10 @@ namespace ExercisesTests
         {
             var input = new int[] { 1, 2, 3, 4, 5 };
             var result = Distinct.AreAllUnique(input);
-            Assert.True(result, $"All elements of (1,2,3,4,5) are unique," +
-                $" but the result was False");
+            Assert.True(
+                result,
+                $"All elements of (1,2,3,4,5) are unique," + $" but the result was False"
+            );
         }
 
         [Test]
@@ -20,8 +22,11 @@ namespace ExercisesTests
         {
             var input = new int[] { 1, 2, 3, 4, 4, 5 };
             var result = Distinct.AreAllUnique(input);
-            Assert.False(result, $"Not all elements of (1,2,3,4,4,5) are unique" +
-                $" (4 is duplicated), but the result was True");
+            Assert.False(
+                result,
+                $"Not all elements of (1,2,3,4,4,5) are unique"
+                    + $" (4 is duplicated), but the result was True"
+            );
         }
     }
 }
