@@ -55,7 +55,7 @@ namespace Exercises
             IEnumerable<string> words
         )
         {
-            //
+            return words.Where(word => word.Length < 5).Distinct();
         }
 
         //do not modify this method
