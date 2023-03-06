@@ -18,7 +18,7 @@ namespace Exercises
          */
         public static bool AreAllUnique<T>(IEnumerable<T> collection)
         {
-            //
+            return collection.Distinct().Count() == collection.Count();
         }
 
         //Coding Exercise 2
