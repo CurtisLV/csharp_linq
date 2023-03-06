@@ -44,7 +44,9 @@ namespace Exercises
             IEnumerable<IEnumerable<T>> collections
         )
         {
-            //
+            return collections
+                .OrderByDescending(collection => collection.Count() - collection.Distinct().Count())
+                .First();
         }
 
         //Refactoring challenge
