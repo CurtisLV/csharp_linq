@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Exercises
 {
@@ -28,7 +29,17 @@ namespace Exercises
          */
         public static IEnumerable<string> AddStartAndEndMarkers(IEnumerable<string> words)
         {
-            //
+            if (words.First() != "START")
+            {
+                words.Prepend("START");
+            }
+
+            if (words.Last() != "END")
+            {
+                words.Prepend("END");
+            }
+
+            return words;
         }
 
         //Coding Exercise 2
