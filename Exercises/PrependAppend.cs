@@ -62,6 +62,11 @@ namespace Exercises
         */
         public static IEnumerable<int> RemoveDuplicatesFromStartAndEnd(IEnumerable<int> numbers)
         {
+            if (numbers.Count() < 2)
+            {
+                return numbers;
+            }
+
             return numbers
                 .Where(number => number != numbers.First())
                 .Prepend(numbers.First())
