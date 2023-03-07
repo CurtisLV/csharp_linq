@@ -62,8 +62,7 @@ namespace Exercises
         */
         public static IEnumerable<int> RemoveDuplicatesFromStartAndEnd(IEnumerable<int> numbers)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring challenge
