@@ -29,17 +29,19 @@ namespace Exercises
          */
         public static IEnumerable<string> AddStartAndEndMarkers(IEnumerable<string> words)
         {
+            var answer = words;
+
             if (words.First() != "START")
             {
-                words.Prepend("START");
+                answer = answer.Prepend("START");
             }
 
             if (words.Last() != "END")
             {
-                words.Prepend("END");
+                answer = answer.Append("END");
             }
 
-            return words;
+            return answer;
         }
 
         //Coding Exercise 2
