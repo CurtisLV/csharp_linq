@@ -80,7 +80,7 @@ namespace Exercises
             IEnumerable<string> words
         )
         {
-            //
+            return words.TakeWhile(word => word != "The end").Append("END");
         }
 
         //do not modify this method
