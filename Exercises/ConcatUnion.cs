@@ -25,8 +25,7 @@ namespace Exercises
          */
         public static IEnumerable<News> SelectRecentAndImportant(IEnumerable<News> newsCollection)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Coding Exercise 2
