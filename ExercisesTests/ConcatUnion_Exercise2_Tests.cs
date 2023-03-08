@@ -12,7 +12,11 @@ namespace ExercisesTests
             var input = "f_o!_!x";
             var result = ConcatUnion.CleanWord(input);
             var expectedResult = "fox_!";
-            Assert.AreEqual(expectedResult, result, $"For input '{input}' the result shall be '{expectedResult}', but it was '{result}'");
+            Assert.AreEqual(
+                expectedResult,
+                result,
+                $"For input '{input}' the result shall be '{expectedResult}', but it was '{result}'"
+            );
         }
 
         [Test]
@@ -21,7 +25,11 @@ namespace ExercisesTests
             var input = "d_3uc(k))";
             var result = ConcatUnion.CleanWord(input);
             var expectedResult = "duck_3()";
-            Assert.AreEqual(expectedResult, result, $"For input '{input}' the result shall be '{expectedResult}', but it was '{result}'");
+            Assert.AreEqual(
+                expectedResult,
+                result,
+                $"For input '{input}' the result shall be '{expectedResult}', but it was '{result}'"
+            );
         }
 
         [Test]
@@ -30,7 +38,11 @@ namespace ExercisesTests
             var input = "";
             var result = ConcatUnion.CleanWord(input);
             var expectedResult = "";
-            Assert.AreEqual(expectedResult, result, $"For an empty input the result shall be an empty string, but it was '{result}'");
+            Assert.AreEqual(
+                expectedResult,
+                result,
+                $"For an empty input the result shall be an empty string, but it was '{result}'"
+            );
         }
     }
 }
