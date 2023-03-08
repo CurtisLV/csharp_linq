@@ -20,7 +20,11 @@ namespace ExercisesTests
             var expectedResultAsString = string.Join(", ", expectedResult);
             var resultAsString = string.Join(", ", result);
 
-            CollectionAssert.AreEqual(expectedResult, result, $"For input collections ({numbers1AsString}) and ({numbers2AsString}) the result shall be ({expectedResultAsString}) but it is ({resultAsString})");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For input collections ({numbers1AsString}) and ({numbers2AsString}) the result shall be ({expectedResultAsString}) but it is ({resultAsString})"
+            );
         }
 
         [Test]
@@ -37,7 +41,11 @@ namespace ExercisesTests
             var expectedResultAsString = string.Join(", ", expectedResult);
             var resultAsString = string.Join(", ", result);
 
-            CollectionAssert.AreEqual(expectedResult, result, $"For input collections ({numbers1AsString}) and ({numbers2AsString}) the result shall be ({expectedResultAsString}) but it is ({resultAsString})");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For input collections ({numbers1AsString}) and ({numbers2AsString}) the result shall be ({expectedResultAsString}) but it is ({resultAsString})"
+            );
         }
     }
 }
