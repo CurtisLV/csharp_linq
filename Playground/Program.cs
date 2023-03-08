@@ -6,54 +6,63 @@ public class Program
 {
     private static void Main(string[] args)
     {
-        var students = new List<Student>
-        {
-            new Student
-            {
-                Marks = new List<int> { 4, 5, 5 }
-            },
-            new Student
-            {
-                Marks = new List<int> { 5, 6, 5 }
-            },
-            new Student
-            {
-                Marks = new List<int> { 4, 4, 5 }
-            },
-        };
+        var user = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+        var user2 = Environment.UserName;
+        var user3 = Environment.UserDomainName;
 
-        var students2 = new List<Student>
-        {
-            new Student
-            {
-                Marks = new List<int> { 2, 4, 5 }
-            },
-            new Student { Marks = new List<int> { } },
-            new Student { Marks = new List<int> { } },
-        };
+        Console.WriteLine(user);
+        Console.WriteLine(user2);
+        Console.WriteLine(user3);
 
-        double MaxAverageOfMarks(IEnumerable<Student> students)
-        {
-            if (!students.Any() || students.All(s => !s.Marks.Any()))
-            {
-                return 0;
-            }
+        //    var students = new List<Student>
+        //    {
+        //        new Student
+        //        {
+        //            Marks = new List<int> { 4, 5, 5 }
+        //        },
+        //        new Student
+        //        {
+        //            Marks = new List<int> { 5, 6, 5 }
+        //        },
+        //        new Student
+        //        {
+        //            Marks = new List<int> { 4, 4, 5 }
+        //        },
+        //    };
 
-            return (double)
-                students.Max(x =>
-                {
-                    if (x.Marks.Any())
-                    {
-                        return x.Marks.Average();
-                    }
-                    return 0;
-                });
-        }
-    }
+        //    var students2 = new List<Student>
+        //    {
+        //        new Student
+        //        {
+        //            Marks = new List<int> { 2, 4, 5 }
+        //        },
+        //        new Student { Marks = new List<int> { } },
+        //        new Student { Marks = new List<int> { } },
+        //    };
 
-    public class Student
-    {
-        public IEnumerable<int> Marks { get; set; }
+        //    double MaxAverageOfMarks(IEnumerable<Student> students)
+        //    {
+        //        if (!students.Any() || students.All(s => !s.Marks.Any()))
+        //        {
+        //            return 0;
+        //        }
+
+        //        return (double)
+        //            students.Max(x =>
+        //            {
+        //                if (x.Marks.Any())
+        //                {
+        //                    return x.Marks.Average();
+        //                }
+        //                return 0;
+        //            });
+        //    }
+        //}
+
+        //public class Student
+        //{
+        //    public IEnumerable<int> Marks { get; set; }
+        //
     }
 }
 
