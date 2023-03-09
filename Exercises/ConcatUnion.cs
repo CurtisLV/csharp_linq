@@ -65,7 +65,11 @@ namespace Exercises
             IEnumerable<int> numbers2
         )
         {
-            //
+            return numbers1
+                .Where(x => Math.Sqrt(x) % 1 == 0)
+                .Distinct()
+                .Union(numbers2.Where(x => Math.Sqrt(x) % 1 == 0).Distinct())
+                .OrderBy(a => a);
         }
 
         //do not modify this method
