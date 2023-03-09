@@ -26,10 +26,18 @@ namespace Exercises
          */
         public static IEnumerable<News> SelectRecentAndImportant(IEnumerable<News> newsCollection)
         {
-            return newsCollection
+            var threeNewest = newsCollection
                 .OrderByDescending(n => n.PublishingDate)
                 .ThenBy(x => x.Priority)
                 .Take(3);
+
+            var high = newsCollection.Where(x => x.Priority == "high");
+
+            return newsCollection
+                .OrderByDescending(n => n.PublishingDate)
+                .ThenBy(x => x.Priority)
+                .Take(3)
+                .Union(high);
         }
 
         //Coding Exercise 2
