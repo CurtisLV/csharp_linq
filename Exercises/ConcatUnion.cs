@@ -51,8 +51,7 @@ namespace Exercises
          */
         public static string CleanWord(string word)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring challenge
