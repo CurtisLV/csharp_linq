@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Exercises
 {
@@ -25,7 +26,10 @@ namespace Exercises
          */
         public static IEnumerable<News> SelectRecentAndImportant(IEnumerable<News> newsCollection)
         {
-            //
+            return newsCollection
+                .OrderByDescending(n => n.PublishingDate)
+                .ThenBy(x => x.Priority)
+                .Take(3);
         }
 
         //Coding Exercise 2
