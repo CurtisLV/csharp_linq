@@ -51,9 +51,11 @@ namespace Exercises
          */
         public static string CleanWord(string word)
         {
-            return (string)
+            return new string(
                 word.Where(x => char.IsLetter(x))
-                    .Union((string)word.Where(x => !char.IsLetter(x)).Distinct());
+                    .Union(word.Where(x => !char.IsLetter(x)).Distinct())
+                    .ToArray()
+            );
         }
 
         //Refactoring challenge
