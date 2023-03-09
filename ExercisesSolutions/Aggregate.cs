@@ -7,15 +7,13 @@ namespace ExercisesSolutions
     public static class Aggregate
     {
         //Coding Exercise 1
-        public static TimeSpan TotalActivityDuration(
-            IEnumerable<int> activityTimesInSeconds)
+        public static TimeSpan TotalActivityDuration(IEnumerable<int> activityTimesInSeconds)
         {
-            return activityTimesInSeconds
-                 .Aggregate(
-                 new TimeSpan(),
-                 (totalTimeSpan, activitySeconds) =>
-                 totalTimeSpan.Add(
-                     TimeSpan.FromSeconds(activitySeconds)));
+            return activityTimesInSeconds.Aggregate(
+                new TimeSpan(),
+                (totalTimeSpan, activitySeconds) =>
+                    totalTimeSpan.Add(TimeSpan.FromSeconds(activitySeconds))
+            );
         }
 
         //Coding Exercise 2
@@ -25,7 +23,8 @@ namespace ExercisesSolutions
             {
                 throw new ArgumentException($"'{nameof(count)}' must be between 1 and 26");
             }
-            return Enumerable.Range(1, count - 1)
+            return Enumerable
+                .Range(1, count - 1)
                 .Aggregate("a", (accumulated, index) => $"{accumulated},{(char)('a' + index)}");
         }
 
@@ -35,21 +34,25 @@ namespace ExercisesSolutions
             if (n < 1)
             {
                 throw new ArgumentException(
-                    $"Can't generate Fibonacci sequence " +
-                    $"for {n} elements. N must be a " +
-                    $"positive number");
+                    $"Can't generate Fibonacci sequence "
+                        + $"for {n} elements. N must be a "
+                        + $"positive number"
+                );
             }
 
             if (n == 1)
             {
                 return new[] { 0 };
             }
-            return Enumerable.Range(1, n - 2)
+            return Enumerable
+                .Range(1, n - 2)
                 .Aggregate(
-                new List<int> { 0, 1 } as IEnumerable<int>,
-                (sequence, nextIndex) => sequence.Append(
-                    sequence.ElementAt(nextIndex - 1) +
-                    sequence.ElementAt(nextIndex)));
+                    new List<int> { 0, 1 } as IEnumerable<int>,
+                    (sequence, nextIndex) =>
+                        sequence.Append(
+                            sequence.ElementAt(nextIndex - 1) + sequence.ElementAt(nextIndex)
+                        )
+                );
         }
 
         //do not modify this method
@@ -58,9 +61,10 @@ namespace ExercisesSolutions
             if (n < 1)
             {
                 throw new ArgumentException(
-                    $"Can't generate Fibonacci sequence " +
-                    $"for {n} elements. N must be a " +
-                    $"positive number");
+                    $"Can't generate Fibonacci sequence "
+                        + $"for {n} elements. N must be a "
+                        + $"positive number"
+                );
             }
 
             if (n == 1)
