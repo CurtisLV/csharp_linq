@@ -53,8 +53,7 @@ namespace Exercises
         */
         public static ILookup<bool, int> CreateLookupByDivisibilityBy2(IEnumerable<int> input)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring challenge
