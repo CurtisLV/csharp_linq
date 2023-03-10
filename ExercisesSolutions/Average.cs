@@ -9,34 +9,38 @@ namespace ExercisesSolutions
         //Coding Exercise 1
         public static float? AverageSnowFall(SnowFallData snowFallData)
         {
-            return (snowFallData != null &&
-                    snowFallData.MonthlySnowFallDataItems != null &&
-                    snowFallData.MonthlySnowFallDataItems.Count() == 12) ?
-                snowFallData.MonthlySnowFallDataItems.Average(
-                    snowFallDataItem => snowFallDataItem.SnowfallInCentimeters) :
-                null;
+            return (
+                snowFallData != null
+                && snowFallData.MonthlySnowFallDataItems != null
+                && snowFallData.MonthlySnowFallDataItems.Count() == 12
+            )
+                ? snowFallData.MonthlySnowFallDataItems.Average(
+                    snowFallDataItem => snowFallDataItem.SnowfallInCentimeters
+                )
+                : null;
         }
 
         //Coding Exercise 2
         public static double MaxAverageOfMarks(IEnumerable<Student> students)
         {
-            return students.Any() ?
-                students.Max(student => student.Marks.Any() ? student.Marks.Average() : 0) :
-                0;
+            return students.Any()
+                ? students.Max(student => student.Marks.Any() ? student.Marks.Average() : 0)
+                : 0;
         }
 
         //Refactoring challenge
         public static float CalculateAverageHeight_Refactored(
-            List<float?> heights, float defaultIfNull)
+            List<float?> heights,
+            float defaultIfNull
+        )
         {
-            return heights == null || !heights.Any() ?
-                0 :
-                heights.Average(height => height ?? defaultIfNull);
+            return heights == null || !heights.Any()
+                ? 0
+                : heights.Average(height => height ?? defaultIfNull);
         }
 
         //do not modify this method
-        public static float CalculateAverageHeight(
-            List<float?> heights, float defaultIfNull)
+        public static float CalculateAverageHeight(List<float?> heights, float defaultIfNull)
         {
             if (heights == null || heights.Count == 0)
             {
