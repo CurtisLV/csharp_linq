@@ -25,12 +25,10 @@ namespace LinqTutorial.MethodSyntax
             Console.WriteLine(numbersAsArray.GetType());
 
             //ToDictionary
-            //transforms the collection to a Dictionary, 
+            //transforms the collection to a Dictionary,
             //which is a collection of KeyValue pairs
             //in case of pets, let's make the Id the Key, and the Name the Value
-            var petsAsDictionary = Data.Pets.ToDictionary(
-                pet => pet.Id,
-                pet => pet.Name);
+            var petsAsDictionary = Data.Pets.ToDictionary(pet => pet.Id, pet => pet.Name);
 
             Printer.Print(petsAsDictionary, nameof(petsAsDictionary));
 
@@ -44,7 +42,7 @@ namespace LinqTutorial.MethodSyntax
 
             //ToHashSet
             //HashSet is a collection of unique elements
-            //transforming collection to a HashSet will remove duplicates, 
+            //transforming collection to a HashSet will remove duplicates,
             //similarly as the Distinct method does
             var numbersWithDuplicates = new[] { 1, 1, 2, 2, 2, 3 };
             var numbersAsHashSet = numbersWithDuplicates.ToHashSet();
@@ -52,7 +50,7 @@ namespace LinqTutorial.MethodSyntax
 
             //ToList
             //simply changes the type to a List<T>
-            var words = new [] { "little", "brown", "fox" };
+            var words = new[] { "little", "brown", "fox" };
             Console.WriteLine(words.GetType());
             var wordsAsList = words.ToList();
             Console.WriteLine(wordsAsList.GetType());
@@ -62,9 +60,7 @@ namespace LinqTutorial.MethodSyntax
             //but under one key there can be more than one value
             //let's create a Lookup where the PetType will be the Key,
             //and pets names will be the values
-            var lookup = Data.Pets.ToLookup(
-                pet => pet.PetType,
-                pet => pet.Name);
+            var lookup = Data.Pets.ToLookup(pet => pet.PetType, pet => pet.Name);
             Printer.Print(lookup, nameof(lookup));
 
             //AsEnumerable
@@ -126,4 +122,3 @@ namespace LinqTutorial.MethodSyntax
         }
     }
 }
-
