@@ -27,7 +27,16 @@ namespace Exercises
             IEnumerable<string> words
         )
         {
-            //
+            return words
+                .Distinct()
+                .ToDictionary(
+                    word => word,
+                    word =>
+                    {
+                        int parseRes;
+                        return int.TryParse(word, out parseRes) ? parseRes : (int?)null;
+                    }
+                );
         }
 
         //Coding Exercise 2
