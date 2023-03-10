@@ -21,10 +21,14 @@ namespace ExercisesTests
                 ["bbb"] = null,
             };
 
-            CollectionAssert.AreEqual(expectedResult, result, $"For INPUT " +
-                $"{EnumerableToString(input)} the RESULT shall be " +
-                $"{DictionaryToString(expectedResult)} BUT IT WAS " +
-                $"{DictionaryToString(result)}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For INPUT "
+                    + $"{EnumerableToString(input)} the RESULT shall be "
+                    + $"{DictionaryToString(expectedResult)} BUT IT WAS "
+                    + $"{DictionaryToString(result)}"
+            );
         }
 
         [Test]
@@ -32,16 +36,16 @@ namespace ExercisesTests
         {
             var input = new string[] { "3", "ARR" };
             var result = CollectionTypeChange.ParseToNumbersAndStoreInDictionary(input);
-            var expectedResult = new Dictionary<string, int?>
-            {
-                ["3"] = 3,
-                ["ARR"] = null
-            };
+            var expectedResult = new Dictionary<string, int?> { ["3"] = 3, ["ARR"] = null };
 
-            CollectionAssert.AreEqual(expectedResult, result, $"For INPUT " +
-                $"{EnumerableToString(input)} the RESULT shall be " +
-                $"{DictionaryToString(expectedResult)} BUT IT WAS " +
-                $"{DictionaryToString(result)}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For INPUT "
+                    + $"{EnumerableToString(input)} the RESULT shall be "
+                    + $"{DictionaryToString(expectedResult)} BUT IT WAS "
+                    + $"{DictionaryToString(result)}"
+            );
         }
     }
 }
