@@ -15,9 +15,27 @@ namespace ExercisesTests
         {
             var students = new List<Student>
             {
-              new Student{FirstName = "John", LastName = "Smith",DateOfBirth = new DateTime(1990, 4, 5), Marks = new [] {4,4,5}},
-              new Student{FirstName = "Jane", LastName = "Doe",DateOfBirth = new DateTime(1986, 5, 9), Marks = new int [] {}},
-              new Student{FirstName = "Francis", LastName = "Brown",DateOfBirth = new DateTime(1991, 4, 1), Marks = new [] {4,6,5}}
+                new Student
+                {
+                    FirstName = "John",
+                    LastName = "Smith",
+                    DateOfBirth = new DateTime(1990, 4, 5),
+                    Marks = new[] { 4, 4, 5 }
+                },
+                new Student
+                {
+                    FirstName = "Jane",
+                    LastName = "Doe",
+                    DateOfBirth = new DateTime(1986, 5, 9),
+                    Marks = new int[] { }
+                },
+                new Student
+                {
+                    FirstName = "Francis",
+                    LastName = "Brown",
+                    DateOfBirth = new DateTime(1991, 4, 1),
+                    Marks = new[] { 4, 6, 5 }
+                }
             };
 
             var result = CollectionTypeChange.GetStudentsAverageMarks(students);
@@ -28,10 +46,13 @@ namespace ExercisesTests
                 [FormatStudent(students[2])] = 5f
             };
 
-            Assert.That(result, Is.EqualTo(expectedResult).AsCollection.Within(0.1),
-                $"For students {EnumerableToString(students)} the result shall be " +
-                $"{DictionaryToString(expectedResult)} but it was " +
-                $"{DictionaryToString(result)}");
+            Assert.That(
+                result,
+                Is.EqualTo(expectedResult).AsCollection.Within(0.1),
+                $"For students {EnumerableToString(students)} the result shall be "
+                    + $"{DictionaryToString(expectedResult)} but it was "
+                    + $"{DictionaryToString(result)}"
+            );
         }
 
         [Test]
@@ -39,9 +60,27 @@ namespace ExercisesTests
         {
             var students = new List<Student>
             {
-              new Student{FirstName = "John", LastName = "Smith",DateOfBirth = new DateTime(1990, 4, 5), Marks = new [] {4,4,5}},
-              new Student{FirstName = "Jane", LastName = "Doe",DateOfBirth = new DateTime(1986, 5, 9), Marks = new int [] {}},
-              new Student{FirstName = "Francis", LastName = "Brown",DateOfBirth = new DateTime(1991, 4, 1), Marks = new [] {4,6,5}}
+                new Student
+                {
+                    FirstName = "John",
+                    LastName = "Smith",
+                    DateOfBirth = new DateTime(1990, 4, 5),
+                    Marks = new[] { 4, 4, 5 }
+                },
+                new Student
+                {
+                    FirstName = "Jane",
+                    LastName = "Doe",
+                    DateOfBirth = new DateTime(1986, 5, 9),
+                    Marks = new int[] { }
+                },
+                new Student
+                {
+                    FirstName = "Francis",
+                    LastName = "Brown",
+                    DateOfBirth = new DateTime(1991, 4, 1),
+                    Marks = new[] { 4, 6, 5 }
+                }
             };
 
             var result = CollectionTypeChange.GetStudentsAverageMarks_Refactored(students);
@@ -52,15 +91,18 @@ namespace ExercisesTests
                 [FormatStudent(students[2])] = 5f
             };
 
-            Assert.That(result, Is.EqualTo(expectedResult).AsCollection.Within(0.1), $"For students {EnumerableToString(students)} the result shall be {DictionaryToString(expectedResult)} but it was {DictionaryToString(result)}");
+            Assert.That(
+                result,
+                Is.EqualTo(expectedResult).AsCollection.Within(0.1),
+                $"For students {EnumerableToString(students)} the result shall be {DictionaryToString(expectedResult)} but it was {DictionaryToString(result)}"
+            );
         }
-
 
         private string FormatStudent(Student student)
         {
-            return $"{student.FirstName} " +
-                   $"{student.LastName} born on" +
-                   $" {student.DateOfBirth.ToString("d")}";
+            return $"{student.FirstName} "
+                + $"{student.LastName} born on"
+                + $" {student.DateOfBirth.ToString("d")}";
         }
     }
 }
