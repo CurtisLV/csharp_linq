@@ -62,7 +62,11 @@ namespace Exercises
             IEnumerable<Student> students
         )
         {
-            //
+            return students.ToDictionary(
+                s => $"{s.FirstName} {s.LastName} {s.DateOfBirth.ToString("d")}",
+                s => s.Marks.Average()
+            );
+            ;
         }
 
         //do not modify this method
