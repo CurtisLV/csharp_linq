@@ -63,8 +63,8 @@ namespace Exercises
         )
         {
             return students.ToDictionary(
-                s => $"{s.FirstName} {s.LastName} {s.DateOfBirth.ToString("d")}",
-                s => s.Marks.Count() == 0 ? 0 : (double)s.Marks.Average()
+                s => $"{s.FirstName} {s.LastName} born on {s.DateOfBirth.ToString("d")}",
+                s => s.Marks.Count() == 0 ? 0 : s.Marks.Average()
             );
         }
 
