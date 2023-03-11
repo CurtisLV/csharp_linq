@@ -53,7 +53,7 @@ namespace Exercises
         */
         public static ILookup<bool, int> CreateLookupByDivisibilityBy2(IEnumerable<int> input)
         {
-            return input.ToLookup();
+            return input.ToLookup(i => i % 2 == 0 ? true : false, i => i);
         }
 
         //Refactoring challenge
