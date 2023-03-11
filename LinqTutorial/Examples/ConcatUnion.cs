@@ -20,7 +20,10 @@ namespace LinqTutorial.MethodSyntax
             var numbers3 = new[] { 1, 3, 5, 7, 9 };
             var numbers4 = new[] { 1, 3, 5, 7 };
             var concatenatedNumbersWithDuplicates = numbers3.Concat(numbers4);
-            Printer.Print(concatenatedNumbersWithDuplicates, nameof(concatenatedNumbersWithDuplicates));
+            Printer.Print(
+                concatenatedNumbersWithDuplicates,
+                nameof(concatenatedNumbersWithDuplicates)
+            );
 
             //to remove the duplicates after concatenation we can use Distinct
             var concatenatedNumbersNoDuplicates = numbers3.Concat(numbers4).Distinct();
@@ -37,10 +40,7 @@ namespace LinqTutorial.MethodSyntax
                 new Pet(1, "Hannibal", PetType.Fish, 1.1f),
                 new Pet(2, "Anthony", PetType.Cat, 2f)
             };
-            var pets2 = new[]
-            {
-                new Pet(1, "Hannibal", PetType.Fish, 1.1f)
-            };
+            var pets2 = new[] { new Pet(1, "Hannibal", PetType.Fish, 1.1f) };
             //in this case, Union will produce a collection of 3 elements
             //because Hannibal from pets1 is not equal to Hannibal from pets2
             //remember, they may look the same but they are two different objects
