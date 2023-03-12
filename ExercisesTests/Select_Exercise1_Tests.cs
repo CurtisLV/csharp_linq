@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using System;
 using static ExercisesTests.Utilities.TestUtilities;
+
 namespace ExercisesTests
 {
     [TestFixture]
@@ -16,10 +17,14 @@ namespace ExercisesTests
 
             var expectedResult = new int[] { 1, 3, 10 };
 
-            CollectionAssert.AreEqual(expectedResult, result, $"For input collection " +
-                $"{EnumerableToString(input)} the result shall be " +
-                $"{EnumerableToString(expectedResult)} but it was " +
-                $"{EnumerableToString(result)}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For input collection "
+                    + $"{EnumerableToString(input)} the result shall be "
+                    + $"{EnumerableToString(expectedResult)} but it was "
+                    + $"{EnumerableToString(result)}"
+            );
         }
     }
 }
