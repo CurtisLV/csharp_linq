@@ -30,7 +30,11 @@ namespace Exercises
                 .Concat(
                     objects
                         .OfType<string>()
-                        .Select(s => int.TryParse(s, out int result) ? result : 0)
+                        .Select(s =>
+                        {
+                            int result;
+                            return int.TryParse(s, out result) ? result : 0;
+                        })
                 )
                 .Where(num => num != 0)
                 .OrderBy(num => num);
