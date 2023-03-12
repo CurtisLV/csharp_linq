@@ -64,7 +64,7 @@ namespace Exercises
          */
         public static IEnumerable<Person> PeopleFromString(string input)
         {
-            //
+            return new Person[] { };
         }
 
         //Refactoring challenge
