@@ -25,8 +25,7 @@ namespace Exercises
          */
         public static IEnumerable<int> GetNumbers(IEnumerable<object> objects)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Coding Exercise 2
