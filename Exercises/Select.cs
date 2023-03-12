@@ -8,17 +8,17 @@ namespace Exercises
     {
         //Coding Exercise 1
         /*
-         Imagine you work on an application that retrieves data from scanned paper 
-        documents. Let's say you only want to retrieve numbers from some particular 
+         Imagine you work on an application that retrieves data from scanned paper
+        documents. Let's say you only want to retrieve numbers from some particular
         documents, unfortunately, they contain other data, like dates, strings, etc.
 
-        Implement the GetNumbers method, which given a collection of objects 
-        of different types, will return a collection of integers. 
-        Please note that if an object in the input collection is a string, 
+        Implement the GetNumbers method, which given a collection of objects
+        of different types, will return a collection of integers.
+        Please note that if an object in the input collection is a string,
         it should be parsed to int if possible.
         
-        For example, for input collection 
-            *{"1", 3, "abc", new DateTime(2020,1,2), true, "10"} the result shall be 
+        For example, for input collection
+            *{"1", 3, "abc", new DateTime(2020,1,2), true, "10"} the result shall be
                 {1,3,10}.
         
         The result collection shall be ordered from least to greatest.
@@ -31,24 +31,24 @@ namespace Exercises
 
         //Coding Exercise 2
         /*
-        Imagine you work on an application that retrieves data from scanned paper 
-        documents. Those documents contain personal data which you want to convert to 
+        Imagine you work on an application that retrieves data from scanned paper
+        documents. Those documents contain personal data which you want to convert to
         C# objects.
 
-        Implement the PeopleFromString method, which given a single string containing 
-        personal data of multiple people, will return a collection of people. 
-        If a person's data is not valid and can't be properly parsed, 
+        Implement the PeopleFromString method, which given a single string containing
+        personal data of multiple people, will return a collection of people.
+        If a person's data is not valid and can't be properly parsed,
         this person should not be included in the result collection.
         
-        For example, for an input string:        
+        For example, for an input string:
             "John Smith, 1983/08/21;Jane Doe, 1993/12/21;Francis Brown, invalid date here"
         
-        ...the result shall be a collection of two people: 
-            John Smith and Jane Doe. 
-        We shall not include Francis Brown, because his date of birth is not valid 
+        ...the result shall be a collection of two people:
+            John Smith and Jane Doe.
+        We shall not include Francis Brown, because his date of birth is not valid
         and can't be parsed to a valid DateTime.
         
-        As you can see in the example the separator between each person's data is ";", 
+        As you can see in the example the separator between each person's data is ";",
         and the full name and the date of birth are separated with ",".
          */
         public static IEnumerable<Person> PeopleFromString(string input)
@@ -66,8 +66,7 @@ namespace Exercises
         }
 
         //do not modify this method
-        public static TimeSpan TotalDurationOfSongs(
-            string allSongsDuration)
+        public static TimeSpan TotalDurationOfSongs(string allSongsDuration)
         {
             if (string.IsNullOrEmpty(allSongsDuration))
             {
@@ -78,8 +77,7 @@ namespace Exercises
             var totalDuration = 0d;
             foreach (var durationString in durationStrings)
             {
-                var timeSpan = TimeSpan.ParseExact(
-                    durationString, @"m\:ss", null);
+                var timeSpan = TimeSpan.ParseExact(durationString, @"m\:ss", null);
                 totalDuration += timeSpan.TotalSeconds;
             }
 
@@ -99,9 +97,9 @@ namespace Exercises
 
             public bool Equals(Person other)
             {
-                return FirstName == other.FirstName &&
-                       LastName == other.LastName &&
-                       DateOfBirth == other.DateOfBirth;
+                return FirstName == other.FirstName
+                    && LastName == other.LastName
+                    && DateOfBirth == other.DateOfBirth;
             }
         }
     }
