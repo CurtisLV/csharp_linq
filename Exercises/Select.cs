@@ -25,10 +25,15 @@ namespace Exercises
          */
         public static IEnumerable<int> GetNumbers(IEnumerable<object> objects)
         {
-            return objects.Select(o =>
-            {
-                o is int || int.Parse(o) is int
-            }) ;
+            return objects
+                .OfType<int>()
+                .Concat(
+                    objects
+                        .OfType<string>()
+                        .Select(s => int.TryParse(s, out int result) ? result : 0)
+                )
+                .Where(num => num != 0)
+                .OrderBy(num => num);
         }
 
         //Coding Exercise 2
