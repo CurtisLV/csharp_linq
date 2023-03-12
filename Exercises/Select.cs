@@ -25,7 +25,7 @@ namespace Exercises
          */
         public static IEnumerable<int> GetNumbers(IEnumerable<object> objects)
         {
-            //
+            return objects.Select(o => (int)o);
         }
 
         //Coding Exercise 2
