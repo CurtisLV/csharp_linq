@@ -14,8 +14,12 @@ namespace ExercisesTests
             var result = Select.TotalDurationOfSongs(input);
             var expectedResult = new TimeSpan(0, 38, 23);
 
-            Assert.AreEqual(expectedResult, result, $"For input \"{input}\" the " +
-                $"result shall be {expectedResult} but it was {result}");
+            Assert.AreEqual(
+                expectedResult,
+                result,
+                $"For input \"{input}\" the "
+                    + $"result shall be {expectedResult} but it was {result}"
+            );
         }
 
         [Test]
@@ -25,8 +29,12 @@ namespace ExercisesTests
             var result = Select.TotalDurationOfSongs_Refactored(input);
             var expectedResult = new TimeSpan(0, 38, 23);
 
-            Assert.AreEqual(expectedResult, result, $"For input \"{input}\" the " +
-                $"result shall be {expectedResult} but it was {result}");
+            Assert.AreEqual(
+                expectedResult,
+                result,
+                $"For input \"{input}\" the "
+                    + $"result shall be {expectedResult} but it was {result}"
+            );
         }
 
         [Test]
@@ -36,8 +44,11 @@ namespace ExercisesTests
             var result = Select.TotalDurationOfSongs(input);
             var expectedResult = new TimeSpan();
 
-            Assert.AreEqual(expectedResult, result, $"For an empty input the " +
-                $"result shall be {expectedResult} but it was {result}");
+            Assert.AreEqual(
+                expectedResult,
+                result,
+                $"For an empty input the " + $"result shall be {expectedResult} but it was {result}"
+            );
         }
 
         [Test]
@@ -47,8 +58,11 @@ namespace ExercisesTests
             var result = Select.TotalDurationOfSongs_Refactored(input);
             var expectedResult = new TimeSpan();
 
-            Assert.AreEqual(expectedResult, result, $"For an empty input the " +
-                $"result shall be {expectedResult} but it was {result}");
+            Assert.AreEqual(
+                expectedResult,
+                result,
+                $"For an empty input the " + $"result shall be {expectedResult} but it was {result}"
+            );
         }
     }
 }
