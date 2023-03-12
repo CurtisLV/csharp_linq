@@ -25,7 +25,10 @@ namespace Exercises
          */
         public static IEnumerable<int> GetNumbers(IEnumerable<object> objects)
         {
-            return objects.Select(o => (int)o);
+            return objects.Select(o =>
+            {
+                o is int || int.Parse(o) is int
+            }) ;
         }
 
         //Coding Exercise 2
