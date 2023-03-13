@@ -95,6 +95,11 @@ namespace Exercises
         //TODO implement this method
         public static TimeSpan TotalDurationOfSongs_Refactored(string allSongsDuration)
         {
+            if (string.IsNullOrEmpty(allSongsDuration))
+            {
+                return new TimeSpan();
+            }
+
             return TimeSpan.FromSeconds(
                 allSongsDuration
                     .Split(',')
