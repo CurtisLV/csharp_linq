@@ -64,7 +64,15 @@ namespace Exercises
          */
         public static IEnumerable<Person> PeopleFromString(string input)
         {
-            return new Person[] { };
+            return input.Split(';').Select(Select);
+
+            //var persons = input.Split(';');
+            //var person = persons[0].Split(' ');
+
+
+
+
+            //return new Person[] { };
         }
 
         //Refactoring challenge
