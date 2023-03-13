@@ -83,7 +83,7 @@ namespace Exercises
                             DateOfBirth = dateBirth
                         };
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         return null;
                     }
