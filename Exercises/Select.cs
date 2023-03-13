@@ -95,8 +95,7 @@ namespace Exercises
         //TODO implement this method
         public static TimeSpan TotalDurationOfSongs_Refactored(string allSongsDuration)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //do not modify this method
