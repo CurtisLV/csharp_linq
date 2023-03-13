@@ -83,11 +83,12 @@ namespace Exercises
                             DateOfBirth = dateBirth
                         };
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         return null;
                     }
-                });
+                })
+                .Where(person => person != null);
 
             //var persons = input.Split(';');
             //var person = persons[0].Split(' ');
