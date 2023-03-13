@@ -89,10 +89,6 @@ namespace Exercises
                     }
                 })
                 .Where(person => person != null);
-
-            //var persons = input.Split(';');
-            //var person = persons[0].Split(' ');
-            //
         }
 
         //Refactoring challenge
