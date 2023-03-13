@@ -64,11 +64,11 @@ namespace Exercises
          */
         public static IEnumerable<Person> PeopleFromString(string input)
         {
-            try
-            {
-                return input
-                    .Split(';')
-                    .Select(personData =>
+            return input
+                .Split(';')
+                .Select(personData =>
+                {
+                    try
                     {
                         var split = personData.Split(',');
                         var fullName = split[0].Split(' ');
@@ -82,12 +82,12 @@ namespace Exercises
                             LastName = lastName,
                             DateOfBirth = dateBirth
                         };
-                    });
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+                    }
+                    catch (Exception)
+                    {
+                        return null;
+                    }
+                });
 
             //var persons = input.Split(';');
             //var person = persons[0].Split(' ');
