@@ -16,8 +16,7 @@ namespace Exercises
          */
         public static IEnumerable<string> BuildCartesianProduct(HashSet<int> numbers)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Coding Exercise 2
