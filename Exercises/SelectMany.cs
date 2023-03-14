@@ -70,7 +70,21 @@ namespace Exercises
             IEnumerable<Point> ends
         )
         {
-            //
+            return starts
+                .SelectMany(
+                    start => ends,
+                    (start, end) =>
+                        new
+                        {
+                            Start = start,
+                            End = end,
+                            Length = SegmentLength(start, end)
+                        }
+                )
+                .ToDictionary(
+                    data => $"Start: ({data.Start})," + $"End: ({data.End})",
+                    data => data.Length
+                );
         }
 
         //do not modify this method
