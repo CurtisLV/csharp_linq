@@ -14,14 +14,14 @@ namespace ExercisesTests
         {
             var starts = new[]
             {
-                new Point{X = 5, Y = 5},
-                new Point{X = 3, Y = 3},
+                new Point { X = 5, Y = 5 },
+                new Point { X = 3, Y = 3 },
             };
 
             var ends = new[]
             {
-                new Point{X = 0, Y = 5},
-                new Point{X = 4, Y = 5},
+                new Point { X = 0, Y = 5 },
+                new Point { X = 4, Y = 5 },
             };
 
             var result = SelectMany.SegmentsLengths(starts, ends);
@@ -33,10 +33,13 @@ namespace ExercisesTests
                 ["Start: (X: 3, Y: 3), End: (X: 4, Y: 5)"] = 2.23,
             };
 
-            Assert.That(result, Is.EqualTo(expectedResult).AsCollection.Within(0.1),
-                $"For starts {EnumerableToString(starts)} and ends " +
-                $"{EnumerableToString(ends)} the result shall be " +
-                $"{DictionaryToString(expectedResult)} but it was {DictionaryToString(result)}");
+            Assert.That(
+                result,
+                Is.EqualTo(expectedResult).AsCollection.Within(0.1),
+                $"For starts {EnumerableToString(starts)} and ends "
+                    + $"{EnumerableToString(ends)} the result shall be "
+                    + $"{DictionaryToString(expectedResult)} but it was {DictionaryToString(result)}"
+            );
         }
 
         [Test]
@@ -44,14 +47,14 @@ namespace ExercisesTests
         {
             var starts = new[]
             {
-                new Point{X = 5, Y = 5},
-                new Point{X = 3, Y = 3},
+                new Point { X = 5, Y = 5 },
+                new Point { X = 3, Y = 3 },
             };
 
             var ends = new[]
             {
-                new Point{X = 0, Y = 5},
-                new Point{X = 4, Y = 5},
+                new Point { X = 0, Y = 5 },
+                new Point { X = 4, Y = 5 },
             };
 
             var result = SelectMany.SegmentsLengths_Refactored(starts, ends);
@@ -63,11 +66,14 @@ namespace ExercisesTests
                 ["Start: (X: 3, Y: 3), End: (X: 4, Y: 5)"] = 2.23,
             };
 
-            Assert.That(result, Is.EqualTo(expectedResult).AsCollection.Within(0.1),
-                $"For starts {EnumerableToString(starts)} and ends " +
-                $"{EnumerableToString(ends)} the result shall be " +
-                $"{DictionaryToString(expectedResult)} but it was " +
-                $"{DictionaryToString(result)}");
+            Assert.That(
+                result,
+                Is.EqualTo(expectedResult).AsCollection.Within(0.1),
+                $"For starts {EnumerableToString(starts)} and ends "
+                    + $"{EnumerableToString(ends)} the result shall be "
+                    + $"{DictionaryToString(expectedResult)} but it was "
+                    + $"{DictionaryToString(result)}"
+            );
         }
     }
 }
