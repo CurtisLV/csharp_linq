@@ -16,7 +16,7 @@ namespace Exercises
          */
         public static IEnumerable<string> BuildCartesianProduct(HashSet<int> numbers)
         {
-            //
+            return numbers.SelectMany(number => numbers, (num1, num2) => $"{num1},{num2}");
         }
 
         //Coding Exercise 2
