@@ -70,8 +70,7 @@ namespace Exercises
             IEnumerable<Point> ends
         )
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //do not modify this method
