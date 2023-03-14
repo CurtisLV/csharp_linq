@@ -16,7 +16,7 @@ namespace Exercises
          */
         public static IEnumerable<string> BuildCartesianProduct(HashSet<int> numbers)
         {
-            return numbers.SelectMany(number => numbers, (num1, num2) => $"{num1},{num2}");
+            return numbers.SelectMany(_ => numbers, (num1, num2) => $"{num1},{num2}");
         }
 
         //Coding Exercise 2
@@ -50,8 +50,7 @@ namespace Exercises
          */
         public static IEnumerable<string> BestMarksAndStudents(IEnumerable<Student> students)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring challenge
