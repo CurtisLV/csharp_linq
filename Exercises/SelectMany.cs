@@ -82,7 +82,7 @@ namespace Exercises
                         }
                 )
                 .ToDictionary(
-                    data => $"Start: ({data.Start})," + $"End: ({data.End})",
+                    data => $"Start: ({data.Start}), " + $"End: ({data.End})",
                     data => data.Length
                 );
         }
