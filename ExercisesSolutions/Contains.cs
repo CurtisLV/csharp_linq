@@ -8,7 +8,9 @@ namespace ExercisesSolutions
     {
         //Coding Exercise 1
         public static bool IsAppointmentDateAvailable(
-            DateTime date, IEnumerable<DateTime> existingAppointmentDates)
+            DateTime date,
+            IEnumerable<DateTime> existingAppointmentDates
+        )
         {
             return !existingAppointmentDates.Contains(date);
         }
@@ -21,14 +23,18 @@ namespace ExercisesSolutions
 
         //Refactoring challenge
         public static bool ContainsBannedWords_Refactored(
-            IEnumerable<string> words, IEnumerable<string> bannedWords)
+            IEnumerable<string> words,
+            IEnumerable<string> bannedWords
+        )
         {
             return words.Any(word => bannedWords.Contains(word));
         }
 
         //do not modify this method
         public static bool ContainsBannedWords(
-            IEnumerable<string> words, IEnumerable<string> bannedWords)
+            IEnumerable<string> words,
+            IEnumerable<string> bannedWords
+        )
         {
             foreach (var word in words)
             {
