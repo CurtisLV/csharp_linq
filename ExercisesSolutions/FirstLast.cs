@@ -9,10 +9,12 @@ namespace ExercisesSolutions
         //Coding Exercise 1
         public static string FindFirstNameInTheCollection(IEnumerable<string> words)
         {
-            return words.FirstOrDefault(word =>
-                word.Length > 1 &&
-                char.IsUpper(word.First()) &&
-                word.Count(character => char.IsUpper(character)) == 1);
+            return words.FirstOrDefault(
+                word =>
+                    word.Length > 1
+                    && char.IsUpper(word.First())
+                    && word.Count(character => char.IsUpper(character)) == 1
+            );
         }
 
         //Coding Exercise 2
