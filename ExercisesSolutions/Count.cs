@@ -12,24 +12,26 @@ namespace ExercisesSolutions
         }
 
         //Coding Exercise 2
-        public static bool AreThereFewerOddThanEvenNumbers(
-            IEnumerable<int> numbers)
+        public static bool AreThereFewerOddThanEvenNumbers(IEnumerable<int> numbers)
         {
-            return numbers.Count(number => number % 2 == 0) >
-                numbers.Count(number => number % 2 != 0);
+            return numbers.Count(number => number % 2 == 0)
+                > numbers.Count(number => number % 2 != 0);
         }
 
         //Refactoring challenge
         public static bool IsAnySequenceTooLong_Refactored(
-            IEnumerable<IEnumerable<int>> numberSequences, int maxLength)
+            IEnumerable<IEnumerable<int>> numberSequences,
+            int maxLength
+        )
         {
-            return numberSequences.Any(
-                numberSequence => numberSequence.Count() > maxLength);
+            return numberSequences.Any(numberSequence => numberSequence.Count() > maxLength);
         }
 
         //do not modify this method
         public static bool IsAnySequenceTooLong(
-            IEnumerable<IEnumerable<int>> numberSequences, int maxLength)
+            IEnumerable<IEnumerable<int>> numberSequences,
+            int maxLength
+        )
         {
             foreach (var numberSequence in numberSequences)
             {
