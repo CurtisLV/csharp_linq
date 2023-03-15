@@ -10,46 +10,38 @@ namespace ExercisesSolutions
         public static IEnumerable<string> GroupByFirstDigit(IEnumerable<int> numbers)
         {
             return from number in numbers
-                   group number by number.ToString()[0]
-                    into groupsByFirstDigit
-                   let groupedNumbers = string.Join(
-                       ",",
-                       from number in groupsByFirstDigit
-                       select number)
-                   select
-                    $"FirstDigit: {groupsByFirstDigit.Key}, " +
-                    $"numbers: {groupedNumbers}";
+            group number by number.ToString()[0] into groupsByFirstDigit
+            let groupedNumbers = string.Join(",", from number in groupsByFirstDigit select number)
+            select $"FirstDigit: {groupsByFirstDigit.Key}, " + $"numbers: {groupedNumbers}";
         }
 
         //Coding Exercise 2
-        public static Dictionary<DayOfWeek, DateTime> GroupByDayOfWeek(
-            IEnumerable<DateTime> dates)
+        public static Dictionary<DayOfWeek, DateTime> GroupByDayOfWeek(IEnumerable<DateTime> dates)
         {
-            return (from date in dates
-                    group date by date.DayOfWeek
-                   into groupedBeDaysOfWeek
-                    select groupedBeDaysOfWeek)
-                   .ToDictionary(
+            return (
+                from date in dates
+                group date by date.DayOfWeek into groupedBeDaysOfWeek
+                select groupedBeDaysOfWeek
+            ).ToDictionary(
                 grouping => grouping.Key,
-                grouping => (from date in grouping orderby date select date).Last());
+                grouping => (from date in grouping orderby date select date).Last()
+            );
         }
 
         //Refactoring challenge
         public static IEnumerable<string> GetOwnersWithMultipleHouses_Refactored(
-            IEnumerable<House> houses)
+            IEnumerable<House> houses
+        )
         {
             return from house in houses
-                   group house by house.OwnerId
-                   into housesGroupedByOwners
-                   where housesGroupedByOwners.Count() > 1
-                   select $"Owner with ID {housesGroupedByOwners.Key} owns houses: " +
-                    $"{string.Join(", ", housesGroupedByOwners)}";
+            group house by house.OwnerId into housesGroupedByOwners
+            where housesGroupedByOwners.Count() > 1
+            select $"Owner with ID {housesGroupedByOwners.Key} owns houses: "
+                + $"{string.Join(", ", housesGroupedByOwners)}";
         }
 
         //do not modify this method
-        public static IEnumerable<string>
-            GetOwnersWithMultipleHouses(
-                IEnumerable<House> houses)
+        public static IEnumerable<string> GetOwnersWithMultipleHouses(IEnumerable<House> houses)
         {
             var ownersHouses = new Dictionary<int, List<House>>();
             foreach (var house in houses)
@@ -67,9 +59,10 @@ namespace ExercisesSolutions
                 if (keyValue.Value.Count > 1)
                 {
                     result.Add(
-                        $"Owner with ID {keyValue.Key} " +
-                        $"owns houses: " +
-                        $"{string.Join(", ", keyValue.Value)}");
+                        $"Owner with ID {keyValue.Key} "
+                            + $"owns houses: "
+                            + $"{string.Join(", ", keyValue.Value)}"
+                    );
                 }
             }
             return result;
