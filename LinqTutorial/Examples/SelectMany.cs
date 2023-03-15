@@ -9,7 +9,8 @@ namespace LinqTutorial.MethodSyntax
     {
         public static IEnumerable<TResult> OurSelectMany<TSource, TResult>(
             this IEnumerable<TSource> source,
-            Func<TSource, IEnumerable<TResult>> selector)
+            Func<TSource, IEnumerable<TResult>> selector
+        )
         {
             var results = new List<TResult>();
             foreach (var element in source)
@@ -32,18 +33,19 @@ namespace LinqTutorial.MethodSyntax
             //SelectMany is used to flatten nested collections
             var nestedListOfNumbers = new List<List<int>>
             {
-                new List<int> {1, 2, 3},
-                new List<int> {4, 5, 6},
-                new List<int> {5, 6},
+                new List<int> { 1, 2, 3 },
+                new List<int> { 4, 5, 6 },
+                new List<int> { 5, 6 },
             };
 
             Console.WriteLine(
-                $"Count of elements in the {nameof(nestedListOfNumbers)}: {nestedListOfNumbers.Count()}");
+                $"Count of elements in the {nameof(nestedListOfNumbers)}: {nestedListOfNumbers.Count()}"
+            );
 
-            var allNumbersFromNestedList = nestedListOfNumbers.SelectMany(
-                list => list);
+            var allNumbersFromNestedList = nestedListOfNumbers.SelectMany(list => list);
             Console.WriteLine(
-                $"Count of elements in the {nameof(allNumbersFromNestedList)}: {allNumbersFromNestedList.Count()}");
+                $"Count of elements in the {nameof(allNumbersFromNestedList)}: {allNumbersFromNestedList.Count()}"
+            );
             Printer.Print(allNumbersFromNestedList, nameof(allNumbersFromNestedList));
 
             //let's select all Pets belonging to people,
@@ -53,7 +55,9 @@ namespace LinqTutorial.MethodSyntax
             var allPetsOfJPeopleNested = Data.People
                 .Where(person => person.Name.StartsWith("J"))
                 .Select(person => person.Pets);
-            Console.WriteLine($"Count of {nameof(allPetsOfJPeopleNested)} is {allPetsOfJPeopleNested.Count()}");
+            Console.WriteLine(
+                $"Count of {nameof(allPetsOfJPeopleNested)} is {allPetsOfJPeopleNested.Count()}"
+            );
             Printer.Print(allPetsOfJPeopleNested, nameof(allPetsOfJPeopleNested));
 
             //we must use SelectMany to flatten the nested collection
@@ -68,14 +72,14 @@ namespace LinqTutorial.MethodSyntax
             {
                 new List<List<int>>
                 {
-                    new List<int> { 1, 2, 3},
-                    new List<int> { 4,5,6},
-                    new List<int> { 5,6},
+                    new List<int> { 1, 2, 3 },
+                    new List<int> { 4, 5, 6 },
+                    new List<int> { 5, 6 },
                 },
                 new List<List<int>>
                 {
-                    new List<int> { 10, 12, 13},
-                    new List<int> { 14, 15},
+                    new List<int> { 10, 12, 13 },
+                    new List<int> { 14, 15 },
                 }
             };
 
@@ -84,7 +88,8 @@ namespace LinqTutorial.MethodSyntax
                 .SelectMany(innerList => innerList)
                 .SelectMany(innerInnerList => innerInnerList);
             Console.WriteLine(
-                $"Count of elements in the {nameof(allNumbersFromVeryNestedList)}: {allNumbersFromVeryNestedList.Count()}");
+                $"Count of elements in the {nameof(allNumbersFromVeryNestedList)}: {allNumbersFromVeryNestedList.Count()}"
+            );
             Printer.Print(allNumbersFromVeryNestedList, nameof(allNumbersFromVeryNestedList));
 
             //let's go back to the People and Pets example
@@ -93,10 +98,10 @@ namespace LinqTutorial.MethodSyntax
             //let's now select pairs of People and their Pets
             //we will use the overloaded SelectMany method
 
-            var personsPetsPairs = Data.People
-                .SelectMany(
-                    person => person.Pets,
-                    (person, pet) => $"Person {person.Name}, Pet: {pet.Name}");
+            var personsPetsPairs = Data.People.SelectMany(
+                person => person.Pets,
+                (person, pet) => $"Person {person.Name}, Pet: {pet.Name}"
+            );
 
             Printer.Print(personsPetsPairs, nameof(personsPetsPairs));
 
@@ -104,7 +109,8 @@ namespace LinqTutorial.MethodSyntax
             var letters = new[] { 'A', 'B', 'C' };
             var carthesianProduct = numbers.SelectMany(
                 _ => letters,
-                (number, letter) => $"{number},{letter}");
+                (number, letter) => $"{number},{letter}"
+            );
             Printer.Print(carthesianProduct, nameof(carthesianProduct));
         }
 
@@ -115,30 +121,36 @@ namespace LinqTutorial.MethodSyntax
                 //with query syntax, we must simply use "from... in" twice
                 var nestedListOfNumbers = new List<List<int>>
                 {
-                    new List<int> { 1, 2, 3},
-                    new List<int> { 4,5,6},
-                    new List<int> { 5,6},
+                    new List<int> { 1, 2, 3 },
+                    new List<int> { 4, 5, 6 },
+                    new List<int> { 5, 6 },
                 };
 
                 Console.WriteLine(
-                    $"Count of elements in the {nameof(nestedListOfNumbers)}: {nestedListOfNumbers.Count()}");
+                    $"Count of elements in the {nameof(nestedListOfNumbers)}: {nestedListOfNumbers.Count()}"
+                );
 
-                var allNumbersFromNestedList = from list in nestedListOfNumbers
-                                               from number in list
-                                               select number;
+                var allNumbersFromNestedList =
+                    from list in nestedListOfNumbers
+                    from number in list
+                    select number;
                 Console.WriteLine(
-                    $"Count of elements in the {nameof(allNumbersFromNestedList)}: {allNumbersFromNestedList.Count()}");
+                    $"Count of elements in the {nameof(allNumbersFromNestedList)}: {allNumbersFromNestedList.Count()}"
+                );
                 Printer.Print(allNumbersFromNestedList, nameof(allNumbersFromNestedList));
 
                 //let's select all Pets belonging to people,
                 //whose names start with letter "J"
 
-                var allPetsOfJPeople = from person in Data.People
-                                       where person.Name.StartsWith("J")
-                                       from pet in person.Pets
-                                       select pet;
+                var allPetsOfJPeople =
+                    from person in Data.People
+                    where person.Name.StartsWith("J")
+                    from pet in person.Pets
+                    select pet;
 
-                Console.WriteLine($"Count of {nameof(allPetsOfJPeople)} is {allPetsOfJPeople.Count()}");
+                Console.WriteLine(
+                    $"Count of {nameof(allPetsOfJPeople)} is {allPetsOfJPeople.Count()}"
+                );
                 Printer.Print(allPetsOfJPeople, nameof(allPetsOfJPeople));
 
                 //what if the collection was nested even deeper?
@@ -146,14 +158,14 @@ namespace LinqTutorial.MethodSyntax
                 {
                     new List<List<int>>
                     {
-                        new List<int> { 1, 2, 3},
-                        new List<int> { 4,5,6},
-                        new List<int> { 5,6},
+                        new List<int> { 1, 2, 3 },
+                        new List<int> { 4, 5, 6 },
+                        new List<int> { 5, 6 },
                     },
                     new List<List<int>>
                     {
-                        new List<int> { 10, 12, 13},
-                        new List<int> { 14, 15},
+                        new List<int> { 10, 12, 13 },
+                        new List<int> { 14, 15 },
                     }
                 };
 
@@ -165,10 +177,10 @@ namespace LinqTutorial.MethodSyntax
                     select number;
 
                 Console.WriteLine(
-                    $"Count of elements in the {nameof(allNumbersFromVeryNestedList)}: {allNumbersFromVeryNestedList.Count()}");
+                    $"Count of elements in the {nameof(allNumbersFromVeryNestedList)}: {allNumbersFromVeryNestedList.Count()}"
+                );
                 Printer.Print(allNumbersFromVeryNestedList, nameof(allNumbersFromVeryNestedList));
             }
         }
     }
 }
-

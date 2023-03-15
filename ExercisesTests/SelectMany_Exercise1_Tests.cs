@@ -17,13 +17,24 @@ namespace ExercisesTests
 
             var expectedResult = new[]
             {
-              "1,1", "1,2", "1,5", "2,1", "2,2", "2,5", "5,1", "5,2", "5,5"
+                "1,1",
+                "1,2",
+                "1,5",
+                "2,1",
+                "2,2",
+                "2,5",
+                "5,1",
+                "5,2",
+                "5,5"
             };
 
-            CollectionAssert.AreEqual(expectedResult, result, 
-                $"For input (1,2,5) the result shall be " +
-                $"{EnumerableToString(expectedResult)} but it was " +
-                $"{EnumerableToString(result)}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For input (1,2,5) the result shall be "
+                    + $"{EnumerableToString(expectedResult)} but it was "
+                    + $"{EnumerableToString(result)}"
+            );
         }
     }
 }
