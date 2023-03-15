@@ -7,8 +7,7 @@ namespace ExercisesSolutions
     public static class ElementAt
     {
         //Coding Exercise 1
-        public static bool IsTheNumberAtIndexTheLargest(
-            IEnumerable<int> numbers, int index)
+        public static bool IsTheNumberAtIndexTheLargest(IEnumerable<int> numbers, int index)
         {
             if (index < 0 || index >= numbers.Count())
             {
@@ -21,13 +20,10 @@ namespace ExercisesSolutions
         }
 
         //Coding Exercise 2
-        public static string FormatPetDataAtIndex(
-            IEnumerable<Pet> pets, int index)
+        public static string FormatPetDataAtIndex(IEnumerable<Pet> pets, int index)
         {
             var pet = pets.ElementAtOrDefault(index);
-            return pet == null ?
-                $"Pet data is missing for index {index}" :
-                $"Pet name: {pet.Name}";
+            return pet == null ? $"Pet data is missing for index {index}" : $"Pet name: {pet.Name}";
         }
 
         //Refactoring challenge
