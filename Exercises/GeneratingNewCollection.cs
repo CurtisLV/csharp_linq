@@ -60,7 +60,7 @@ namespace Exercises
                 Environment.NewLine,
                 Enumerable
                     .Range(1, levels)
-                    .Select((x, index) => $"{x * index}{Environment.NewLine}")
+                    .Select(level => string.Join("", Enumerable.Repeat("*", level)))
             );
         }
 
