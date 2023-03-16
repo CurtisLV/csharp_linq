@@ -56,8 +56,7 @@ namespace Exercises
          */
         public static string BuildTree(int levels)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring challenge
