@@ -27,8 +27,7 @@ namespace Exercises
          */
         public static Dictionary<int, string> NewYearsEvesSince(int initialYear, int yearsCount)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Coding Exercise 2
