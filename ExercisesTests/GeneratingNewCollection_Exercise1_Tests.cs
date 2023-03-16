@@ -21,11 +21,14 @@ namespace ExercisesTests
                 [1904] = "Saturday"
             };
 
-            CollectionAssert.AreEqual(expectedResult, result, 
-                $"For initial year 1900 and 5 years in total, " +
-                $"the days of week of the New Year's Eve were " +
-                $"({DictionaryToString(expectedResult)}) but the result is " +
-                $"({DictionaryToString(result)})");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For initial year 1900 and 5 years in total, "
+                    + $"the days of week of the New Year's Eve were "
+                    + $"({DictionaryToString(expectedResult)}) but the result is "
+                    + $"({DictionaryToString(result)})"
+            );
         }
     }
 }
