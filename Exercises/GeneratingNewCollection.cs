@@ -27,7 +27,12 @@ namespace Exercises
          */
         public static Dictionary<int, string> NewYearsEvesSince(int initialYear, int yearsCount)
         {
-            //
+            return Enumerable
+                .Repeat(initialYear, yearsCount)
+                .ToDictionary(
+                    year => year,
+                    year => new DateTime(year, 12, 31).DayOfWeek.ToString()
+                );
         }
 
         //Coding Exercise 2
