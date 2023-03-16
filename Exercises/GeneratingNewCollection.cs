@@ -56,9 +56,12 @@ namespace Exercises
          */
         public static string BuildTree(int levels)
         {
-            return Enumerable
-                .Range(0, levels)
-                .Select((x, index) => $"{x * index}{Environment.NewLine}");
+            return string.Join(
+                Environment.NewLine,
+                Enumerable
+                    .Range(1, levels)
+                    .Select((x, index) => $"{x * index}{Environment.NewLine}")
+            );
         }
 
         //Refactoring challenge
