@@ -11,7 +11,8 @@ namespace ExercisesTests
         public void FiveLevels()
         {
             var result = GeneratingNewCollection.BuildTree(5);
-            var expectedResult = @"*
+            var expectedResult =
+                @"*
 **
 ***
 ****
@@ -26,7 +27,11 @@ namespace ExercisesTests
             var result = GeneratingNewCollection.BuildTree(0);
             var expectedResult = @"";
 
-            Assert.AreEqual(expectedResult, result, "For levels count 0 the result shall be an empty string");
+            Assert.AreEqual(
+                expectedResult,
+                result,
+                "For levels count 0 the result shall be an empty string"
+            );
         }
     }
 }
