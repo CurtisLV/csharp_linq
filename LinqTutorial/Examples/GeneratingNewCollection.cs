@@ -16,9 +16,11 @@ namespace LinqTutorial.MethodSyntax
             //Empty
             //simply creates a new empty collection of a given type
             var emptyNumbers = Enumerable.Empty<int>();
-            Console.WriteLine($"Count of elements in {nameof(emptyNumbers)} is {emptyNumbers.Count()}");
+            Console.WriteLine(
+                $"Count of elements in {nameof(emptyNumbers)} is {emptyNumbers.Count()}"
+            );
 
-            //let's create a Dictionary 
+            //let's create a Dictionary
             //where Person's name will be the key
             //and the Person's Pets will be the Value
             //but if this Person owns a Pet from the "blacklistedPets" collection
@@ -27,9 +29,11 @@ namespace LinqTutorial.MethodSyntax
 
             var peoplePetsDictionry = Data.People.ToDictionary(
                 person => person.Name,
-                person => person.Pets.Any(pet => blackListedPets.Contains(pet)) ?
-                        Enumerable.Empty<Pet>() :
-                        person.Pets);
+                person =>
+                    person.Pets.Any(pet => blackListedPets.Contains(pet))
+                        ? Enumerable.Empty<Pet>()
+                        : person.Pets
+            );
 
             Printer.Print(peoplePetsDictionry, nameof(peoplePetsDictionry));
 
@@ -41,7 +45,7 @@ namespace LinqTutorial.MethodSyntax
 
             var threeFoxes = Enumerable
                 .Repeat("fox", 3)
-                .Select((word, index) => $"{index+1}. {word}");
+                .Select((word, index) => $"{index + 1}. {word}");
             Printer.Print(threeFoxes, nameof(threeFoxes));
 
             //Range
@@ -54,7 +58,7 @@ namespace LinqTutorial.MethodSyntax
             var powersOf2 = Enumerable.Range(1, 10).Select(number => Math.Pow(2, number));
             Printer.Print(powersOf2, nameof(powersOf2));
 
-            //since in C# char can be cast to an int, we can easily generate 
+            //since in C# char can be cast to an int, we can easily generate
             // a collection of letters
             var letters = Enumerable.Range('A', 10).Select(charAsNumber => (char)charAsNumber);
             Printer.Print(letters, nameof(letters));
@@ -67,9 +71,9 @@ namespace LinqTutorial.MethodSyntax
                 .Select(number => number * 5)
                 .ToDictionary(
                     number => $"[{number}-{number + 5}) kg",
-                    number => Data.Pets.Count(pet =>
-                        pet.Weight >= number &&
-                        pet.Weight < number + 5));
+                    number =>
+                        Data.Pets.Count(pet => pet.Weight >= number && pet.Weight < number + 5)
+                );
             Printer.Print(petsWeightsMapping, nameof(petsWeightsMapping));
 
             //DefaultIfEmpty
@@ -89,4 +93,3 @@ namespace LinqTutorial.MethodSyntax
         }
     }
 }
-
