@@ -75,7 +75,7 @@ namespace Exercises
 
             return allLetters.SelectMany(
                 _ => allLetters,
-                (firstLetter, secondLetter) => $"{firstLetter},{secondLetter}"
+                (firstLetter, secondLetter) => $"{firstLetter}{secondLetter}"
             );
         }
 
