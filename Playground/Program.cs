@@ -6,13 +6,27 @@ public class Program
 {
     private static void Main(string[] args)
     {
-        var user = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-        var user2 = Environment.UserName;
-        var user3 = Environment.UserDomainName;
+        IEnumerable<string> aDoubleLetters_Refactored(int countOfLetters)
+        {
+            const int CountOfLettersInEnglishAlphabet = 26;
+            var finalCountOfLetters = Math.Min(countOfLetters, CountOfLettersInEnglishAlphabet);
 
-        Console.WriteLine(user);
-        Console.WriteLine(user2);
-        Console.WriteLine(user3);
+            var allLetters = Enumerable
+                .Range('A', finalCountOfLetters)
+                .Select(i => (char)i)
+                .ToString();
+
+            yield return allLetters;
+        }
+        aDoubleLetters_Refactored(20);
+
+        //var user = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+        //var user2 = Environment.UserName;
+        //var user3 = Environment.UserDomainName;
+
+        //Console.WriteLine(user);
+        //Console.WriteLine(user2);
+        //Console.WriteLine(user3);
 
         //    var students = new List<Student>
         //    {

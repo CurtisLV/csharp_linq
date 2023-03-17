@@ -72,6 +72,8 @@ namespace Exercises
             var finalCountOfLetters = Math.Min(countOfLetters, CountOfLettersInEnglishAlphabet);
 
             var allLetters = Enumerable.Range('A', finalCountOfLetters).Select(i => (char)i);
+
+            throw new NotImplementedException();
         }
 
         //do not modify this method
