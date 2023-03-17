@@ -73,7 +73,10 @@ namespace Exercises
 
             var allLetters = Enumerable.Range('A', finalCountOfLetters).Select(i => (char)i);
 
-            throw new NotImplementedException();
+            return allLetters.SelectMany(
+                _ => allLetters,
+                (firstLetter, secondLetter) => $"{firstLetter},{secondLetter}"
+            );
         }
 
         //do not modify this method
