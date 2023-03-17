@@ -68,7 +68,9 @@ namespace Exercises
         //TODO implement this method
         public static IEnumerable<string> DoubleLetters_Refactored(int countOfLetters)
         {
-            //
+            const int CountOfLettersInEnglishAlphabet = 26;
+            var finalCountOfLetters = Math.Min(countOfLetters, CountOfLettersInEnglishAlphabet);
+            return Enumerable.Repeat('A', countOfLetters).
         }
 
         //do not modify this method
