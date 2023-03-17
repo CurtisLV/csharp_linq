@@ -70,7 +70,8 @@ namespace Exercises
         {
             const int CountOfLettersInEnglishAlphabet = 26;
             var finalCountOfLetters = Math.Min(countOfLetters, CountOfLettersInEnglishAlphabet);
-            return Enumerable.Repeat('A', countOfLetters).
+
+            var allLetters = Enumerable.Range('A', finalCountOfLetters).Select(i => (char)i);
         }
 
         //do not modify this method
