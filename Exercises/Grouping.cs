@@ -73,7 +73,15 @@ namespace Exercises
         //TODO implement this method
         public static IEnumerable<string> CountPets_Refactored(string petsData)
         {
-            //
+            if (string.IsNullOrEmpty(petsData))
+            {
+                return new string[0];
+            }
+
+            return petsData
+                .Split(',')
+                .GroupBy(pet => pet, pet => pet.Count())
+                .Select(pet => $"{pet.Key}:{pet.Value}");
         }
 
         //do not modify this method
