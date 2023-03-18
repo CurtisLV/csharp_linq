@@ -14,10 +14,13 @@ namespace ExercisesTests
             var result = Grouping.CountPets(input);
             var expectedResult = new[] { "Dog:5", "Cat:3", "Fish:2", "Ferret:1" };
 
-            CollectionAssert.AreEqual(expectedResult, result, 
-                $"For INPUT '{input}' the RESULT shall be " +
-                $"{EnumerableToString(expectedResult)} BUT IT WAS " +
-                $"{EnumerableToString(result)}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For INPUT '{input}' the RESULT shall be "
+                    + $"{EnumerableToString(expectedResult)} BUT IT WAS "
+                    + $"{EnumerableToString(result)}"
+            );
         }
 
         [Test]
@@ -27,10 +30,13 @@ namespace ExercisesTests
             var result = Grouping.CountPets(input);
             var expectedResult = new string[0];
 
-            CollectionAssert.AreEqual(expectedResult, result, 
-                $"For an EMPTY INPUT the RESULT shall be " +
-                $"{EnumerableToString(expectedResult)} BUT IT WAS " +
-                $"{EnumerableToString(result)}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For an EMPTY INPUT the RESULT shall be "
+                    + $"{EnumerableToString(expectedResult)} BUT IT WAS "
+                    + $"{EnumerableToString(result)}"
+            );
         }
 
         [Test]
@@ -40,10 +46,13 @@ namespace ExercisesTests
             var result = Grouping.CountPets_Refactored(input);
             var expectedResult = new[] { "Dog:5", "Cat:3", "Fish:2", "Ferret:1" };
 
-            CollectionAssert.AreEqual(expectedResult, result, 
-                $"For INPUT '{input}' the RESULT shall be " +
-                $"{EnumerableToString(expectedResult)} BUT IT WAS " +
-                $"{EnumerableToString(result)}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For INPUT '{input}' the RESULT shall be "
+                    + $"{EnumerableToString(expectedResult)} BUT IT WAS "
+                    + $"{EnumerableToString(result)}"
+            );
         }
 
         [Test]
@@ -53,10 +62,13 @@ namespace ExercisesTests
             var result = Grouping.CountPets_Refactored(input);
             var expectedResult = new string[0];
 
-            CollectionAssert.AreEqual(expectedResult, result, 
-                $"For an EMPTY INPUT the RESULT shall be " +
-                $"{EnumerableToString(expectedResult)} BUT IT WAS " +
-                $"{EnumerableToString(result)}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For an EMPTY INPUT the RESULT shall be "
+                    + $"{EnumerableToString(expectedResult)} BUT IT WAS "
+                    + $"{EnumerableToString(result)}"
+            );
         }
     }
 }
