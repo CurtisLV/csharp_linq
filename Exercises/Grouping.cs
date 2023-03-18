@@ -29,8 +29,7 @@ namespace Exercises
          */
         public static char? GetTheMostFrequentCharacter(string text)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Coding Exercise 2
