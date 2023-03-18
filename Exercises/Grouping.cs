@@ -58,6 +58,11 @@ namespace Exercises
          */
         public static PetType? FindTheHeaviestPetType(IEnumerable<Pet> pets)
         {
+            if (!pets.Any())
+            {
+                return (PetType?)null;
+            }
+
             return pets.GroupBy(pet => pet.PetType)
                 .OrderBy(group => group.Average(pet => pet.Weight))
                 .Last()
