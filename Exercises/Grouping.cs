@@ -29,10 +29,15 @@ namespace Exercises
          */
         public static char? GetTheMostFrequentCharacter(string text)
         {
-            return text.Split("")
+            if (string.IsNullOrEmpty(text))
+            {
+                (char?)null;
+            }
+
+            return text.ToLower()
                 .GroupBy(chr => chr)
                 .OrderByDescending(chr => chr.Count())
-                .FirstOrDefault()
+                .First()
                 .Key;
         }
 
