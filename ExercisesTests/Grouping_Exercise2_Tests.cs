@@ -13,8 +13,7 @@ namespace ExercisesTests
         [Test]
         public void HeaviestPetTypeIsDog()
         {
-            var pets =
-            new[]
+            var pets = new[]
             {
                 new Pet("Hannibal", PetType.Fish, 1.1f),
                 new Pet("Anthony", PetType.Cat, 2f),
@@ -26,14 +25,17 @@ namespace ExercisesTests
             var result = Grouping.FindTheHeaviestPetType(pets);
             var expectedResult = PetType.Dog;
 
-            Assert.AreEqual(expectedResult, result, $"For pets {EnumerableToString(pets)} the result shall be {expectedResult} but it was {result}");
+            Assert.AreEqual(
+                expectedResult,
+                result,
+                $"For pets {EnumerableToString(pets)} the result shall be {expectedResult} but it was {result}"
+            );
         }
 
         [Test]
         public void HeaviestPetTypeIsCat()
         {
-            var pets =
-            new[]
+            var pets = new[]
             {
                 new Pet("Shere Khan", PetType.Cat, 250f),
                 new Pet("Alex", PetType.Cat, 200f),
@@ -46,7 +48,11 @@ namespace ExercisesTests
             var result = Grouping.FindTheHeaviestPetType(pets);
             var expectedResult = PetType.Cat;
 
-            Assert.AreEqual(expectedResult, result, $"For pets {EnumerableToString(pets)} the result shall be {expectedResult} but it was {result}");
+            Assert.AreEqual(
+                expectedResult,
+                result,
+                $"For pets {EnumerableToString(pets)} the result shall be {expectedResult} but it was {result}"
+            );
         }
 
         [Test]
@@ -54,19 +60,22 @@ namespace ExercisesTests
         {
             try
             {
-                var pets =
-                new Pet[]
-                {
-                };
+                var pets = new Pet[] { };
 
                 var result = Grouping.FindTheHeaviestPetType(pets);
                 PetType? expectedResult = null;
 
-                Assert.AreEqual(expectedResult, result, $"For empty pets collection the result shall be null but it was {result}");
+                Assert.AreEqual(
+                    expectedResult,
+                    result,
+                    $"For empty pets collection the result shall be null but it was {result}"
+                );
             }
             catch (Exception ex)
             {
-                Assert.Fail($"The result shall be null for an empty input, but an expection was thrown. Exception message: {ex.Message}. (Did you possibly call the First or the Last methods on an empty collection?)");
+                Assert.Fail(
+                    $"The result shall be null for an empty input, but an expection was thrown. Exception message: {ex.Message}. (Did you possibly call the First or the Last methods on an empty collection?)"
+                );
             }
         }
     }
