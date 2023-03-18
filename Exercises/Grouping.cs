@@ -73,8 +73,7 @@ namespace Exercises
         //TODO implement this method
         public static IEnumerable<string> CountPets_Refactored(string petsData)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //do not modify this method
