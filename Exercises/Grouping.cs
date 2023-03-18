@@ -58,7 +58,10 @@ namespace Exercises
          */
         public static PetType? FindTheHeaviestPetType(IEnumerable<Pet> pets)
         {
-            //
+            return pets.GroupBy(pet => pet.PetType)
+                .OrderBy(group => group.Average(pet => pet.Weight))
+                .Last()
+                .Key;
         }
 
         //Refactoring challenge
