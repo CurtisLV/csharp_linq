@@ -15,7 +15,11 @@ namespace ExercisesTests
             var expectedResult = new int[] { 1, 2, 3, 4, 7, 8, 9 };
             var result = IntersectExcept.GetExclusiveNumbers(numbers1, numbers2);
 
-            Assert.AreEqual(expectedResult, result, $"For numbers1 {EnumerableToString(numbers1)} and numbers2 {EnumerableToString(numbers2)} the result shall be {EnumerableToString(expectedResult)}, but it was {EnumerableToString(result)}");
+            Assert.AreEqual(
+                expectedResult,
+                result,
+                $"For numbers1 {EnumerableToString(numbers1)} and numbers2 {EnumerableToString(numbers2)} the result shall be {EnumerableToString(expectedResult)}, but it was {EnumerableToString(result)}"
+            );
         }
 
         [Test]
@@ -26,7 +30,11 @@ namespace ExercisesTests
             var expectedResult = new int[] { 10, 20, 30, 40 };
             var result = IntersectExcept.GetExclusiveNumbers(numbers1, numbers2);
 
-            Assert.AreEqual(expectedResult, result, $"For numbers1 {EnumerableToString(numbers1)} and numbers2 {EnumerableToString(numbers2)} the result shall be {EnumerableToString(expectedResult)}, but it was {EnumerableToString(result)}");
+            Assert.AreEqual(
+                expectedResult,
+                result,
+                $"For numbers1 {EnumerableToString(numbers1)} and numbers2 {EnumerableToString(numbers2)} the result shall be {EnumerableToString(expectedResult)}, but it was {EnumerableToString(result)}"
+            );
         }
 
         [Test]
@@ -37,7 +45,11 @@ namespace ExercisesTests
             var expectedResult = new int[0];
             var result = IntersectExcept.GetExclusiveNumbers(numbers1, numbers2);
 
-            Assert.AreEqual(expectedResult, result, $"For empty input collections the result shall be empty, but it was {EnumerableToString(result)}");
+            Assert.AreEqual(
+                expectedResult,
+                result,
+                $"For empty input collections the result shall be empty, but it was {EnumerableToString(result)}"
+            );
         }
     }
 }
