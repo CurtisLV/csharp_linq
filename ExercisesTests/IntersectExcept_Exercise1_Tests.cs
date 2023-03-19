@@ -15,7 +15,11 @@ namespace ExercisesTests
             var expectedResult = 2;
             var result = IntersectExcept.CountCommonWords(words1, words2);
 
-            Assert.AreEqual(expectedResult, result, $"For words1 {EnumerableToString(words1)} and words2 {EnumerableToString(words2)} the result shall be {expectedResult}, but it was {result}");
+            Assert.AreEqual(
+                expectedResult,
+                result,
+                $"For words1 {EnumerableToString(words1)} and words2 {EnumerableToString(words2)} the result shall be {expectedResult}, but it was {result}"
+            );
         }
 
         [Test]
@@ -26,7 +30,11 @@ namespace ExercisesTests
             var expectedResult = 3;
             var result = IntersectExcept.CountCommonWords(words1, words2);
 
-            Assert.AreEqual(expectedResult, result, $"For words1 {EnumerableToString(words1)} and words2 {EnumerableToString(words2)} the result shall be {expectedResult}, but it was {result}");
+            Assert.AreEqual(
+                expectedResult,
+                result,
+                $"For words1 {EnumerableToString(words1)} and words2 {EnumerableToString(words2)} the result shall be {expectedResult}, but it was {result}"
+            );
         }
 
         [Test]
@@ -37,7 +45,11 @@ namespace ExercisesTests
             var expectedResult = 0;
             var result = IntersectExcept.CountCommonWords(words1, words2);
 
-            Assert.AreEqual(expectedResult, result, $"For empty input collections the result shall be {expectedResult}, but it was {result}");
+            Assert.AreEqual(
+                expectedResult,
+                result,
+                $"For empty input collections the result shall be {expectedResult}, but it was {result}"
+            );
         }
     }
 }
