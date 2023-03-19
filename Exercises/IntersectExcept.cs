@@ -8,8 +8,8 @@ namespace Exercises
     {
         //Coding Exercise 1
         /*
-         Implement the CountCommonWords method, which given two collections of strings 
-        will return the count of the words that belong to both of those collections. 
+         Implement the CountCommonWords method, which given two collections of strings
+        will return the count of the words that belong to both of those collections.
         Please note that the casing of the words does not matter.
 
         For example, for the following collections:
@@ -17,12 +17,10 @@ namespace Exercises
             *{"aaa", "ccc", "DDD"}
 
         The result shall be 2 because there are two words that occur in both collections:
-        "aaa" and "ccc". As we said, it doesn't matter if "ccc" is lower case in one 
+        "aaa" and "ccc". As we said, it doesn't matter if "ccc" is lower case in one
         collection and upper case in the other.
          */
-        public static int CountCommonWords(
-            IEnumerable<string> words1,
-            IEnumerable<string> words2)
+        public static int CountCommonWords(IEnumerable<string> words1, IEnumerable<string> words2)
         {
             //TODO your code goes here
             throw new NotImplementedException();
@@ -31,19 +29,20 @@ namespace Exercises
         //Coding Exercise 2
         /*
          Implement the GetExclusiveNumbers method, which given two collections of numbers,
-        will return an ordered collection consisting of those numbers, that only 
+        will return an ordered collection consisting of those numbers, that only
         occurred in one of those collections.
 
         For example, for the following input:
             *{1,2,3,4,5,6}
             *{9,8,7,6,5}
         
-        The result shall be {1,2,3,4,7,8,9} because those are the numbers that are 
+        The result shall be {1,2,3,4,7,8,9} because those are the numbers that are
         exclusive for one collection only.
          */
         public static IEnumerable<int> GetExclusiveNumbers(
             IEnumerable<int> numbers1,
-            IEnumerable<int> numbers2)
+            IEnumerable<int> numbers2
+        )
         {
             //TODO your code goes here
             throw new NotImplementedException();
@@ -51,17 +50,14 @@ namespace Exercises
 
         //Refactoring challenge
         //TODO implement this method
-        public static IEnumerable<string>
-            GetRoutesInfo_Refactored(
-                Route route1, Route route2)
+        public static IEnumerable<string> GetRoutesInfo_Refactored(Route route1, Route route2)
         {
             //TODO your code goes here
             throw new NotImplementedException();
         }
 
         //do not modify this method
-        public static IEnumerable<string> GetRoutesInfo(
-           Route route1, Route route2)
+        public static IEnumerable<string> GetRoutesInfo(Route route1, Route route2)
         {
             var result = new List<string>();
             var sharedPoints = new List<RoutePoint>();
@@ -74,9 +70,11 @@ namespace Exercises
                         if (!sharedPoints.Contains(routePoint1))
                         {
                             sharedPoints.Add(routePoint1);
-                            result.Add($"Shared point " +
-                            $"{routePoint1.Name}" +
-                            $" at {routePoint1.Point}");
+                            result.Add(
+                                $"Shared point "
+                                    + $"{routePoint1.Name}"
+                                    + $" at {routePoint1.Point}"
+                            );
                         }
                     }
                 }
@@ -86,9 +84,8 @@ namespace Exercises
                 if (!sharedPoints.Contains(routePoint))
                 {
                     result.Add(
-                        $"Unshared point " +
-                        $"{routePoint.Name}" +
-                        $" at {routePoint.Point}");
+                        $"Unshared point " + $"{routePoint.Name}" + $" at {routePoint.Point}"
+                    );
                 }
             }
             foreach (var routePoint in route2.RoutePoints)
@@ -96,9 +93,8 @@ namespace Exercises
                 if (!sharedPoints.Contains(routePoint))
                 {
                     result.Add(
-                        $"Unshared point " +
-                        $"{routePoint.Name}" +
-                        $" at {routePoint.Point}");
+                        $"Unshared point " + $"{routePoint.Name}" + $" at {routePoint.Point}"
+                    );
                 }
             }
 
@@ -108,6 +104,7 @@ namespace Exercises
         public class Route
         {
             public IEnumerable<RoutePoint> RoutePoints { get; }
+
             public Route(IEnumerable<RoutePoint> routePoints)
             {
                 RoutePoints = routePoints;
@@ -118,20 +115,24 @@ namespace Exercises
                 return $"RoutePoints: ({string.Join("; ", RoutePoints)})";
             }
         }
+
         public struct RoutePoint
         {
             public string Name { get; }
             public Point Point { get; }
+
             public RoutePoint(string name, Point point)
             {
                 Name = name;
                 Point = point;
             }
+
             public override string ToString()
             {
                 return $"{Name} ({Point})";
             }
         }
+
         public struct Point
         {
             public double X { get; }
