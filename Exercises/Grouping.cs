@@ -80,8 +80,8 @@ namespace Exercises
 
             return petsData
                 .Split(',')
-                .GroupBy(pet => pet, pet => pet.Count())
-                .Select(pet => $"{pet.Key}:{pet.Value}");
+                .GroupBy(pet => pet)
+                .Select(pet => $"{pet.Key}:{pet.Count()}");
         }
 
         //do not modify this method
