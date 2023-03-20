@@ -63,7 +63,12 @@ namespace Exercises
                 .Concat(
                     route1.RoutePoints
                         .Except(route2.RoutePoints)
-                        .Select(x => $"Unshared {x.Name} at {x.Point}")
+                        .Select(x => $"Unshared point {x.Name} at {x.Point}")
+                        .Concat(
+                            route2.RoutePoints
+                                .Except(route1.RoutePoints)
+                                .Select(x => $"Unshared point {x.Name} at {x.Point}")
+                        )
                 )
                 .ToList();
         }
