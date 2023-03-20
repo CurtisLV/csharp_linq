@@ -46,7 +46,7 @@ namespace Exercises
             IEnumerable<int> numbers2
         )
         {
-            //
+            return numbers1.Concat(numbers2).Distinct().OrderBy(x => x);
         }
 
         //Refactoring challenge
