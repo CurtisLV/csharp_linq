@@ -57,7 +57,15 @@ namespace Exercises
         //TODO implement this method
         public static IEnumerable<string> GetRoutesInfo_Refactored(Route route1, Route route2)
         {
-            //
+            return route1.RoutePoints
+                .Intersect(route2.RoutePoints)
+                .Select(r => $"Shared point {r.Name} at {r.Point}")
+                .Concat(
+                    route1.RoutePoints
+                        .Except(route2.RoutePoints)
+                        .Select(x => $"Unshared {x.Name} at {x.Point}")
+                )
+                .ToList();
         }
 
         //do not modify this method
