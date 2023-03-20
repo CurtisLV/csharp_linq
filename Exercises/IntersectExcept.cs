@@ -22,8 +22,7 @@ namespace Exercises
          */
         public static int CountCommonWords(IEnumerable<string> words1, IEnumerable<string> words2)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Coding Exercise 2
