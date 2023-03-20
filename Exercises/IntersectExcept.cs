@@ -67,7 +67,7 @@ namespace Exercises
                         .Concat(
                             route2.RoutePoints
                                 .Except(route1.RoutePoints)
-                                .Select(x => $"Unshared point {x.Name} at {x.Point}")
+                                .Select(x => $"Unshared point {x.Name} at {x.Point}") // we get all items that are unique in route2
                         )
                 )
                 .ToList();
