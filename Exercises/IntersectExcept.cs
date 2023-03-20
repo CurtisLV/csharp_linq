@@ -22,7 +22,10 @@ namespace Exercises
          */
         public static int CountCommonWords(IEnumerable<string> words1, IEnumerable<string> words2)
         {
-            //
+            return words1
+                .Select(word => word.ToLower())
+                .Intersect(words2.Select(word => word.ToLower()))
+                .Count();
         }
 
         //Coding Exercise 2
