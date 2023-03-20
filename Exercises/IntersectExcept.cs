@@ -59,11 +59,11 @@ namespace Exercises
         {
             return route1.RoutePoints
                 .Intersect(route2.RoutePoints)
-                .Select(r => $"Shared point {r.Name} at {r.Point}")
+                .Select(r => $"Shared point {r.Name} at {r.Point}") // first we get all items that are common
                 .Concat(
                     route1.RoutePoints
                         .Except(route2.RoutePoints)
-                        .Select(x => $"Unshared point {x.Name} at {x.Point}")
+                        .Select(x => $"Unshared point {x.Name} at {x.Point}") // we get all items that are unique in route1
                         .Concat(
                             route2.RoutePoints
                                 .Except(route1.RoutePoints)
