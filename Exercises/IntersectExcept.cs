@@ -46,8 +46,7 @@ namespace Exercises
             IEnumerable<int> numbers2
         )
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring challenge
