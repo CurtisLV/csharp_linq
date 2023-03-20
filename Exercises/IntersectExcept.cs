@@ -46,7 +46,11 @@ namespace Exercises
             IEnumerable<int> numbers2
         )
         {
-            return numbers1.Except(numbers2).Concat(numbers2.Except(numbers1)).ToList();
+            return numbers1
+                .Except(numbers2)
+                .Concat(numbers2.Except(numbers1))
+                .OrderBy(x => x)
+                .ToList();
         }
 
         //Refactoring challenge
