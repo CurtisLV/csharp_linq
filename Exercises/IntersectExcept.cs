@@ -57,8 +57,7 @@ namespace Exercises
         //TODO implement this method
         public static IEnumerable<string> GetRoutesInfo_Refactored(Route route1, Route route2)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //do not modify this method
