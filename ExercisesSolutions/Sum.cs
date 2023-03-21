@@ -13,23 +13,21 @@ namespace ExercisesSolutions
         }
 
         //Coding Exercise 2
-        public static double AverageSum(
-            IEnumerable<IEnumerable<int>> collectionsOfNumbers)
+        public static double AverageSum(IEnumerable<IEnumerable<int>> collectionsOfNumbers)
         {
-            return collectionsOfNumbers.Average(
-                singleCollection => singleCollection.Sum());
+            return collectionsOfNumbers.Average(singleCollection => singleCollection.Sum());
         }
 
         //Refactoring challenge
         public static bool HasAnyStudentSumOfMarksLargerThan100_Refactored(
-            IEnumerable<Student> students)
+            IEnumerable<Student> students
+        )
         {
             return students.Any(student => student.Marks.Sum() > 100);
         }
 
         //do not modify this method
-        public static bool HasAnyStudentSumOfMarksLargerThan100(
-            IEnumerable<Student> students)
+        public static bool HasAnyStudentSumOfMarksLargerThan100(IEnumerable<Student> students)
         {
             foreach (var student in students)
             {
