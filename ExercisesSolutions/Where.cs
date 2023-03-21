@@ -7,32 +7,31 @@ namespace ExercisesSolutions
     public static class Where
     {
         //Coding Exercise 1
-        public static IEnumerable<Student> GetScholarshipCandidates(
-            IEnumerable<Student> students)
+        public static IEnumerable<Student> GetScholarshipCandidates(IEnumerable<Student> students)
         {
-            return students.Where(student =>
-                (student.Marks.Any() ? student.Marks.Average() : 0) > 4.6f);
+            return students.Where(
+                student => (student.Marks.Any() ? student.Marks.Average() : 0) > 4.6f
+            );
         }
 
         //Coding Exercise 2
-        public static IEnumerable<string> GetProperlyIndexedWords(
-            IEnumerable<string> words)
+        public static IEnumerable<string> GetProperlyIndexedWords(IEnumerable<string> words)
         {
             return words.Where((word, index) => word.StartsWith($"{index + 1}"));
         }
 
         //Refactoring challenge
         public static IEnumerable<Person> GetMultipleFishOwners_Refactored(
-            IEnumerable<Person> people)
+            IEnumerable<Person> people
+        )
         {
             return people.Where(
-                person => person.Pets.Count(
-                    pet => pet.PetType == PetType.Fish) > 1);
+                person => person.Pets.Count(pet => pet.PetType == PetType.Fish) > 1
+            );
         }
 
         //do not modify this method
-        public static IEnumerable<Person> GetMultipleFishOwners(
-            IEnumerable<Person> people)
+        public static IEnumerable<Person> GetMultipleFishOwners(IEnumerable<Person> people)
         {
             var result = new List<Person>();
             foreach (var person in people)
