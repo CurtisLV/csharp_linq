@@ -9,30 +9,28 @@ namespace ExercisesSolutions
         //Coding Exercise 1
         public static double CalculateAverageMark(Student student)
         {
-            return student.Marks.Count() > 2 ?
-                student.Marks.OrderBy(mark => mark)
-                .Skip(1)
-                .SkipLast(1)
-                .Average() :
-                0;
+            return student.Marks.Count() > 2
+                ? student.Marks.OrderBy(mark => mark).Skip(1).SkipLast(1).Average()
+                : 0;
         }
 
-        //Coding Exercise 2       
+        //Coding Exercise 2
         public static IEnumerable<string> GetWordsBetweenStartAndEnd(List<string> words)
         {
             var isValidCollection =
-                words.Count(word => word == "START") == 1 &&
-                words.Count(word => word == "END") == 1 &&
-                words.IndexOf("START") < words.IndexOf("END");
+                words.Count(word => word == "START") == 1
+                && words.Count(word => word == "END") == 1
+                && words.IndexOf("START") < words.IndexOf("END");
 
-            return isValidCollection ?
-                words.SkipWhile(word => word != "START").Skip(1).TakeWhile(word => word != "END") :
-                new string[0];
+            return isValidCollection
+                ? words.SkipWhile(word => word != "START").Skip(1).TakeWhile(word => word != "END")
+                : new string[0];
         }
 
         //Refactoring challenge
         public static IEnumerable<int> GetAllAfterFirstDividableBy100_Refactored(
-            IEnumerable<int> numbers)
+            IEnumerable<int> numbers
+        )
         {
             return numbers.SkipWhile(number => number % 100 != 0);
         }
