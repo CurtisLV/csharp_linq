@@ -14,23 +14,25 @@ namespace ExercisesSolutions
 
         //Coding Exercise 2
         public static IEnumerable<int> GetSingleElementCollection(
-            IEnumerable<IEnumerable<int>> numberCollections)
+            IEnumerable<IEnumerable<int>> numberCollections
+        )
         {
             return numberCollections.Single(collection => collection.Count() == 1);
         }
 
         //Refactoring challenge
         public static DateTime? GetSingleDay_Refactored(
-            IEnumerable<DateTime> dates, DayOfWeek dayOfWeek)
+            IEnumerable<DateTime> dates,
+            DayOfWeek dayOfWeek
+        )
         {
-            return dates.Count(date => date.DayOfWeek == dayOfWeek) == 1 ?
-                dates.Single(date => date.DayOfWeek == dayOfWeek) :
-                (DateTime?)null;
+            return dates.Count(date => date.DayOfWeek == dayOfWeek) == 1
+                ? dates.Single(date => date.DayOfWeek == dayOfWeek)
+                : (DateTime?)null;
         }
 
         //do not modify this method
-        public static DateTime? GetSingleDay(
-            IEnumerable<DateTime> dates, DayOfWeek dayOfWeek)
+        public static DateTime? GetSingleDay(IEnumerable<DateTime> dates, DayOfWeek dayOfWeek)
         {
             var count = 0;
             DateTime? result = null;
