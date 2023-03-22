@@ -39,8 +39,7 @@ namespace Exercises
             IEnumerable<House> houses
         )
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Coding Exercise 2
