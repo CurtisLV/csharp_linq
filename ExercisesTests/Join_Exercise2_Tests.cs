@@ -15,16 +15,16 @@ namespace ExercisesTests
         {
             var items = new[]
             {
-              new Item(1, "Tahini"),
-              new Item(2, "Maple Syrup"),
-              new Item(3, "Peanut Butter")
+                new Item(1, "Tahini"),
+                new Item(2, "Maple Syrup"),
+                new Item(3, "Peanut Butter")
             };
 
             var customers = new[]
             {
-              new Customer(1, "John Smith"),
-              new Customer(2, "Stephanie Green"),
-              new Customer(3, "Martin Brown")
+                new Customer(1, "John Smith"),
+                new Customer(2, "Stephanie Green"),
+                new Customer(3, "Martin Brown")
             };
 
             var orders = new[]
@@ -44,7 +44,11 @@ namespace ExercisesTests
                 "Customer: Martin Brown, Item: Maple Syrup, Count: 4"
             };
 
-            CollectionAssert.AreEquivalent(expectedResult, result, $"For ITEMS {EnumerableToString(items)}, CUSTOMERS  {EnumerableToString(customers)} and ORDERS : {EnumerableToString(orders)} the RESULT shall be {EnumerableToString(expectedResult)}, BUT IT WAS {EnumerableToString(result)}");
+            CollectionAssert.AreEquivalent(
+                expectedResult,
+                result,
+                $"For ITEMS {EnumerableToString(items)}, CUSTOMERS  {EnumerableToString(customers)} and ORDERS : {EnumerableToString(orders)} the RESULT shall be {EnumerableToString(expectedResult)}, BUT IT WAS {EnumerableToString(result)}"
+            );
         }
 
         [Test]
@@ -52,24 +56,19 @@ namespace ExercisesTests
         {
             var items = new[]
             {
-              new Item(1, "Tahini"),
-              new Item(2, "Maple Syrup"),
-              new Item(3, "Peanut Butter")
+                new Item(1, "Tahini"),
+                new Item(2, "Maple Syrup"),
+                new Item(3, "Peanut Butter")
             };
 
             var customers = new[]
             {
-              new Customer(1, "John Smith"),
-              new Customer(2, "Stephanie Green"),
-              new Customer(3, "Martin Brown")
+                new Customer(1, "John Smith"),
+                new Customer(2, "Stephanie Green"),
+                new Customer(3, "Martin Brown")
             };
 
-            var orders = new[]
-            {
-                new Order(1, 2, 2),
-                new Order(2, 3, 1),
-                new Order(3, 1, 4)
-            };
+            var orders = new[] { new Order(1, 2, 2), new Order(2, 3, 1), new Order(3, 1, 4) };
 
             var result = Join.GetOrdersData(customers, items, orders);
             var expectedResult = new[]
@@ -79,7 +78,11 @@ namespace ExercisesTests
                 "Customer: Martin Brown, Item: Tahini, Count: 4"
             };
 
-            CollectionAssert.AreEquivalent(expectedResult, result, $"For ITEMS {EnumerableToString(items)}, CUSTOMERS  {EnumerableToString(customers)} and ORDERS : {EnumerableToString(orders)} the RESULT shall be {EnumerableToString(expectedResult)}, BUT IT WAS {EnumerableToString(result)}");
+            CollectionAssert.AreEquivalent(
+                expectedResult,
+                result,
+                $"For ITEMS {EnumerableToString(items)}, CUSTOMERS  {EnumerableToString(customers)} and ORDERS : {EnumerableToString(orders)} the RESULT shall be {EnumerableToString(expectedResult)}, BUT IT WAS {EnumerableToString(result)}"
+            );
         }
     }
 }
