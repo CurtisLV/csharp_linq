@@ -8,10 +8,10 @@ namespace Exercises
     {
         //Coding Exercise 1
         /*
-        Implement the GetHouseOwnersData method, which given a collection of people and 
-        a collection of houses will return a collection of strings with the information 
-        about house owners. The result should contain information about all people, 
-        even if they don't own any houses. If a person owns more than one house, 
+        Implement the GetHouseOwnersData method, which given a collection of people and
+        a collection of houses will return a collection of strings with the information
+        about house owners. The result should contain information about all people,
+        even if they don't own any houses. If a person owns more than one house,
         it should be listed as many times in the result collection.
 
         For example, for the following input:
@@ -27,16 +27,17 @@ namespace Exercises
             *OwnerId: 3, Address: "Beach Farm, 10 Seaside Street"
         
         The result shall be:
-            *"Person: (Id:1), John Smith owns no house", 
-            *"Person: (Id:2), Stephanie Green owns White Cottage, 18 Miners Overlook", 
-            *"Person: (Id:3), Martin Brown owns Hilltop Mansion, 234 Maple Road", 
+            *"Person: (Id:1), John Smith owns no house",
+            *"Person: (Id:2), Stephanie Green owns White Cottage, 18 Miners Overlook",
+            *"Person: (Id:3), Martin Brown owns Hilltop Mansion, 234 Maple Road",
             *"Person: (Id:3), Martin Brown owns Beach Farm, 10 Seaside Street"
         
         Assume both input collections are non-empty.
          */
         public static IEnumerable<string> GetHouseOwnersData(
-             IEnumerable<Person> people,
-             IEnumerable<House> houses)
+            IEnumerable<Person> people,
+            IEnumerable<House> houses
+        )
         {
             //TODO your code goes here
             throw new NotImplementedException();
@@ -44,17 +45,17 @@ namespace Exercises
 
         //Coding Exercise 2
         /*
-        Imagine you are working on a website of an online store selling groceries. 
-        There is a need to provide functionality that will enable printing a summary 
-        of all orders that have been made, including data of customers and the items 
+        Imagine you are working on a website of an online store selling groceries.
+        There is a need to provide functionality that will enable printing a summary
+        of all orders that have been made, including data of customers and the items
         that have been bought.
 
-        Let's say that this website uses a database with the following tables:        
-        Customer (int id, string name)        
-        Item (int id, string name)        
+        Let's say that this website uses a database with the following tables:
+        Customer (int id, string name)
+        Item (int id, string name)
         Order (int customerId, int itemId, int count)
         
-        Implement the GetOrdersData method, which given collections of customers, 
+        Implement the GetOrdersData method, which given collections of customers,
         items and orders, will produce a collection of strings containing the orders data.
         
         For example, for the following data:
@@ -75,8 +76,8 @@ namespace Exercises
             *CustomerId: 3, ItemId: 1, Count: 4
         
         The result shall be the following collection of strings:
-            *"Customer: John Smith, Item: Maple Syrup, Count: 2", 
-            *"Customer: Stephanie Green, Item: Peanut Butter, Count: 1", 
+            *"Customer: John Smith, Item: Maple Syrup, Count: 2",
+            *"Customer: Stephanie Green, Item: Peanut Butter, Count: 1",
             *"Customer: Martin Brown, Item: Tahini, Count: 4"
         
         Assume all input collections are non-empty.
@@ -84,7 +85,8 @@ namespace Exercises
         public static IEnumerable<string> GetOrdersData(
             IEnumerable<Customer> customers,
             IEnumerable<Item> items,
-            IEnumerable<Order> orders)
+            IEnumerable<Order> orders
+        )
         {
             //TODO your code goes here
             throw new NotImplementedException();
@@ -94,7 +96,8 @@ namespace Exercises
         //TODO implement this method
         public static Dictionary<House, Person> GetHousesData_Refactored(
             IEnumerable<Person> people,
-            IEnumerable<House> houses)
+            IEnumerable<House> houses
+        )
         {
             //TODO your code goes here
             throw new NotImplementedException();
@@ -103,7 +106,8 @@ namespace Exercises
         //do not modify this method
         public static Dictionary<House, Person> GetHousesData(
             IEnumerable<Person> people,
-            IEnumerable<House> houses)
+            IEnumerable<House> houses
+        )
         {
             var result = new Dictionary<House, Person>();
             foreach (var house in houses)
