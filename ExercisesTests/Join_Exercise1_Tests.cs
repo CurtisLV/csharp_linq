@@ -14,15 +14,15 @@ namespace ExercisesTests
         {
             var people = new Person[]
             {
-              new Person(1, "John Smith"),
-              new Person(2, "Stephanie Green"),
-              new Person(3, "Martin Brown")
+                new Person(1, "John Smith"),
+                new Person(2, "Stephanie Green"),
+                new Person(3, "Martin Brown")
             };
 
             var houses = new House[]
             {
-              new House(2, "Hilltop Mansion, 234 Maple Road"),
-              new House(3, "Beach Farm, 10 Seaside Street"),
+                new House(2, "Hilltop Mansion, 234 Maple Road"),
+                new House(3, "Beach Farm, 10 Seaside Street"),
             };
             var result = Join.GetHouseOwnersData(people, houses);
             var expectedResult = new[]
@@ -32,7 +32,11 @@ namespace ExercisesTests
                 "Person: (Id:3), Martin Brown owns Beach Farm, 10 Seaside Street"
             };
 
-            CollectionAssert.AreEquivalent(expectedResult, result, $"For PEOPLE {EnumerableToString(people)}, and HOUSES  {EnumerableToString(houses)}  the RESULT shall be {EnumerableToString(expectedResult)}, BUT IT WAS {EnumerableToString(result)}");
+            CollectionAssert.AreEquivalent(
+                expectedResult,
+                result,
+                $"For PEOPLE {EnumerableToString(people)}, and HOUSES  {EnumerableToString(houses)}  the RESULT shall be {EnumerableToString(expectedResult)}, BUT IT WAS {EnumerableToString(result)}"
+            );
         }
 
         [Test]
@@ -40,16 +44,16 @@ namespace ExercisesTests
         {
             var people = new Person[]
             {
-              new Person(1, "John Smith"),
-              new Person(2, "Stephanie Green"),
-              new Person(3, "Martin Brown")
+                new Person(1, "John Smith"),
+                new Person(2, "Stephanie Green"),
+                new Person(3, "Martin Brown")
             };
 
             var houses = new House[]
             {
-              new House(2, "White Cottage, 18 Miners Overlook"),
-              new House(3, "Hilltop Mansion, 234 Maple Road"),
-              new House(3, "Beach Farm, 10 Seaside Street"),
+                new House(2, "White Cottage, 18 Miners Overlook"),
+                new House(3, "Hilltop Mansion, 234 Maple Road"),
+                new House(3, "Beach Farm, 10 Seaside Street"),
             };
             var result = Join.GetHouseOwnersData(people, houses);
             var expectedResult = new[]
@@ -60,8 +64,11 @@ namespace ExercisesTests
                 "Person: (Id:3), Martin Brown owns Beach Farm, 10 Seaside Street"
             };
 
-            CollectionAssert.AreEquivalent(expectedResult, result, $"For PEOPLE {EnumerableToString(people)}, and HOUSES  {EnumerableToString(houses)}  the RESULT shall be {EnumerableToString(expectedResult)}, BUT IT WAS {EnumerableToString(result)}");
+            CollectionAssert.AreEquivalent(
+                expectedResult,
+                result,
+                $"For PEOPLE {EnumerableToString(people)}, and HOUSES  {EnumerableToString(houses)}  the RESULT shall be {EnumerableToString(expectedResult)}, BUT IT WAS {EnumerableToString(result)}"
+            );
         }
-
     }
 }
