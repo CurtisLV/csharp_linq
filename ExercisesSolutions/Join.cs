@@ -8,21 +8,23 @@ namespace ExercisesSolutions
     {
         //Coding Exercise 1
         public static IEnumerable<string> GetHouseOwnersData(
-             IEnumerable<Person> people,
-             IEnumerable<House> houses)
+            IEnumerable<Person> people,
+            IEnumerable<House> houses
+        )
         {
-            return people.GroupJoin(
-                houses,
-                person => person.Id,
-                house => house.OwnerId,
-                (person, personHouses) => new
-                {
-                    Owner = person,
-                    Houses = personHouses
-                })
-                .SelectMany(ownerHouses => ownerHouses.Houses.DefaultIfEmpty(),
-                (ownerHouses, singleHouse) => $"Person: {ownerHouses.Owner} " +
-                $"owns {GetHouseNameOrDefault(singleHouse)}");
+            return people
+                .GroupJoin(
+                    houses,
+                    person => person.Id,
+                    house => house.OwnerId,
+                    (person, personHouses) => new { Owner = person, Houses = personHouses }
+                )
+                .SelectMany(
+                    ownerHouses => ownerHouses.Houses.DefaultIfEmpty(),
+                    (ownerHouses, singleHouse) =>
+                        $"Person: {ownerHouses.Owner} "
+                        + $"owns {GetHouseNameOrDefault(singleHouse)}"
+                );
         }
 
         public static string GetHouseNameOrDefault(House house)
@@ -34,55 +36,58 @@ namespace ExercisesSolutions
         public static IEnumerable<string> GetOrdersData(
             IEnumerable<Customer> customers,
             IEnumerable<Item> items,
-            IEnumerable<Order> orders)
+            IEnumerable<Order> orders
+        )
         {
             var orderCustomers = orders.Join(
                 customers,
                 order => order.CustomerId,
                 customer => customer.Id,
-                (order, customer) => new { order, customer });
+                (order, customer) => new { order, customer }
+            );
 
             var orderCustomerItems = orderCustomers.Join(
                 items,
                 orderCustomer => orderCustomer.order.ItemId,
                 item => item.Id,
-                (orderCustomer, item) => new
-                {
-                    Order = orderCustomer.order,
-                    Customer = orderCustomer.customer,
-                    Item = item
-                });
+                (orderCustomer, item) =>
+                    new
+                    {
+                        Order = orderCustomer.order,
+                        Customer = orderCustomer.customer,
+                        Item = item
+                    }
+            );
 
             return orderCustomerItems.Select(
                 orderCustomerItem =>
-                    $"Customer: {orderCustomerItem.Customer.Name}," +
-                    $" Item: {orderCustomerItem.Item.Name}," +
-                    $" Count: {orderCustomerItem.Order.Count}");
+                    $"Customer: {orderCustomerItem.Customer.Name},"
+                    + $" Item: {orderCustomerItem.Item.Name},"
+                    + $" Count: {orderCustomerItem.Order.Count}"
+            );
         }
 
         //Refactoring challenge
         public static Dictionary<House, Person> GetHousesData_Refactored(
             IEnumerable<Person> people,
-            IEnumerable<House> houses)
+            IEnumerable<House> houses
+        )
         {
-            return people.Join(
-                houses,
-                person => person.Id,
-                house => house.OwnerId,
-                (person, personHouse) => new
-                {
-                    Owner = person,
-                    House = personHouse
-                })
-                .ToDictionary(
-                ownerHouse => ownerHouse.House,
-                ownerHouse => ownerHouse.Owner);
+            return people
+                .Join(
+                    houses,
+                    person => person.Id,
+                    house => house.OwnerId,
+                    (person, personHouse) => new { Owner = person, House = personHouse }
+                )
+                .ToDictionary(ownerHouse => ownerHouse.House, ownerHouse => ownerHouse.Owner);
         }
 
         //do not modify this method
         public static Dictionary<House, Person> GetHousesData(
             IEnumerable<Person> people,
-            IEnumerable<House> houses)
+            IEnumerable<House> houses
+        )
         {
             var result = new Dictionary<House, Person>();
             foreach (var house in houses)
