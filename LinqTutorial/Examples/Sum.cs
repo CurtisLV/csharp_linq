@@ -21,8 +21,7 @@ namespace LinqTutorial
             //no exception will be thrown
             var emptyNumbers = new int[0];
             var sum = emptyNumbers.Sum();
-            Console.WriteLine(
-                $"sum of elements in an empty collection: {sum}");
+            Console.WriteLine($"sum of elements in an empty collection: {sum}");
         }
     }
 }
