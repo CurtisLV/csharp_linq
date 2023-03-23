@@ -10,7 +10,7 @@ namespace LinqTutorial.MethodSyntax
         public static void Run()
         {
             //Select projects each element of a sequence into a new form
-            //it simply applies a method defined in lambda 
+            //it simply applies a method defined in lambda
             //to each of the collection's elements, creating a new collection
             var numbers = new[] { 10, 1, 4, 17, 122 };
             var doubledNumbers = numbers.Select(n => n * 2);
@@ -27,8 +27,10 @@ namespace LinqTutorial.MethodSyntax
             //let's use Select with some other methods
             //let's select those PetTypes, for which
             //Pets lighter than 4 kilos exist
-            var smallPetTypes = Data.Pets.Where(
-                pet => pet.Weight < 4).Select(pet => pet.PetType).Distinct();
+            var smallPetTypes = Data.Pets
+                .Where(pet => pet.Weight < 4)
+                .Select(pet => pet.PetType)
+                .Distinct();
             Printer.Print(smallPetTypes, nameof(smallPetTypes));
 
             //let's create a list of Pets initials, ordered alphabetically
@@ -38,10 +40,14 @@ namespace LinqTutorial.MethodSyntax
             Printer.Print(petsInitials, nameof(petsInitials));
 
             //let's convert all pets' crucial data to a single string
-            var petsDescription = string.Join("\n",
+            var petsDescription = string.Join(
+                "\n",
                 Data.Pets.Select(
-                    pet => $"This pet's name is {pet.Name}, it's a {pet.PetType}," +
-                    $" and it weights {pet.Weight} kilos"));
+                    pet =>
+                        $"This pet's name is {pet.Name}, it's a {pet.PetType},"
+                        + $" and it weights {pet.Weight} kilos"
+                )
+            );
             Console.WriteLine(petsDescription);
         }
 
@@ -51,7 +57,7 @@ namespace LinqTutorial.MethodSyntax
             public static void Run()
             {
                 //Select projects each element of a sequence into a new form
-                //it simply applies a method defined in lambda 
+                //it simply applies a method defined in lambda
                 //to each of the collection's elements, creating a new collection
                 var numbers = new[] { 10, 1, 4, 17, 122 };
                 var doubledNumbers = from number in numbers select number * 2;
@@ -68,25 +74,30 @@ namespace LinqTutorial.MethodSyntax
                 //let's use Select with some other methods
                 //let's select those PetTypes, for which
                 //Pets lighter than 4 kilos exist
-                var smallPetTypes = (from pet in Data.Pets
-                                     where pet.Weight < 4
-                                     select pet.PetType).Distinct();
+                var smallPetTypes = (
+                    from pet in Data.Pets
+                    where pet.Weight < 4
+                    select pet.PetType
+                ).Distinct();
                 Printer.Print(smallPetTypes, nameof(smallPetTypes));
 
                 //let's create a list of Pets initials, ordered alphabetically
-                var petsInitials = from pet in Data.Pets
-                                   orderby pet.Name
-                                   select pet.Name.First() + ".";
+                var petsInitials =
+                    from pet in Data.Pets
+                    orderby pet.Name
+                    select pet.Name.First() + ".";
                 Printer.Print(petsInitials, nameof(petsInitials));
 
                 //let's convert all pets' crucial data to a single string
-                var petsDescription = string.Join("\n", from pet in Data.Pets
-                                      select $"This pet's name is {pet.Name}, it's a {pet.PetType}," +
-                                             $" and it weights {pet.Weight} kilos");
+                var petsDescription = string.Join(
+                    "\n",
+                    from pet in Data.Pets
+                    select $"This pet's name is {pet.Name}, it's a {pet.PetType},"
+                        + $" and it weights {pet.Weight} kilos"
+                );
 
                 Console.WriteLine(petsDescription);
             }
         }
     }
 }
-
