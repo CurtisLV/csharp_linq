@@ -18,7 +18,7 @@ namespace LinqTutorial
             var distinctNumbers = numbers.Distinct();
             Printer.Print(distinctNumbers, nameof(distinctNumbers));
 
-            //below pets seem like duplicates, but they are not 
+            //below pets seem like duplicates, but they are not
             //those objects are compared by reference
             //in this case pets[0] == pets[1] will return false
             //that's why Distinct will not remove any of those items
