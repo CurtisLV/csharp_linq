@@ -39,12 +39,14 @@ namespace Exercises
             IEnumerable<House> houses
         )
         {
-            return people.Join(
-                houses,
-                person => person.Id,
-                house => house.OwnerId,
-                (person, house) => $"Person: (Id:{person.Id}), {person.Name} owns {house.Adderss}"
-            );
+            return people
+                .GroupJoin(
+                    houses,
+                    person => person.Id,
+                    house => house.OwnerId,
+                    (person, personHouses) => new { Owner = person, Houses = personHouses }
+                )
+                .SelectMany();
         }
 
         //Coding Exercise 2
