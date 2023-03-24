@@ -46,7 +46,10 @@ namespace Exercises
                     house => house.OwnerId,
                     (person, personHouses) => new { Owner = person, Houses = personHouses }
                 )
-                .SelectMany();
+                .SelectMany(
+                    ownerHouses => ownerHouses.Houses.DefaultIfEmpty(),
+                    (ownerHouses, singleHouse) => $""
+                );
         }
 
         //Coding Exercise 2
