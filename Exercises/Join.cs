@@ -48,8 +48,14 @@ namespace Exercises
                 )
                 .SelectMany(
                     ownerHouses => ownerHouses.Houses.DefaultIfEmpty(),
-                    (ownerHouses, singleHouse) => $"Person: ({ownerHouses.Owner.Id}), {ownerHouses.Owner.Name} owns {}"
+                    (ownerHouses, singleHouse) =>
+                        $"Person: ({ownerHouses.Owner.Id}), {ownerHouses.Owner.Name} owns {}"
                 );
+        }
+
+        public static string GetHouseOrNull(House singleHouse)
+        {
+            return singleHouse == null ? "no house" : singleHouse.Adderss;
         }
 
         //Coding Exercise 2
