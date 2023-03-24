@@ -48,7 +48,7 @@ namespace Exercises
                 )
                 .SelectMany(
                     ownerHouses => ownerHouses.Houses.DefaultIfEmpty(),
-                    (ownerHouses, singleHouse) => $""
+                    (ownerHouses, singleHouse) => $"Person: ({ownerHouses.Owner.Id}), {ownerHouses.Owner.Name} owns {}"
                 );
         }
 
