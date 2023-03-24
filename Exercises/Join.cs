@@ -49,7 +49,7 @@ namespace Exercises
                 .SelectMany(
                     ownerHouses => ownerHouses.Houses.DefaultIfEmpty(),
                     (ownerHouses, singleHouse) =>
-                        $"Person: ({ownerHouses.Owner.Id}), {ownerHouses.Owner.Name} owns {GetHouseOrNull(singleHouse)}"
+                        $"Person: (Id:{ownerHouses.Owner.Id}), {ownerHouses.Owner.Name} owns {GetHouseOrNull(singleHouse)}"
                 );
         }
 
@@ -103,8 +103,7 @@ namespace Exercises
             IEnumerable<Order> orders
         )
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring challenge
