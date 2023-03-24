@@ -49,7 +49,7 @@ namespace Exercises
                 .SelectMany(
                     ownerHouses => ownerHouses.Houses.DefaultIfEmpty(),
                     (ownerHouses, singleHouse) =>
-                        $"Person: ({ownerHouses.Owner.Id}), {ownerHouses.Owner.Name} owns {}"
+                        $"Person: ({ownerHouses.Owner.Id}), {ownerHouses.Owner.Name} owns {GetHouseOrNull(singleHouse)}"
                 );
         }
 
