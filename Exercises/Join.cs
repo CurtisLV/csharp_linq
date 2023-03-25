@@ -125,7 +125,7 @@ namespace Exercises
 
             return orderCustomerItems.Select(
                 entry =>
-                    $"Customer: {entry.Customer.Name}, Item: {entry.Item.Name}, Cound: {entry.Order.Count}"
+                    $"Customer: {entry.Customer.Name}, Item: {entry.Item.Name}, Count: {entry.Order.Count}"
             );
         }
 
