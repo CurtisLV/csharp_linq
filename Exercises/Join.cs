@@ -110,7 +110,8 @@ namespace Exercises
                 (order, customer) => new { order, customer }
             );
 
-            //var orderCustomerItems
+            var orderCustomerItems = orderCustomers.Join();
+
             return orderCustomerItems.Select();
         }
 
