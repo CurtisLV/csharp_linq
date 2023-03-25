@@ -103,7 +103,12 @@ namespace Exercises
             IEnumerable<Order> orders
         )
         {
-            var orderCustomers
+            var orderCustomers = orders.Join(
+                customers,
+                order => order.CustomerId,
+                customer => customer.Id,
+                (order, customer) => new { order, customer }
+            );
 
             //var orderCustomerItems
             return orderCustomerItems.Select();
