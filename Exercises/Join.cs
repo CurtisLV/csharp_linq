@@ -123,7 +123,10 @@ namespace Exercises
                     }
             );
 
-            return orderCustomerItems.Select();
+            return orderCustomerItems.Select(
+                entry => $"Customer: {}, Item: {}, Cound: {}"
+                
+                );
         }
 
         //Refactoring challenge
