@@ -114,7 +114,13 @@ namespace Exercises
                 items,
                 orderCustomer => orderCustomer.order.ItemId,
                 item => item.Id,
-                (orderCustomer, item) => new { }
+                (orderCustomer, item) =>
+                    new
+                    {
+                        Order = orderCustomer.order,
+                        Customer = orderCustomer.customer,
+                        Item = item
+                    }
             );
 
             return orderCustomerItems.Select();
