@@ -103,7 +103,10 @@ namespace Exercises
             IEnumerable<Order> orders
         )
         {
-            //
+            var orderCustomers
+
+            //var orderCustomerItems
+            return orderCustomerItems.Select();
         }
 
         //Refactoring challenge
