@@ -124,9 +124,9 @@ namespace Exercises
             );
 
             return orderCustomerItems.Select(
-                entry => $"Customer: {}, Item: {}, Cound: {}"
-                
-                );
+                entry =>
+                    $"Customer: {entry.Customer.Name}, Item: {entry.Item.Name}, Cound: {entry.Order.Count}"
+            );
         }
 
         //Refactoring challenge
