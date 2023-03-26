@@ -136,7 +136,11 @@ namespace Exercises
             IEnumerable<House> houses
         )
         {
-            //
+            return people.Join(
+                    houses,
+                    person => person.Id,
+                    house => house.OwnerId,
+                )
         }
 
         //do not modify this method
