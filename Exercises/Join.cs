@@ -143,7 +143,7 @@ namespace Exercises
                     house => house.OwnerId,
                     (person, house) => new { Owner = person, PersonHouse = house }
                 )
-                .ToDictionary();
+                .ToDictionary(owner => owner.PersonHouse, owner => owner.Owner);
         }
 
         //do not modify this method
