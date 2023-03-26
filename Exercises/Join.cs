@@ -140,7 +140,7 @@ namespace Exercises
                     houses,
                     person => person.Id,
                     house => house.OwnerId,
-                )
+                    (person, house) => new { House = house, Person = person }
         }
 
         //do not modify this method
