@@ -136,11 +136,14 @@ namespace Exercises
             IEnumerable<House> houses
         )
         {
-            return people.Join(
+            return people
+                .Join(
                     houses,
                     person => person.Id,
                     house => house.OwnerId,
-                    (person, house) => new { House = house, Person = person }
+                    (person, house) => new { Owner = person, PersonHouse = house }
+                )
+                .ToDictionary();
         }
 
         //do not modify this method
