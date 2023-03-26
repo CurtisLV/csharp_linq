@@ -8,18 +8,17 @@ namespace Exercises
     {
         //Coding Exercise 1
         /*
-        Imagine you are working on an activity tracker app. On the main screen, 
+        Imagine you are working on an activity tracker app. On the main screen,
         we want to show the user the total activity time for the current day.
 
-        Using the Aggregate method, implement the TotalActivityDuration method, 
-        which given a collection of integers representing activities durations 
+        Using the Aggregate method, implement the TotalActivityDuration method,
+        which given a collection of integers representing activities durations
         in seconds will return a TimeSpan object representing the total time of activity.
 
-        For example, for durations {10, 50, 121} the result shall be a TimeSpan 
+        For example, for durations {10, 50, 121} the result shall be a TimeSpan
         object with a total duration of 3 minutes and 1 second.
          */
-        public static TimeSpan TotalActivityDuration(
-            IEnumerable<int> activityTimesInSeconds)
+        public static TimeSpan TotalActivityDuration(IEnumerable<int> activityTimesInSeconds)
         {
             //TODO your code goes here
             throw new NotImplementedException();
@@ -27,8 +26,8 @@ namespace Exercises
 
         //Coding Exercise 2
         /*
-         Using LINQ's Aggregate method implement the PrintAlphabet method which given 
-        a count (assume it's from 1 to 26) will return a string with this count 
+         Using LINQ's Aggregate method implement the PrintAlphabet method which given
+        a count (assume it's from 1 to 26) will return a string with this count
         of letters starting with 'a'.
 
         For example:
@@ -58,9 +57,10 @@ namespace Exercises
             if (n < 1)
             {
                 throw new ArgumentException(
-                    $"Can't generate Fibonacci sequence " +
-                    $"for {n} elements. N must be a " +
-                    $"positive number");
+                    $"Can't generate Fibonacci sequence "
+                        + $"for {n} elements. N must be a "
+                        + $"positive number"
+                );
             }
 
             if (n == 1)
