@@ -64,7 +64,21 @@ namespace Exercises
                 return new[] { 0 };
             }
 
-            return new List<int> { 0, 1 };
+            return Enumerable
+                .Range(0, n)
+                .Aggregate(
+                    new List<int> { 0, 1 },
+                    (acc, i) =>
+                    {
+                        if (i < 2)
+                        {
+                            return acc;
+                        }
+                        acc.Add(acc[i - 1] + acc[i - 2]);
+                        return acc;
+                    }
+                )
+                .Take(n);
         }
 
         //do not modify this method
