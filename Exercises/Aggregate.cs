@@ -41,8 +41,8 @@ namespace Exercises
         public static string PrintAlphabet(int count)
         {
             return Enumerable
-                .Range(1, count)
-                .Aggregate("a", (total, next) => $"{total}, {(char)'a' + next}");
+                .Range(1, count - 1)
+                .Aggregate("a", (total, next) => $"{total}, {(char)('a' + next)}");
         }
 
         //Refactoring challenge
