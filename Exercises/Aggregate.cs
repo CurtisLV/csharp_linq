@@ -40,9 +40,14 @@ namespace Exercises
          */
         public static string PrintAlphabet(int count)
         {
+            if (count < 0 || count > 26)
+            {
+                throw new ArgumentException();
+            }
+
             return Enumerable
                 .Range(1, count - 1)
-                .Aggregate("a", (total, next) => $"{total}, {(char)('a' + next)}");
+                .Aggregate("a", (total, next) => $"{total},{(char)('a' + next)}");
         }
 
         //Refactoring challenge
