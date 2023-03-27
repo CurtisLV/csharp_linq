@@ -40,8 +40,7 @@ namespace Exercises
          */
         public static string PrintAlphabet(int count)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring challenge
