@@ -59,6 +59,11 @@ namespace Exercises
                 throw new ArgumentException();
             }
 
+            if (n == 1)
+            {
+                return new[] { 0 };
+            }
+
             return new List<int> { 0, 1 };
         }
 
