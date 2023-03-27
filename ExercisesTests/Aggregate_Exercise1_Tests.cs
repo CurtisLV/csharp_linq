@@ -14,7 +14,11 @@ namespace ExercisesTests
             var input = new[] { 10, 50, 121 };
             var result = Aggregate.TotalActivityDuration(input);
             var expectedResult = TimeSpan.FromSeconds(181);
-            Assert.AreEqual(expectedResult, result, $"For input '{EnumerableToString(input)}' the result shall be '{expectedResult}' but it was '{result}'");
+            Assert.AreEqual(
+                expectedResult,
+                result,
+                $"For input '{EnumerableToString(input)}' the result shall be '{expectedResult}' but it was '{result}'"
+            );
         }
 
         [Test]
@@ -23,7 +27,11 @@ namespace ExercisesTests
             var input = new[] { 20, 0, 10, 50, 121 };
             var result = Aggregate.TotalActivityDuration(input);
             var expectedResult = TimeSpan.FromSeconds(201);
-            Assert.AreEqual(expectedResult, result, $"For input '{EnumerableToString(input)}' the result shall be '{expectedResult}' but it was '{result}'");
+            Assert.AreEqual(
+                expectedResult,
+                result,
+                $"For input '{EnumerableToString(input)}' the result shall be '{expectedResult}' but it was '{result}'"
+            );
         }
     }
 }
