@@ -54,7 +54,12 @@ namespace Exercises
         //TODO implement this method
         public static IEnumerable<int> Fibonacci_Refactored(int n)
         {
-            //
+            if (n < 1)
+            {
+                throw new ArgumentException();
+            }
+
+            return new List<int> { 0, 1 };
         }
 
         //do not modify this method
