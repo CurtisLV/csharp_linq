@@ -20,8 +20,7 @@ namespace Exercises
          */
         public static TimeSpan TotalActivityDuration(IEnumerable<int> activityTimesInSeconds)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+.//
         }
 
         //Coding Exercise 2
