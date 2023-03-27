@@ -12,7 +12,11 @@ namespace ExercisesTests
         {
             var result = Aggregate.PrintAlphabet(5);
             var expectedResult = "a,b,c,d,e";
-            Assert.AreEqual(expectedResult, result, $"For count 5 the result shall be '{expectedResult}' but it was '{result}'");
+            Assert.AreEqual(
+                expectedResult,
+                result,
+                $"For count 5 the result shall be '{expectedResult}' but it was '{result}'"
+            );
         }
 
         [Test]
@@ -20,7 +24,11 @@ namespace ExercisesTests
         {
             var result = Aggregate.PrintAlphabet(1);
             var expectedResult = "a";
-            Assert.AreEqual(expectedResult, result, $"For count ` the result shall be '{expectedResult}' but it was '{result}'");
+            Assert.AreEqual(
+                expectedResult,
+                result,
+                $"For count ` the result shall be '{expectedResult}' but it was '{result}'"
+            );
         }
 
         [TestCase(0)]
@@ -28,7 +36,10 @@ namespace ExercisesTests
         [TestCase(27)]
         public void InvalidCount(int count)
         {
-            Assert.Throws<ArgumentException>(() => Aggregate.PrintAlphabet(count), $"For count {count} ArgumentException should be thrown");
+            Assert.Throws<ArgumentException>(
+                () => Aggregate.PrintAlphabet(count),
+                $"For count {count} ArgumentException should be thrown"
+            );
         }
     }
 }
