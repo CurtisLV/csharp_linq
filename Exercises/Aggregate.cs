@@ -20,7 +20,9 @@ namespace Exercises
          */
         public static TimeSpan TotalActivityDuration(IEnumerable<int> activityTimesInSeconds)
         {
-.//
+            return TimeSpan.FromSeconds(
+                activityTimesInSeconds.Aggregate((sum, nextNumber) => sum + nextNumber)
+            );
         }
 
         //Coding Exercise 2
