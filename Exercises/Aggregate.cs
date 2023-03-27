@@ -40,7 +40,9 @@ namespace Exercises
          */
         public static string PrintAlphabet(int count)
         {
-            return Enumerable.Range(1, count).Aggregate("a", (total, next) => total + ", " + next);
+            return Enumerable
+                .Range(1, count)
+                .Aggregate("a", (total, next) => $"{total}, {(char)'a' + next}");
         }
 
         //Refactoring challenge
