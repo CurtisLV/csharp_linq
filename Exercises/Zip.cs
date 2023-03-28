@@ -65,18 +65,11 @@ namespace Exercises
             IEnumerable<DateTime> dates
         )
         {
-            //return dates
-            //    .Zip(dates.Skip(1), (prevDate, date) => (prevDate, date))
-            //    .Select(
-            //        pair =>
-            //            $"It's been {(pair.date - pair.prevDate).Days} days between {pair.prevDate.ToString("yyyy-MM-dd")} and {pair.date.ToString("yyyy-MM-dd")}"
-            //    );
-            return dates
-                .Zip(dates.Skip(1), (prevDate, date) => (prevDate, date))
-                .Select(
-                    pair =>
-                        $"It's been {pair.prevDate - pair.date} days between {pair.prevDate.ToString("yyyy-MM-dd")} and {pair.date.ToString("yyyy-MM-dd")}"
-                );
+            return dates.Zip(
+                dates.Skip(1),
+                (prevDate, date) =>
+                    $"It's been {(date - prevDate).TotalDays} days between {prevDate.ToString("yyyy-MM-dd")} and {date.ToString("yyyy-MM-dd")}"
+            );
         }
 
         //Refactoring challenge
