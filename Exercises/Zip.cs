@@ -38,8 +38,7 @@ namespace Exercises
             IEnumerable<int> days
         )
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Coding Exercise 2
