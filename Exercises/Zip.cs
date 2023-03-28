@@ -65,8 +65,7 @@ namespace Exercises
             IEnumerable<DateTime> dates
         )
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring challenge
