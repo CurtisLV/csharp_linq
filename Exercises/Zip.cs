@@ -65,7 +65,12 @@ namespace Exercises
             IEnumerable<DateTime> dates
         )
         {
-            //
+            return dates
+                .Zip(dates.Skip(1), (prevDate, date) => (prevDate, date))
+                .Select(
+                    pair =>
+                        $"It's been {(pair.date - pair.prevDate).Days} days between {pair.prevDate.ToString("yyyy-MM-dd")} and {pair.date.ToString("yyyy-MM-dd")}"
+                );
         }
 
         //Refactoring challenge
