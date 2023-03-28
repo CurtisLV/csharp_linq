@@ -38,7 +38,10 @@ namespace Exercises
             IEnumerable<int> days
         )
         {
-            return years.Zip(months).Zip(days).OrderByDescending(d => d).ToList(x => new DateTime(x))
+            return years
+                .Zip(months, (year, month) => new DateTime(year, month, 1))
+                .Zip(days, (date, day) => date.AddDays(day - 1))
+                .OrderByDescending(d => d);
         }
 
         //Coding Exercise 2
