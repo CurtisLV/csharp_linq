@@ -15,16 +15,14 @@ namespace LinqTutorial.MethodSyntax
 
             var numbers = new[] { 1, 2, 3, 4, 5 };
             var words = new[] { "The", "quick", "brown", "fox", "jumps" };
-            var zipped = numbers.Zip(words,
-                (number, word) => $"{number}. {word}");
+            var zipped = numbers.Zip(words, (number, word) => $"{number}. {word}");
 
             Printer.Print(zipped, nameof(zipped));
 
             //if the collections are of different lengths
             //the overflow will simply be ignored
             var moreNumbers = new[] { 1, 2, 3, 4, 5, 6, 7, 8 };
-            var zipped2 = moreNumbers.Zip(words,
-                (number, word) => $"{number}. {word}");
+            var zipped2 = moreNumbers.Zip(words, (number, word) => $"{number}. {word}");
 
             Printer.Print(zipped2, nameof(zipped2));
 
@@ -33,9 +31,9 @@ namespace LinqTutorial.MethodSyntax
             //which is a collection of tuples
             var countries = new[] { "United States", "Great Britain", "Poland" };
             var currencies = new[] { "USD", "GBP", "PLN" };
-            var dictionary = countries.Zip(currencies).ToDictionary(
-                pair => pair.First,
-                pair => pair.Second);
+            var dictionary = countries
+                .Zip(currencies)
+                .ToDictionary(pair => pair.First, pair => pair.Second);
             Printer.Print(dictionary, nameof(dictionary));
 
             //it is quite common to zip a collection with itself
@@ -57,20 +55,23 @@ namespace LinqTutorial.MethodSyntax
             //and then we will calculate distances between those points
             var distances = points.Zip(
                 points.Skip(1),
-                (point1, point2) => GetDistance(point1, point2));
+                (point1, point2) => GetDistance(point1, point2)
+            );
             Printer.Print(distances, nameof(distances));
         }
 
         private static double GetDistance(Point point1, Point point2)
         {
-            return Math.Sqrt(Math.Pow((point2.X - point1.X), 2) + 
-                Math.Pow((point2.Y - point1.Y), 2));
+            return Math.Sqrt(
+                Math.Pow((point2.X - point1.X), 2) + Math.Pow((point2.Y - point1.Y), 2)
+            );
         }
 
         class Point
         {
             public int X { get; }
             public int Y { get; }
+
             public Point(int x, int y)
             {
                 X = x;
