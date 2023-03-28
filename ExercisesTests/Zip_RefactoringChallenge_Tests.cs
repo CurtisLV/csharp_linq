@@ -13,7 +13,8 @@ namespace ExercisesTests
             var words = new[] { "a", "little", "duck", "swims", "in", "a", "pond" };
 
             var result = Zip.MakeList(words);
-            var expectedResult = new[] {
+            var expectedResult = new[]
+            {
                 "A) a",
                 "B) little",
                 "C) duck",
@@ -23,7 +24,11 @@ namespace ExercisesTests
                 "G) pond"
             };
 
-            CollectionAssert.AreEqual(expectedResult, result, $"For words {EnumerableToString(words)} the result shall be {EnumerableToString(expectedResult)} but it was '{EnumerableToString(result)}'");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For words {EnumerableToString(words)} the result shall be {EnumerableToString(expectedResult)} but it was '{EnumerableToString(result)}'"
+            );
         }
 
         [Test]
@@ -32,11 +37,13 @@ namespace ExercisesTests
             var words = new[] { "duck" };
 
             var result = Zip.MakeList(words);
-            var expectedResult = new[] {
-                "A) duck"
-            };
+            var expectedResult = new[] { "A) duck" };
 
-            CollectionAssert.AreEqual(expectedResult, result, $"For words {EnumerableToString(words)} the result shall be {EnumerableToString(expectedResult)} but it was '{EnumerableToString(result)}'");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For words {EnumerableToString(words)} the result shall be {EnumerableToString(expectedResult)} but it was '{EnumerableToString(result)}'"
+            );
         }
 
         [Test]
@@ -45,7 +52,8 @@ namespace ExercisesTests
             var words = new[] { "a", "little", "duck", "swims", "in", "a", "pond" };
 
             var result = Zip.MakeList_Refactored(words);
-            var expectedResult = new[] {
+            var expectedResult = new[]
+            {
                 "A) a",
                 "B) little",
                 "C) duck",
@@ -55,7 +63,11 @@ namespace ExercisesTests
                 "G) pond"
             };
 
-            CollectionAssert.AreEqual(expectedResult, result, $"For words {EnumerableToString(words)} the result shall be {EnumerableToString(expectedResult)} but it was '{EnumerableToString(result)}'");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For words {EnumerableToString(words)} the result shall be {EnumerableToString(expectedResult)} but it was '{EnumerableToString(result)}'"
+            );
         }
 
         [Test]
@@ -64,11 +76,13 @@ namespace ExercisesTests
             var words = new[] { "duck" };
 
             var result = Zip.MakeList_Refactored(words);
-            var expectedResult = new[] {
-                "A) duck"
-            };
+            var expectedResult = new[] { "A) duck" };
 
-            CollectionAssert.AreEqual(expectedResult, result, $"For words {EnumerableToString(words)} the result shall be {EnumerableToString(expectedResult)} but it was '{EnumerableToString(result)}'");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For words {EnumerableToString(words)} the result shall be {EnumerableToString(expectedResult)} but it was '{EnumerableToString(result)}'"
+            );
         }
     }
 }
