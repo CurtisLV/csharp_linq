@@ -41,7 +41,7 @@ namespace Exercises
             return years
                 .Zip(months, (year, month) => new DateTime(year, month, 1))
                 .Zip(days, (date, day) => date.AddDays(day - 1))
-                .OrderByDescending(d => d);
+                .OrderBy(d => d);
         }
 
         //Coding Exercise 2
