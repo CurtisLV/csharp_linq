@@ -31,7 +31,11 @@ namespace Utilities
             Print(hashSet, hashSetName, "HashSet");
         }
 
-        private static void Print<T>(IEnumerable<T> collection, string collectionName, string collectionType)
+        private static void Print<T>(
+            IEnumerable<T> collection,
+            string collectionName,
+            string collectionType
+        )
         {
             Console.WriteLine($"{collectionName}:");
             if (collection.Any())
@@ -44,13 +48,20 @@ namespace Utilities
             }
         }
 
-        public static void Print<TKey, TValue>(Dictionary<TKey, TValue> dictionary, string dictionaryName)
+        public static void Print<TKey, TValue>(
+            Dictionary<TKey, TValue> dictionary,
+            string dictionaryName
+        )
         {
             Console.WriteLine($"{dictionaryName}:");
             if (dictionary.Any())
             {
-                Console.WriteLine(string.Join("\n", dictionary.Select(
-                    elem => $"Key: {elem.Key}, Value: {elem.Value}")));
+                Console.WriteLine(
+                    string.Join(
+                        "\n",
+                        dictionary.Select(elem => $"Key: {elem.Key}, Value: {elem.Value}")
+                    )
+                );
             }
             else
             {
@@ -63,8 +74,15 @@ namespace Utilities
             Console.WriteLine($"{lookupName}:");
             if (lookup.Any())
             {
-                Console.WriteLine(string.Join("\n", lookup.Select(
-                    elem => $"Key: {elem.Key}, Values (count: {lookup[elem.Key].Count()}): {string.Join(", ", lookup[elem.Key])}")));
+                Console.WriteLine(
+                    string.Join(
+                        "\n",
+                        lookup.Select(
+                            elem =>
+                                $"Key: {elem.Key}, Values (count: {lookup[elem.Key].Count()}): {string.Join(", ", lookup[elem.Key])}"
+                        )
+                    )
+                );
             }
             else
             {
