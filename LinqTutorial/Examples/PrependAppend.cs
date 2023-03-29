@@ -20,8 +20,7 @@ namespace LinqTutorial.MethodSyntax
             Printer.Print(numbers, nameof(numbers));
 
             //Append works the same, but it puts the element at the end of the collection
-            var petsWithNewPet = Data.Pets.Append(
-                new Pet(7, "Spark", PetType.Dog, 4f));
+            var petsWithNewPet = Data.Pets.Append(new Pet(7, "Spark", PetType.Dog, 4f));
             Printer.Print(petsWithNewPet, nameof(petsWithNewPet));
 
             //Prepend and Append are often used together
