@@ -41,15 +41,16 @@ namespace LinqTutorial
             var petsOrderedByTypeDescendingThenIdDescending = Data.Pets
                 .OrderByDescending(pet => pet.PetType)
                 .ThenByDescending(pet => pet.Id);
-            Printer.Print(petsOrderedByTypeDescendingThenIdDescending,
-                nameof(petsOrderedByTypeDescendingThenIdDescending));
+            Printer.Print(
+                petsOrderedByTypeDescendingThenIdDescending,
+                nameof(petsOrderedByTypeDescendingThenIdDescending)
+            );
 
             //Remember that LINQ does not modify the collections - it creates new ones
 
             //there are also overloaded versions of those methods
             //Accepting IComparer<T> as an input
-            var petsOrderedByType = Data.Pets.OrderBy(
-                pet => pet, new PetByTypeComparer());
+            var petsOrderedByType = Data.Pets.OrderBy(pet => pet, new PetByTypeComparer());
             Printer.Print(petsOrderedByType, nameof(petsOrderedByType));
 
             //we can use the Reverse method to Reverse the order of the collection
@@ -71,32 +72,32 @@ namespace LinqTutorial
             public static void Run()
             {
                 var numbers = new[] { 9, 3, 7, 1, 2 };
-                var orderedNumbers = from number in numbers
-                                     orderby number
-                                     select number;
+                var orderedNumbers = from number in numbers orderby number select number;
                 Printer.Print(orderedNumbers, nameof(orderedNumbers));
 
-                var petsOrderedByName = from pet in Data.Pets
-                                        orderby pet.Name
-                                        select pet;
+                var petsOrderedByName = from pet in Data.Pets orderby pet.Name select pet;
                 Printer.Print(petsOrderedByName, nameof(petsOrderedByName));
 
-                var petsOrderedByIdDescending = from pet in Data.Pets
-                                                orderby pet.Id descending
-                                                select pet;
+                var petsOrderedByIdDescending =
+                    from pet in Data.Pets
+                    orderby pet.Id descending
+                    select pet;
                 Printer.Print(petsOrderedByIdDescending, nameof(petsOrderedByIdDescending));
 
-                var petsOrderedByTypeThenName = from pet in Data.Pets
-                                                orderby pet.PetType, pet.Name
-                                                select pet;
+                var petsOrderedByTypeThenName =
+                    from pet in Data.Pets
+                    orderby pet.PetType, pet.Name
+                    select pet;
                 Printer.Print(petsOrderedByTypeThenName, nameof(petsOrderedByTypeThenName));
 
                 var petsOrderedByTypeDescendingThenIdDescending =
                     from pet in Data.Pets
                     orderby pet.PetType descending, pet.Id descending
                     select pet;
-                Printer.Print(petsOrderedByTypeDescendingThenIdDescending,
-                    nameof(petsOrderedByTypeDescendingThenIdDescending));
+                Printer.Print(
+                    petsOrderedByTypeDescendingThenIdDescending,
+                    nameof(petsOrderedByTypeDescendingThenIdDescending)
+                );
 
                 //No equivalent of Reverse method is present in Query Syntax
             }
