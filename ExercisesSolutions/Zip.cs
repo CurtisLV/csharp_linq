@@ -10,25 +10,28 @@ namespace ExercisesSolutions
         public static IEnumerable<DateTime> BuildDates(
             IEnumerable<int> years,
             IEnumerable<int> months,
-            IEnumerable<int> days)
+            IEnumerable<int> days
+        )
         {
-            return years.Zip(months,
-                (year, month) => new { year, month }).Zip(days,
-                (yearMonth, day) => new DateTime(
-                    yearMonth.year, yearMonth.month, day))
+            return years
+                .Zip(months, (year, month) => new { year, month })
+                .Zip(days, (yearMonth, day) => new DateTime(yearMonth.year, yearMonth.month, day))
                 .OrderBy(date => date);
         }
 
         //Coding Exercise 2
-        public static IEnumerable<string>
-            GetDaysDifferencesBetweenDates(
-                IEnumerable<DateTime> dates)
+        public static IEnumerable<string> GetDaysDifferencesBetweenDates(
+            IEnumerable<DateTime> dates
+        )
         {
-            return dates.Zip(dates.Skip(1),
-                (first, second) => $"It's been " +
-                $"{(second - first).TotalDays} days " +
-                $"between {first.ToString("yyyy-MM-dd")} " +
-                $"and {second.ToString("yyyy-MM-dd")}");
+            return dates.Zip(
+                dates.Skip(1),
+                (first, second) =>
+                    $"It's been "
+                    + $"{(second - first).TotalDays} days "
+                    + $"between {first.ToString("yyyy-MM-dd")} "
+                    + $"and {second.ToString("yyyy-MM-dd")}"
+            );
         }
 
         //Refactoring challenge
