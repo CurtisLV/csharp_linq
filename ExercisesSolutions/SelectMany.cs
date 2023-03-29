@@ -7,48 +7,53 @@ namespace ExercisesSolutions
     public static class SelectMany
     {
         //Coding Exercise 1
-        public static IEnumerable<string> BuildCartesianProduct(
-            HashSet<int> numbers)
+        public static IEnumerable<string> BuildCartesianProduct(HashSet<int> numbers)
         {
             return numbers.SelectMany(
-                number1 => numbers, (number1, number2) =>
-                $"{number1},{number2}");
+                number1 => numbers,
+                (number1, number2) => $"{number1},{number2}"
+            );
         }
 
         //Coding Exercise 2
-        public static IEnumerable<string> BestMarksAndStudents(
-            IEnumerable<Student> students)
+        public static IEnumerable<string> BestMarksAndStudents(IEnumerable<Student> students)
         {
-            return students.SelectMany(student => student.Marks,
-                (student, mark) => new { Student = student, Mark = mark })
+            return students
+                .SelectMany(
+                    student => student.Marks,
+                    (student, mark) => new { Student = student, Mark = mark }
+                )
                 .OrderByDescending(studentMarkPair => studentMarkPair.Mark)
                 .ThenBy(studentMarkPair => studentMarkPair.Student.Name)
                 .Take(5)
-                .Select(studentMarkPair => 
-                    $"{studentMarkPair.Student.Name}: {studentMarkPair.Mark}");
+                .Select(
+                    studentMarkPair => $"{studentMarkPair.Student.Name}: {studentMarkPair.Mark}"
+                );
         }
 
         //Refactoring challenge
         public static Dictionary<string, double> SegmentsLengths_Refactored(
-            IEnumerable<Point> starts, IEnumerable<Point> ends)
+            IEnumerable<Point> starts,
+            IEnumerable<Point> ends
+        )
         {
-            return starts.SelectMany(
-                start => ends, (start, end) =>
-                new {
-                    Start = start,
-                    End = end,
-                    Length = SegmentLength(start, end)
-                })
+            return starts
+                .SelectMany(
+                    start => ends,
+                    (start, end) =>
+                        new { Start = start, End = end, Length = SegmentLength(start, end) }
+                )
                 .ToDictionary(
-                    segmentData =>
-                        $"Start: ({segmentData.Start})," +
-                        $" End: ({segmentData.End})",
-                    segmentData => segmentData.Length);
+                    segmentData => $"Start: ({segmentData.Start})," + $" End: ({segmentData.End})",
+                    segmentData => segmentData.Length
+                );
         }
 
         //do not modify this method
         public static Dictionary<string, double> SegmentsLengths(
-            IEnumerable<Point> starts, IEnumerable<Point> ends)
+            IEnumerable<Point> starts,
+            IEnumerable<Point> ends
+        )
         {
             var result = new Dictionary<string, double>();
             foreach (var startPoint in starts)

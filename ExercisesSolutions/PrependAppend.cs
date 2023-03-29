@@ -12,18 +12,13 @@ namespace ExercisesSolutions
             const string Start = "START";
             const string End = "END";
 
-            var withStart = words.First() == Start ?
-                                         words :
-                                         words.Prepend(Start);
+            var withStart = words.First() == Start ? words : words.Prepend(Start);
 
-            return withStart.Last() == End ?
-                    withStart :
-                    withStart.Append(End);
+            return withStart.Last() == End ? withStart : withStart.Append(End);
         }
 
         //Coding Exercise 2
-        public static IEnumerable<int> RemoveDuplicatesFromStartAndEnd(
-            IEnumerable<int> numbers)
+        public static IEnumerable<int> RemoveDuplicatesFromStartAndEnd(IEnumerable<int> numbers)
         {
             if (numbers.Count() < 2)
             {
@@ -41,7 +36,8 @@ namespace ExercisesSolutions
 
         //Refactoring challenge
         public static IEnumerable<string> TrimSentenceAndChangeEndMarker_Refactored(
-            IEnumerable<string> words)
+            IEnumerable<string> words
+        )
         {
             return words.TakeWhile(word => word != "The end").Append("END");
         }
