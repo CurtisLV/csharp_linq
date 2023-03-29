@@ -27,7 +27,7 @@ namespace LinqTutorial
             //Distinct.Run();
             //PrependAppend.Run();
             //ConcatUnion.Run();
-            //TypeSwitching.Run();           
+            //TypeSwitching.Run();
             //Select.Run();
             //SelectMany.Run();
             //GeneratingNewCollection.Run();
