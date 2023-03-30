@@ -30,10 +30,14 @@ namespace ExercisesTests
 
             var result = OrderByQuerySyntax.OrderFromLongestToShortest(timespans);
 
-            CollectionAssert.AreEqual(expectedResult, result, $"For input " +
-                $"{EnumerableToString(timespans)} the result shall be " +
-                $"{EnumerableToString(expectedResult)} but it was " +
-                $"'{EnumerableToString(result)}'");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For input "
+                    + $"{EnumerableToString(timespans)} the result shall be "
+                    + $"{EnumerableToString(expectedResult)} but it was "
+                    + $"'{EnumerableToString(result)}'"
+            );
         }
 
         [Test]
@@ -55,10 +59,13 @@ namespace ExercisesTests
 
             var result = OrderByQuerySyntax.OrderFromLongestToShortest(timespans);
 
-            CollectionAssert.AreEqual(expectedResult, result, 
-                $"For input {EnumerableToString(timespans)} the result shall be " +
-                $"{EnumerableToString(expectedResult)} but it was " +
-                $"'{EnumerableToString(result)}'");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For input {EnumerableToString(timespans)} the result shall be "
+                    + $"{EnumerableToString(expectedResult)} but it was "
+                    + $"'{EnumerableToString(result)}'"
+            );
         }
     }
 }
