@@ -76,7 +76,10 @@ namespace Exercises
         //TODO implement this method
         public static IEnumerable<string> MakeList_Refactored(IEnumerable<string> words)
         {
-            //
+            return words
+                .Range('A', words.Count)
+                .Select(letter => (char)letter)
+                .Zip(words, (letter, word) => $"{letter}) {word}");
         }
 
         //do not modify this method
