@@ -76,8 +76,7 @@ namespace Exercises
         //TODO implement this method
         public static IEnumerable<string> MakeList_Refactored(IEnumerable<string> words)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //do not modify this method
