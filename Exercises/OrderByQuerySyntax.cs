@@ -25,7 +25,10 @@ namespace Exercises
             IEnumerable<TimeSpan> timeSpans
         )
         {
-            return timeSpans = from timeSpan in timeSpans orderby timeSpan select timeSpan;
+            return timeSpans =
+                from timeSpan in timeSpans
+                orderby timeSpan descending
+                select timeSpan;
         }
 
         //Coding Exercise 2
