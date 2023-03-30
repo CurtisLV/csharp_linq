@@ -25,8 +25,7 @@ namespace Exercises
             IEnumerable<TimeSpan> timeSpans
         )
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Coding Exercise 2
