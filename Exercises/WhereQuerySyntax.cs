@@ -21,8 +21,7 @@ namespace Exercises
             *Monica Smith born in 1954
             *Jake Smith born in 1982
          */
-        public static IEnumerable<Person> GetBornAfter(
-           int year, IEnumerable<Person> people)
+        public static IEnumerable<Person> GetBornAfter(int year, IEnumerable<Person> people)
         {
             //TODO your code goes here
             throw new NotImplementedException();
@@ -30,8 +29,8 @@ namespace Exercises
 
         //Coding Exercise 2
         /*
-        Using LINQ's query syntax implement the GetStudentsWhoNeedToStudyMore method, 
-        which given a collection of students will return those students, 
+        Using LINQ's query syntax implement the GetStudentsWhoNeedToStudyMore method,
+        which given a collection of students will return those students,
         who don't have any marks, or the average of their marks is below 3.
 
         For example, for the following students:
@@ -45,9 +44,9 @@ namespace Exercises
             *Chris Miller with marks {2, 3}
             *Anne Evans with marks {3, 3, 1}
          */
-        public static IEnumerable<Student>
-           GetStudentsWhoNeedToStudyMore(
-               IEnumerable<Student> students)
+        public static IEnumerable<Student> GetStudentsWhoNeedToStudyMore(
+            IEnumerable<Student> students
+        )
         {
             //TODO your code goes here
             throw new NotImplementedException();
@@ -56,8 +55,9 @@ namespace Exercises
         //Refactoring challenge
         //TODO implement this method
         public static IEnumerable<string> FindWordsWithSubstring_Refactored(
-                 string substring,
-                 IEnumerable<string> words)
+            string substring,
+            IEnumerable<string> words
+        )
         {
             //TODO your code goes here
             throw new NotImplementedException();
@@ -65,8 +65,9 @@ namespace Exercises
 
         //do not modify this method
         public static IEnumerable<string> FindWordsWithSubstring(
-                string substring,
-                IEnumerable<string> words)
+            string substring,
+            IEnumerable<string> words
+        )
         {
             var result = new List<string>();
             foreach (var word in words)
@@ -98,9 +99,7 @@ namespace Exercises
 
             public bool Equals(Person other)
             {
-                return
-                       Name == other.Name &&
-                       DateOfBirth == other.DateOfBirth;
+                return Name == other.Name && DateOfBirth == other.DateOfBirth;
             }
         }
 
@@ -116,9 +115,7 @@ namespace Exercises
 
             public bool Equals(Student other)
             {
-                return
-                       Name == other.Name &&
-                       Marks.SequenceEqual(other.Marks);
+                return Name == other.Name && Marks.SequenceEqual(other.Marks);
             }
         }
     }
