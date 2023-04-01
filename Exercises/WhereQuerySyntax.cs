@@ -23,8 +23,7 @@ namespace Exercises
          */
         public static IEnumerable<Person> GetBornAfter(int year, IEnumerable<Person> people)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Coding Exercise 2
