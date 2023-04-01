@@ -55,8 +55,7 @@ namespace Exercises
          */
         public static IEnumerable<Point> OrderPoints(IEnumerable<Point> points)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring challenge
