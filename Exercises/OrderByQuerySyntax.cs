@@ -55,7 +55,7 @@ namespace Exercises
          */
         public static IEnumerable<Point> OrderPoints(IEnumerable<Point> points)
         {
-            //
+            return points = from point in points orderby point.X, point.Y select point;
         }
 
         //Refactoring challenge
