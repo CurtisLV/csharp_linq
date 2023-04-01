@@ -23,7 +23,10 @@ namespace Exercises
          */
         public static IEnumerable<Person> GetBornAfter(int year, IEnumerable<Person> people)
         {
-            //
+            return people =
+                from person in people
+                where (person.DateOfBirth.Year > year)
+                select person;
         }
 
         //Coding Exercise 2
