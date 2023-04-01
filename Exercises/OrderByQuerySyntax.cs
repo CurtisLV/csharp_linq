@@ -64,7 +64,7 @@ namespace Exercises
             IEnumerable<DateTime> dates
         )
         {
-            //
+            return dates = from date in dates orderby date.DayOfWeek select date;
         }
 
         //do not modify this method
