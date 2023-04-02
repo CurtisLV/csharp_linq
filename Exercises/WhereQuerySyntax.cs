@@ -62,7 +62,7 @@ namespace Exercises
             IEnumerable<string> words
         )
         {
-            //
+            return from word in words where word.Contains(substring) select word;
         }
 
         //do not modify this method
