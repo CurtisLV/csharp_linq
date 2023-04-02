@@ -50,7 +50,13 @@ namespace Exercises
             IEnumerable<Student> students
         )
         {
-            //
+            return from student in students
+            where !student.Marks.Any() || student.Marks.Average() < 3
+            select (
+                student.Marks.Any()
+                    ? $"{student.Name} with marks {student.Marks}"
+                    : $"{student.Name} with no marks"
+            );
         }
 
         //Refactoring challenge
