@@ -14,22 +14,26 @@ namespace ExercisesTests
         {
             var students = new List<Student>
             {
-                new Student {Name = "Stacey Brown", Marks = new int[0]},
-                new Student {Name = "Jake Smith", Marks = new int[] {3, 5, 5}},
-                new Student {Name = "Chris Miller", Marks = new int[]{2,3}},
-                new Student {Name = "Anne Evans", Marks = new int[]{3, 3, 1}},
+                new Student { Name = "Stacey Brown", Marks = new int[0] },
+                new Student { Name = "Jake Smith", Marks = new int[] { 3, 5, 5 } },
+                new Student { Name = "Chris Miller", Marks = new int[] { 2, 3 } },
+                new Student { Name = "Anne Evans", Marks = new int[] { 3, 3, 1 } },
             };
 
             var expectedResult = new List<Student>
             {
-                new Student {Name = "Stacey Brown", Marks = new int[0]},
-                new Student {Name = "Chris Miller", Marks = new int[]{2,3}},
-                new Student {Name = "Anne Evans", Marks = new int[]{3, 3, 1}},
+                new Student { Name = "Stacey Brown", Marks = new int[0] },
+                new Student { Name = "Chris Miller", Marks = new int[] { 2, 3 } },
+                new Student { Name = "Anne Evans", Marks = new int[] { 3, 3, 1 } },
             };
 
             var result = WhereQuerySyntax.GetStudentsWhoNeedToStudyMore(students);
 
-            CollectionAssert.AreEqual(expectedResult, result, $"For INPUT {EnumerableToString(students)} the RESULT shall be {EnumerableToString(expectedResult)} but IT WAS '{EnumerableToString(result)}'");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For INPUT {EnumerableToString(students)} the RESULT shall be {EnumerableToString(expectedResult)} but IT WAS '{EnumerableToString(result)}'"
+            );
         }
 
         [Test]
@@ -37,17 +41,19 @@ namespace ExercisesTests
         {
             var students = new List<Student>
             {
-                new Student {Name = "Jake Smith", Marks = new int[] {3, 5}},
-                new Student {Name = "Chris Miller", Marks = new int[]{3,3}},
+                new Student { Name = "Jake Smith", Marks = new int[] { 3, 5 } },
+                new Student { Name = "Chris Miller", Marks = new int[] { 3, 3 } },
             };
 
-            var expectedResult = new List<Student>
-            {
-            };
+            var expectedResult = new List<Student> { };
 
             var result = WhereQuerySyntax.GetStudentsWhoNeedToStudyMore(students);
 
-            CollectionAssert.AreEqual(expectedResult, result, $"For input {EnumerableToString(students)} the result shall be empty but it was '{EnumerableToString(result)}'");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For input {EnumerableToString(students)} the result shall be empty but it was '{EnumerableToString(result)}'"
+            );
         }
     }
 }
