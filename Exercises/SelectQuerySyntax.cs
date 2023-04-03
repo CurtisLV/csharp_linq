@@ -63,7 +63,7 @@ namespace Exercises
         {
             return from hus in houses
             let addressSplit = hus.Address.Split(", ")
-            select addressSplit.Count() == 3 ? addressSplit[1] : addressSplit[0];
+            select addressSplit.Count() == 3 ? addressSplit[1] : hus.Address;
         }
 
         //Refactoring Challenge
