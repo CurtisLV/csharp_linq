@@ -61,8 +61,7 @@ namespace Exercises
          */
         public static IEnumerable<string> GetShortAddresses(IEnumerable<House> houses)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring Challenge
