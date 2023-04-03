@@ -61,7 +61,7 @@ namespace Exercises
          */
         public static IEnumerable<string> GetShortAddresses(IEnumerable<House> houses)
         {
-            //
+            return from hus in houses select hus.Address;
         }
 
         //Refactoring Challenge
