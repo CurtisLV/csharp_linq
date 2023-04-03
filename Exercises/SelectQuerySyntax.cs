@@ -62,7 +62,7 @@ namespace Exercises
         public static IEnumerable<string> GetShortAddresses(IEnumerable<House> houses)
         {
             return from hus in houses
-            let addressSplit = hus.Address.Split(",")
+            let addressSplit = hus.Address.Split(", ")
             select addressSplit.Count() == 3 ? addressSplit[1] : addressSplit[0];
         }
 
