@@ -21,7 +21,9 @@ namespace Exercises
          */
         public static IEnumerable<string> GetAbsoluteValuesInfo(IEnumerable<int> numbers)
         {
-            //
+            return (IEnumerable<string>)(
+                numbers = (IEnumerable<int>)(from num in numbers select $"|{num}|{Math.Abs(num)}")
+            );
         }
 
         //Coding Exercise 2
