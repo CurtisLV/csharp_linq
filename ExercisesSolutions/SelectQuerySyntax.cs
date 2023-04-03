@@ -7,37 +7,30 @@ namespace ExercisesSolutions
     public static class SelectQuerySyntax
     {
         //Coding Exercise 1
-        public static IEnumerable<string>
-            GetAbsoluteValuesInfo(IEnumerable<int> numbers)
+        public static IEnumerable<string> GetAbsoluteValuesInfo(IEnumerable<int> numbers)
         {
-            return from number in numbers
-                   select $"|{number}|={Math.Abs(number)}";
+            return from number in numbers select $"|{number}|={Math.Abs(number)}";
         }
 
         //Coding Exercise 2
         public static IEnumerable<string> GetShortAddresses(IEnumerable<House> houses)
         {
             return from house in houses
-                   let addressSplitByCommas = house.Address.Split(',')
-                   select addressSplitByCommas.Count() == 3 ?
-                   addressSplitByCommas[1].TrimStart(' ') :
-                   house.Address;
+            let addressSplitByCommas = house.Address.Split(',')
+            select addressSplitByCommas.Count() == 3
+                ? addressSplitByCommas[1].TrimStart(' ')
+                : house.Address;
         }
 
         //Refactoring Challenge
-        public static string GetBestStudentInfo_Refactored(
-            IEnumerable<Student> students)
+        public static string GetBestStudentInfo_Refactored(IEnumerable<Student> students)
         {
-            return (from student in students
-                    let maxMark = student.Marks.Any() ?
-                                  student.Marks.Max() :
-                                  0
-                    orderby maxMark descending
-                    select
-                        $"Best mark was earned by " +
-                        $"{student.Name}" +
-                        $" and it is {maxMark}")
-                    .FirstOrDefault();
+            return (
+                from student in students
+                let maxMark = student.Marks.Any() ? student.Marks.Max() : 0
+                orderby maxMark descending
+                select $"Best mark was earned by " + $"{student.Name}" + $" and it is {maxMark}"
+            ).FirstOrDefault();
         }
 
         //do not modify this method
@@ -53,9 +46,7 @@ namespace ExercisesSolutions
             var maxMark = 0;
             foreach (var student in studentsAsList)
             {
-                var studentsMaxMark = student.Marks.Any() ?
-                    student.Marks.Max() :
-                    0;
+                var studentsMaxMark = student.Marks.Any() ? student.Marks.Max() : 0;
                 if (studentsMaxMark > maxMark)
                 {
                     maxMark = studentsMaxMark;
@@ -63,9 +54,9 @@ namespace ExercisesSolutions
                 }
             }
 
-            return $"Best mark was earned by " +
-                   $"{studentWithMaxMark.Name}" +
-                   $" and it is {maxMark}";
+            return $"Best mark was earned by "
+                + $"{studentWithMaxMark.Name}"
+                + $" and it is {maxMark}";
         }
 
         public class House
