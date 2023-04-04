@@ -70,8 +70,7 @@ namespace Exercises
         //TODO implement this method
         public static string GetBestStudentInfo_Refactored(IEnumerable<Student> students)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //do not modify this method
