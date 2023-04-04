@@ -70,7 +70,10 @@ namespace Exercises
         //TODO implement this method
         public static string GetBestStudentInfo_Refactored(IEnumerable<Student> students)
         {
-            //
+            return from student in students
+                   let maxMark = student.Marks.Any() ? student.Marks.Max() : 0
+                   orderby maxMark descending
+                   select $"Best mark was earned by {student.Name} and it is {student.Marks.Max()}"
         }
 
         //do not modify this method
