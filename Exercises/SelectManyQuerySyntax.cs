@@ -75,7 +75,10 @@ namespace Exercises
         //TODO implement this method
         public static IEnumerable<string> GetDivisorsInfo_Refactored(IEnumerable<int> numbers)
         {
-            //
+            return from num in numbers
+            from divisor in GetDivisors(num)
+            orderby num, divisor
+            select $"Number {num} is divisible by {divisor}";
         }
 
         //do not modify this method
