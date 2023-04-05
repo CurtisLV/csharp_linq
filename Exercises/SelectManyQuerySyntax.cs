@@ -32,8 +32,7 @@ namespace Exercises
         */
         public static IEnumerable<string> GetStudentMarksInfo(IEnumerable<Student> students)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Coding Exercise 2
