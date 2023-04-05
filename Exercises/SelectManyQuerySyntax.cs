@@ -33,8 +33,9 @@ namespace Exercises
         public static IEnumerable<string> GetStudentMarksInfo(IEnumerable<Student> students)
         {
             return from student in students
-            orderby student.Name
+            where !student.Marks.Any()
             from mark in student.Marks
+            orderby student.Name
             orderby mark
             select $"{student.Name}: {mark}";
         }
