@@ -65,7 +65,10 @@ namespace Exercises
             IEnumerable<int> numbers2
         )
         {
-            //
+            return from num1 in numbers1
+            from num2 in numbers2
+            where num1 + num2 < 100
+            select new Tuple<int, int>(num1, num2);
         }
 
         //Refactoring challenge
