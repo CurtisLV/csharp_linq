@@ -75,8 +75,7 @@ namespace Exercises
         //TODO implement this method
         public static IEnumerable<string> GetDivisorsInfo_Refactored(IEnumerable<int> numbers)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //do not modify this method
