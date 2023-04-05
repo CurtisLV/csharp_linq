@@ -32,7 +32,11 @@ namespace Exercises
         */
         public static IEnumerable<string> GetStudentMarksInfo(IEnumerable<Student> students)
         {
-            //
+            return from student in students
+            orderby student.Name
+            from mark in student.Marks
+            orderby mark
+            select $"{student.Name}: {mark}";
         }
 
         //Coding Exercise 2
