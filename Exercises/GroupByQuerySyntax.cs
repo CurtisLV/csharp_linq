@@ -20,8 +20,7 @@ namespace Exercises
          */
         public static IEnumerable<string> GroupByFirstDigit(IEnumerable<int> numbers)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Coding Exercise 2
