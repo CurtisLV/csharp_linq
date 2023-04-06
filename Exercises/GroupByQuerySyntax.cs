@@ -20,7 +20,9 @@ namespace Exercises
          */
         public static IEnumerable<string> GroupByFirstDigit(IEnumerable<int> numbers)
         {
-            //
+            return from num in numbers
+                   group num by num.ToString().First()
+         
         }
 
         //Coding Exercise 2
