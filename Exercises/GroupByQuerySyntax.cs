@@ -49,8 +49,7 @@ namespace Exercises
          */
         public static Dictionary<DayOfWeek, DateTime> GroupByDayOfWeek(IEnumerable<DateTime> dates)
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //Refactoring challenge
