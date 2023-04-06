@@ -49,7 +49,10 @@ namespace Exercises
          */
         public static Dictionary<DayOfWeek, DateTime> GroupByDayOfWeek(IEnumerable<DateTime> dates)
         {
-            //
+            return (from date in dates group date by date.DayOfWeek).ToDictionary(
+                grouping => grouping.Key,
+                grouping => grouping.Max()
+            );
         }
 
         //Refactoring challenge
