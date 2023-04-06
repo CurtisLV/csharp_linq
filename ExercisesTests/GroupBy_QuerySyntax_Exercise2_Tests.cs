@@ -12,7 +12,8 @@ namespace ExercisesTests
         [Test]
         public void GroupByDayOfWeekShallWorkCorrectly1()
         {
-            var input = new[] {
+            var input = new[]
+            {
                 new DateTime(2021, 10, 10),
                 new DateTime(2021, 10, 17),
                 new DateTime(2021, 10, 11),
@@ -27,13 +28,18 @@ namespace ExercisesTests
                 [DayOfWeek.Wednesday] = new DateTime(2021, 10, 13)
             };
 
-            CollectionAssert.AreEqual(expectedResult, result, $"For INPUT {EnumerableToString(input)} the RESULT shall be {DictionaryToString(expectedResult)} but it was {DictionaryToString(result)}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For INPUT {EnumerableToString(input)} the RESULT shall be {DictionaryToString(expectedResult)} but it was {DictionaryToString(result)}"
+            );
         }
 
         [Test]
         public void GroupByDayOfWeekShallWorkCorrectly2()
         {
-            var input = new[] {
+            var input = new[]
+            {
                 new DateTime(2021, 10, 10),
                 new DateTime(2021, 10, 17),
                 new DateTime(2021, 10, 24),
@@ -48,7 +54,11 @@ namespace ExercisesTests
                 [DayOfWeek.Wednesday] = new DateTime(2021, 10, 13)
             };
 
-            CollectionAssert.AreEqual(expectedResult, result, $"For INPUT {EnumerableToString(input)} the RESULT shall be {DictionaryToString(expectedResult)} but it was {DictionaryToString(result)}");
+            CollectionAssert.AreEqual(
+                expectedResult,
+                result,
+                $"For INPUT {EnumerableToString(input)} the RESULT shall be {DictionaryToString(expectedResult)} but it was {DictionaryToString(result)}"
+            );
         }
     }
 }
