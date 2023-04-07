@@ -61,10 +61,11 @@ namespace Exercises
             IEnumerable<House> houses
         )
         {
-            var ownerHouses = from house in houses
-                              group house by house.OwnerId into housesByOwner
-                              where housesByOwner.Count > 1 && housesByOwner.Key != null
-                              select $""
+            var ownerHouses =
+                from house in houses
+                group house by house.OwnerId into housesByOwner
+                where housesByOwner.Count > 1 && housesByOwner.Key != null
+                select $"Owner with ID {housesByOwner.Key} owns houses {housesByOwner}";
         }
 
         //do not modify this method
