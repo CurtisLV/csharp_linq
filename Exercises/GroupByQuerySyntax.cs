@@ -63,7 +63,7 @@ namespace Exercises
         {
             return from house in houses
             group house by house.OwnerId into housesByOwner
-            where housesByOwner.Count > 1
+            where housesByOwner.Count() > 1
             select $"Owner with ID {housesByOwner.Key} owns houses {housesByOwner}";
         }
 
