@@ -61,8 +61,7 @@ namespace Exercises
             IEnumerable<House> houses
         )
         {
-            //TODO your code goes here
-            throw new NotImplementedException();
+            //
         }
 
         //do not modify this method
