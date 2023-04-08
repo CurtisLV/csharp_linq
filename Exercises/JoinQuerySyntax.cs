@@ -43,6 +43,7 @@ namespace Exercises
         {
             return from student in students
             join house in houses on student.HouseId equals house.Id
+            orderby house.Name, student.Name
             select $"{student.Name} from house {house.Name}";
         }
 
