@@ -41,8 +41,9 @@ namespace Exercises
             IEnumerable<HogwartsHouse> houses
         )
         {
-            return from house in houses
-
+            return from student in students
+            join house in houses on student.HouseId equals house.Id
+            select $"{student.Name} from house {house.Name}";
         }
 
         //Coding Exercise 2
