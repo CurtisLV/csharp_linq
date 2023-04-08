@@ -90,7 +90,8 @@ namespace Exercises
             join student in students on house.Id equals student.HouseId into houseStudents
             from houseStudent in houseStudents.DefaultIfEmpty()
             let studentInfo = houseStudent != null ? houseStudent.Name : "no students"
-            select $"House name: {house}, student: {houseStudent.Name}";
+            orderby house.Name, studentInfo
+            select $"House name: {house.Name}, student: {studentInfo}";
         }
 
         //Refactoring challenge
