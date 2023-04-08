@@ -8,52 +8,50 @@ namespace ExercisesSolutions
     {
         //Coding Exercise 1
         public static IEnumerable<string> GetStudentsInfo(
-           IEnumerable<HogwartsStudent> students,
-           IEnumerable<HogwartsHouse> houses)
+            IEnumerable<HogwartsStudent> students,
+            IEnumerable<HogwartsHouse> houses
+        )
         {
             return from student in students
-                   join house in houses on student.HouseId equals house.Id
-                   orderby house.Name, student.Name
-                   select $"{student.Name} from house {house.Name}";
+            join house in houses on student.HouseId equals house.Id
+            orderby house.Name, student.Name
+            select $"{student.Name} from house {house.Name}";
         }
 
         //Coding Exercise 2
         public static IEnumerable<string> GetHousesAndStudentsInfo(
-                IEnumerable<HogwartsStudent> students,
-                IEnumerable<HogwartsHouse> houses)
+            IEnumerable<HogwartsStudent> students,
+            IEnumerable<HogwartsHouse> houses
+        )
         {
             return from house in houses
-                   join student in students
-                            on house.Id equals student.HouseId into housesStudents
-                   from houseStudent in housesStudents.DefaultIfEmpty()
-                   let studentInfo = houseStudent == null ? "no students" : houseStudent.Name
-                   orderby house.Name, studentInfo
-                   select $"House name: {house.Name}, student: {studentInfo}";
+            join student in students on house.Id equals student.HouseId into housesStudents
+            from houseStudent in housesStudents.DefaultIfEmpty()
+            let studentInfo = houseStudent == null ? "no students" : houseStudent.Name
+            orderby house.Name, studentInfo
+            select $"House name: {house.Name}, student: {studentInfo}";
         }
 
         //Refactoring challenge
-        public static IEnumerable<string>
-            GetSubjectsOfStudents_Refactored(
-                IEnumerable<HogwartsStudent> students,
-                IEnumerable<HogwartsSubject> subjects,
-                IEnumerable<HogwartsHouse> houses)
+        public static IEnumerable<string> GetSubjectsOfStudents_Refactored(
+            IEnumerable<HogwartsStudent> students,
+            IEnumerable<HogwartsSubject> subjects,
+            IEnumerable<HogwartsHouse> houses
+        )
         {
             return from student in students
-                   from subjectIds in student.SubjectsIds
-                   join house in houses
-                        on student.HouseId equals house.Id
-                   join subject in subjects
-                        on subjectIds equals subject.Id
-                   select $"{student.Name} from house " +
-                   $"{house.Name} studies {subject.Name}";
+            from subjectIds in student.SubjectsIds
+            join house in houses on student.HouseId equals house.Id
+            join subject in subjects on subjectIds equals subject.Id
+            select $"{student.Name} from house " + $"{house.Name} studies {subject.Name}";
         }
 
         //do not modify this method
-        public static IEnumerable<string>
-            GetSubjectsOfStudents(
-                IEnumerable<HogwartsStudent> students,
-                IEnumerable<HogwartsSubject> subjects,
-                IEnumerable<HogwartsHouse> houses)
+        public static IEnumerable<string> GetSubjectsOfStudents(
+            IEnumerable<HogwartsStudent> students,
+            IEnumerable<HogwartsSubject> subjects,
+            IEnumerable<HogwartsHouse> houses
+        )
         {
             var result = new List<string>();
             foreach (var student in students)
@@ -73,9 +71,11 @@ namespace ExercisesSolutions
                     {
                         if (subject.Id == subjectId)
                         {
-                            result.Add($"{student.Name} from house" +
-                                $" {studentHouse} " +
-                                $"studies {subject.Name}");
+                            result.Add(
+                                $"{student.Name} from house"
+                                    + $" {studentHouse} "
+                                    + $"studies {subject.Name}"
+                            );
                         }
                     }
                 }
