@@ -86,7 +86,11 @@ namespace Exercises
             IEnumerable<HogwartsHouse> houses
         )
         {
-            //
+            return from house in houses
+                   join student in students
+                   on house.Id equals student.HouseId into houseStudents
+                   from combo in houseStudents
+                   let houseName = combo.HouseId != 0 ? combo. : "no students" 
         }
 
         //Refactoring challenge
