@@ -41,7 +41,8 @@ namespace Exercises
             IEnumerable<HogwartsHouse> houses
         )
         {
-            //
+            return from house in houses
+
         }
 
         //Coding Exercise 2
