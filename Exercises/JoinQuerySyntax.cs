@@ -8,10 +8,10 @@ namespace Exercises
     {
         //Coding Exercise 1
         /*
-        Using LINQ's query syntax, implement the GetStudentsInfo method, 
-        which given a collection of HogwartsStudents and HogwartsHouses will return 
-        a collection of strings with information about which house the given student 
-        is from. The result shall be ordered by the house name, 
+        Using LINQ's query syntax, implement the GetStudentsInfo method,
+        which given a collection of HogwartsStudents and HogwartsHouses will return
+        a collection of strings with information about which house the given student
+        is from. The result shall be ordered by the house name,
         and then by the student name.
 
         For example, for the following houses:
@@ -20,7 +20,7 @@ namespace Exercises
             *Id: 3, Name: Ravenclaw
             *Id: 4, Name: Slytherin
         
-        ...and the following students:        
+        ...and the following students:
             *HouseId: 1, Name: Harry
             *HouseId: 4, Name: Draco
             *HouseId: 2, Name: Cedric
@@ -37,8 +37,9 @@ namespace Exercises
             "Draco from house Slytherin"
          */
         public static IEnumerable<string> GetStudentsInfo(
-           IEnumerable<HogwartsStudent> students,
-           IEnumerable<HogwartsHouse> houses)
+            IEnumerable<HogwartsStudent> students,
+            IEnumerable<HogwartsHouse> houses
+        )
         {
             //TODO your code goes here
             throw new NotImplementedException();
@@ -46,11 +47,11 @@ namespace Exercises
 
         //Coding Exercise 2
         /*
-        Using LINQ's query syntax, implement the GetHousesAndStudentsInfo method, 
-        which given a collection of HogwartsStudents and HogwartsHouses will return 
-        a collection of strings with information about which house the given student 
-        is from. This method shall perform a left join, which means, 
-        even if there is a house with no students, it shall still be listed in 
+        Using LINQ's query syntax, implement the GetHousesAndStudentsInfo method,
+        which given a collection of HogwartsStudents and HogwartsHouses will return
+        a collection of strings with information about which house the given student
+        is from. This method shall perform a left join, which means,
+        even if there is a house with no students, it shall still be listed in
         the collection, with special "no students" information.
 
         The result shall be ordered by the house name, and then by the student name.
@@ -79,8 +80,9 @@ namespace Exercises
             "House name: Slytherin, student: no students"
          */
         public static IEnumerable<string> GetHousesAndStudentsInfo(
-                IEnumerable<HogwartsStudent> students,
-                IEnumerable<HogwartsHouse> houses)
+            IEnumerable<HogwartsStudent> students,
+            IEnumerable<HogwartsHouse> houses
+        )
         {
             //TODO your code goes here
             throw new NotImplementedException();
@@ -88,22 +90,22 @@ namespace Exercises
 
         //Refactoring challenge
         //TODO implement this method
-        public static IEnumerable<string>
-            GetSubjectsOfStudents_Refactored(
-                IEnumerable<HogwartsStudent> students,
-                IEnumerable<HogwartsSubject> subjects,
-                IEnumerable<HogwartsHouse> houses)
+        public static IEnumerable<string> GetSubjectsOfStudents_Refactored(
+            IEnumerable<HogwartsStudent> students,
+            IEnumerable<HogwartsSubject> subjects,
+            IEnumerable<HogwartsHouse> houses
+        )
         {
             //TODO your code goes here
             throw new NotImplementedException();
         }
 
         //do not modify this method
-        public static IEnumerable<string>
-            GetSubjectsOfStudents(
-                IEnumerable<HogwartsStudent> students,
-                IEnumerable<HogwartsSubject> subjects,
-                IEnumerable<HogwartsHouse> houses)
+        public static IEnumerable<string> GetSubjectsOfStudents(
+            IEnumerable<HogwartsStudent> students,
+            IEnumerable<HogwartsSubject> subjects,
+            IEnumerable<HogwartsHouse> houses
+        )
         {
             var result = new List<string>();
             foreach (var student in students)
@@ -123,9 +125,11 @@ namespace Exercises
                     {
                         if (subject.Id == subjectId)
                         {
-                            result.Add($"{student.Name} from house" +
-                                $" {studentHouse} " +
-                                $"studies {subject.Name}");
+                            result.Add(
+                                $"{student.Name} from house"
+                                    + $" {studentHouse} "
+                                    + $"studies {subject.Name}"
+                            );
                         }
                     }
                 }
