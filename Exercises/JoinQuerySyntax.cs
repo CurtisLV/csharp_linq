@@ -88,9 +88,9 @@ namespace Exercises
         {
             return from house in houses
             join student in students on house.Id equals student.HouseId into houseStudents
-            from combo in houseStudents.DefaultIfEmpty()
-            let houseName = combo.HouseId != 0 ? combo.Name : "no students"
-            select $"House name: {house}, student: {combo.Name}";
+            from houseStudent in houseStudents.DefaultIfEmpty()
+            let studentInfo = houseStudent != null ? houseStudent.Name : "no students"
+            select $"House name: {house}, student: {houseStudent.Name}";
         }
 
         //Refactoring challenge
