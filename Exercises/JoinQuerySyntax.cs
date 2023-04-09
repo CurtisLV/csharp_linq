@@ -104,6 +104,8 @@ namespace Exercises
         {
             return from student in students
                    join subject in subjects on student.SubjectsIds equals subject.Id
+                   join house in houses on student.HouseId equals house.Id
+                   
         }
 
         //do not modify this method
