@@ -102,7 +102,8 @@ namespace Exercises
             IEnumerable<HogwartsHouse> houses
         )
         {
-            //
+            return from student in students
+                   join subject in subjects on student.SubjectsIds equals subject.Id
         }
 
         //do not modify this method
