@@ -21,9 +21,9 @@ namespace Exercises
         public static IEnumerable<string> GroupByFirstDigit(IEnumerable<int> numbers)
         {
             return from num in numbers
-            group num by num.ToString().First() into groupsByFirstDigit
-            let groupedNumbers = String.Join(",", from num in groupsByFirstDigit select num)
-            select $"FirstDigit: {groupsByFirstDigit.Key}, numbers: {groupedNumbers}";
+                group num by num.ToString().First() into groupsByFirstDigit
+                let groupedNumbers = String.Join(",", from num in groupsByFirstDigit select num)
+                select $"FirstDigit: {groupsByFirstDigit.Key}, numbers: {groupedNumbers}";
         }
 
         //Coding Exercise 2
@@ -62,9 +62,9 @@ namespace Exercises
         )
         {
             return from house in houses
-            group house by house.OwnerId into housesByOwner
-            where housesByOwner.Count() > 1
-            select $"Owner with ID {housesByOwner.Key} owns houses: {string.Join(", ", housesByOwner)}";
+                group house by house.OwnerId into housesByOwner
+                where housesByOwner.Count() > 1
+                select $"Owner with ID {housesByOwner.Key} owns houses: {string.Join(", ", housesByOwner)}";
         }
 
         //do not modify this method
