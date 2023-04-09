@@ -103,12 +103,10 @@ namespace Exercises
         )
         {
             return from student in students
-                   from subjectIds in student.SubjectsIds
-                   join subject in subjects on student.SubjectsIds equals subjectIds
-                   join house in houses on student.HouseId equals house.Id
-                   
-                   
-                   
+            from subjectIds in student.SubjectsIds
+            join house in houses on student.HouseId equals house.Id
+            join subject in subjects on student.SubjectsIds equals subject.Id
+            select $"";
         }
 
         //do not modify this method
