@@ -105,7 +105,7 @@ namespace Exercises
             return from student in students
             from subjectIds in student.SubjectsIds
             join house in houses on student.HouseId equals house.Id
-            join subject in subjects on student.SubjectsIds equals subject.Id
+            join subject in subjects on subjectIds equals subject.Id
             select $"{student.Name} from house {house.Name} studies {subject.Name}";
         }
 
