@@ -103,8 +103,11 @@ namespace Exercises
         )
         {
             return from student in students
-                   join subject in subjects on student.SubjectsIds equals subject.Id
+                   from subjectIds in student.SubjectsIds
+                   join subject in subjects on student.SubjectsIds equals subjectIds
                    join house in houses on student.HouseId equals house.Id
+                   
+                   
                    
         }
 
