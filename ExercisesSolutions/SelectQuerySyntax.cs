@@ -16,10 +16,10 @@ namespace ExercisesSolutions
         public static IEnumerable<string> GetShortAddresses(IEnumerable<House> houses)
         {
             return from house in houses
-            let addressSplitByCommas = house.Address.Split(',')
-            select addressSplitByCommas.Count() == 3
-                ? addressSplitByCommas[1].TrimStart(' ')
-                : house.Address;
+                let addressSplitByCommas = house.Address.Split(',')
+                select addressSplitByCommas.Count() == 3
+                    ? addressSplitByCommas[1].TrimStart(' ')
+                    : house.Address;
         }
 
         //Refactoring Challenge
