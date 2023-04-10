@@ -51,8 +51,8 @@ namespace Exercises
         )
         {
             return from student in students
-            where !student.Marks.Any() || student.Marks.Average() < 3
-            select student;
+                where !student.Marks.Any() || student.Marks.Average() < 3
+                select student;
         }
 
         //Refactoring challenge
