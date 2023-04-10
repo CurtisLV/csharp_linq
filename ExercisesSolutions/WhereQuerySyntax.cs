@@ -7,41 +7,35 @@ namespace ExercisesSolutions
     public static class WhereQuerySyntax
     {
         //Coding Exercise 1
-        public static IEnumerable<Person> GetBornAfter(
-           int year, IEnumerable<Person> people)
+        public static IEnumerable<Person> GetBornAfter(int year, IEnumerable<Person> people)
         {
-            return from person in people
-                   where person.DateOfBirth.Year > year
-                   select person;
+            return from person in people where person.DateOfBirth.Year > year select person;
         }
 
         //Coding Exercise 2
-        public static IEnumerable<Student>
-           GetStudentsWhoNeedToStudyMore(
-               IEnumerable<Student> students)
+        public static IEnumerable<Student> GetStudentsWhoNeedToStudyMore(
+            IEnumerable<Student> students
+        )
         {
             return from student in students
-                   where
-                    !student.Marks.Any() ||
-                    student.Marks.Average() < 3
-                   select student;
+                where !student.Marks.Any() || student.Marks.Average() < 3
+                select student;
         }
 
         //Refactoring challenge
         public static IEnumerable<string> FindWordsWithSubstring_Refactored(
-                 string substring,
-                 IEnumerable<string> words)
+            string substring,
+            IEnumerable<string> words
+        )
         {
-            return from word in words
-                   where word.Contains(substring)
-                   orderby word
-                   select word;
+            return from word in words where word.Contains(substring) orderby word select word;
         }
 
         //do not modify this method
         public static IEnumerable<string> FindWordsWithSubstring(
-                string substring,
-                IEnumerable<string> words)
+            string substring,
+            IEnumerable<string> words
+        )
         {
             var result = new List<string>();
             foreach (var word in words)
@@ -73,9 +67,7 @@ namespace ExercisesSolutions
 
             public bool Equals(Person other)
             {
-                return
-                       Name == other.Name &&
-                       DateOfBirth == other.DateOfBirth;
+                return Name == other.Name && DateOfBirth == other.DateOfBirth;
             }
         }
 
@@ -91,9 +83,7 @@ namespace ExercisesSolutions
 
             public bool Equals(Student other)
             {
-                return
-                       Name == other.Name &&
-                       Marks.SequenceEqual(other.Marks);
+                return Name == other.Name && Marks.SequenceEqual(other.Marks);
             }
         }
     }
