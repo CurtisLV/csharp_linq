@@ -10,10 +10,10 @@ namespace ExercisesSolutions
         public static IEnumerable<string> GetStudentMarksInfo(IEnumerable<Student> students)
         {
             return from student in students
-            where student.Marks != null
-            from mark in student.Marks
-            orderby student.Name, mark
-            select $"{student.Name}: {mark}";
+                where student.Marks != null
+                from mark in student.Marks
+                orderby student.Name, mark
+                select $"{student.Name}: {mark}";
         }
 
         //Coding Exercise 2
@@ -23,18 +23,18 @@ namespace ExercisesSolutions
         )
         {
             return from number1 in numbers1
-            from number2 in numbers2
-            where number1 + number2 < 100
-            select new Tuple<int, int>(number1, number2);
+                from number2 in numbers2
+                where number1 + number2 < 100
+                select new Tuple<int, int>(number1, number2);
         }
 
         //Refactoring challenge
         public static IEnumerable<string> GetDivisorsInfo_Refactored(IEnumerable<int> numbers)
         {
             return from number in numbers
-            from divisor in GetDivisors(number)
-            orderby number, divisor
-            select $"Number {number} is " + $"divisible by {divisor}";
+                from divisor in GetDivisors(number)
+                orderby number, divisor
+                select $"Number {number} is " + $"divisible by {divisor}";
         }
 
         //do not modify this method
@@ -58,8 +58,8 @@ namespace ExercisesSolutions
         private static IEnumerable<int> GetDivisors(int number)
         {
             return from potentialDivisor in Enumerable.Range(1, number)
-            where number % potentialDivisor == 0
-            select potentialDivisor;
+                where number % potentialDivisor == 0
+                select potentialDivisor;
         }
 
         public class Student
