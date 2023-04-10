@@ -14,7 +14,7 @@ namespace LinqTutorial.MethodSyntax
 
             //MaxBy
 
-            //before .NET 6 if we wanted to, for example, find the heaviest Pet, 
+            //before .NET 6 if we wanted to, for example, find the heaviest Pet,
             //we had to do this
 
             var heaviestPetBeforeNet6 = Data.Pets.OrderBy(pet => pet.Weight).Last();
@@ -30,8 +30,8 @@ namespace LinqTutorial.MethodSyntax
 
             //DistinctBy
             //Returns distinct elements from a sequence by some properties.
-            //let's say we have a collection of People, and people's Id 
-            //is identifying them. Unfortunately, our data quality is low, 
+            //let's say we have a collection of People, and people's Id
+            //is identifying them. Unfortunately, our data quality is low,
             //and we have some duplicates. With DistinctBy, we can
             //select people without entries duplicated by Id. The second and next
             //entries with duplicated Id will be discarded
@@ -44,8 +44,7 @@ namespace LinqTutorial.MethodSyntax
                 new Person(3, "Peter", 2000),
             };
 
-            var peopleNoDuplicatesById = peopleWithDuplicatesById.DistinctBy(
-                person => person.Id);
+            var peopleNoDuplicatesById = peopleWithDuplicatesById.DistinctBy(person => person.Id);
             Printer.Print(peopleNoDuplicatesById, nameof(peopleNoDuplicatesById));
 
             //Chunk
@@ -62,20 +61,28 @@ namespace LinqTutorial.MethodSyntax
 
             //before .NET 6 Zip could have combined at most 2 collections:
             var years = new[] { 2000, 2001, 2002 };
-            var months = new [] { 9, 10, 11 };
-            var days = new [] { 20, 21, 22 };
+            var months = new[] { 9, 10, 11 };
+            var days = new[] { 20, 21, 22 };
 
-            var zippedBeforeNet6 = years.Zip(months)
+            var zippedBeforeNet6 = years
+                .Zip(months)
                 .Select(yearMonth => $"{yearMonth.First}/{yearMonth.Second}");
 
             //to Zip 3 collections, we needed to use Zip twice
-            var allZippedBeforeNet6 = years.Zip(months).Zip(days)
-                .Select(yearMonthDay => 
-                $"{yearMonthDay.First.First}/{yearMonthDay.First.Second}/{yearMonthDay.Second}");
+            var allZippedBeforeNet6 = years
+                .Zip(months)
+                .Zip(days)
+                .Select(
+                    yearMonthDay =>
+                        $"{yearMonthDay.First.First}/{yearMonthDay.First.Second}/{yearMonthDay.Second}"
+                );
 
-            var allZipped = years.Zip(months, days)
-                .Select(yearMonthDay =>
-                $"{yearMonthDay.First}/{yearMonthDay.Second}/{yearMonthDay.Third}");
+            var allZipped = years
+                .Zip(months, days)
+                .Select(
+                    yearMonthDay =>
+                        $"{yearMonthDay.First}/{yearMonthDay.Second}/{yearMonthDay.Third}"
+                );
 
             Printer.Print(allZipped, nameof(allZipped));
 
@@ -91,7 +98,7 @@ namespace LinqTutorial.MethodSyntax
             Printer.Print(thirdFromEnd, nameof(thirdFromEnd));
 
             //range operator
-            //before .NET 6 if we wanted, for example, to take elements between 
+            //before .NET 6 if we wanted, for example, to take elements between
             //index 2 and 6 from a collection, we needed to do this:
             var secondToSixthBeforeNet6 = numbers.Skip(2).Take(4);
             Printer.Print(secondToSixthBeforeNet6, nameof(secondToSixthBeforeNet6));
@@ -123,16 +130,14 @@ namespace LinqTutorial.MethodSyntax
             //regular Count will enumerate collection, and if this collection
             //comes, for example, from a database, it can take long time
 
-            IEnumerable<Pet> pets1 =
-            new[]
+            IEnumerable<Pet> pets1 = new[]
             {
                 new Pet(1, "Hannibal", PetType.Fish, 1.1f),
                 new Pet(2, "Anthony", PetType.Cat, 2f),
                 new Pet(3, "Ed", PetType.Cat, 0.7f),
             };
 
-            IEnumerable<Pet> pets2 =
-            new[]
+            IEnumerable<Pet> pets2 = new[]
             {
                 new Pet(6, "Lucky", PetType.Dog, 5f),
                 new Pet(7, "Storm", PetType.Cat, 0.9f),
@@ -141,7 +146,7 @@ namespace LinqTutorial.MethodSyntax
             var count = pets1.Concat(pets2).Count();
 
             //for such usecases we can use TryGetNonEnumeratedCount
-            if(numbers.TryGetNonEnumeratedCount(out int safeCount))
+            if (numbers.TryGetNonEnumeratedCount(out int safeCount))
             {
                 Console.WriteLine("Count is: " + safeCount);
             }
