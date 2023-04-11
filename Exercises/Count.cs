@@ -12,7 +12,6 @@ namespace Exercises
         //which will count all words longer than 10 letters.
         public static int CountAllLongWords(IEnumerable<string> words)
         {
-            //TODO your code goes here
             return words.Count(word => word.Length > 10);
         }
 
@@ -31,7 +30,6 @@ namespace Exercises
          */
         public static bool AreThereFewerOddThanEvenNumbers(IEnumerable<int> numbers)
         {
-            //TODO your code goes here
             var even = numbers.Count(num => num % 2 == 0);
             var odd = numbers.Count(num => num % 2 != 0);
 
@@ -45,7 +43,6 @@ namespace Exercises
             int maxLength
         )
         {
-            //TODO your code goes here
             return numberSequences.Any(num => num.Count() > maxLength);
         }
 
