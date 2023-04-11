@@ -41,7 +41,12 @@ namespace ExercisesSolutions
                 .SelectMany(
                     start => ends,
                     (start, end) =>
-                        new { Start = start, End = end, Length = SegmentLength(start, end) }
+                        new
+                        {
+                            Start = start,
+                            End = end,
+                            Length = SegmentLength(start, end)
+                        }
                 )
                 .ToDictionary(
                     segmentData => $"Start: ({segmentData.Start})," + $" End: ({segmentData.End})",
