@@ -19,11 +19,9 @@ namespace ExercisesSolutions
         }
 
         //Refactoring challenge
-        public static int CountOfDogsOfTheOwnerWithMostDogs_Refactored(
-            IEnumerable<Person> owners)
+        public static int CountOfDogsOfTheOwnerWithMostDogs_Refactored(IEnumerable<Person> owners)
         {
-            return owners.Max(owner => owner.Pets.Count(
-                pet => pet.PetType == PetType.Dog));
+            return owners.Max(owner => owner.Pets.Count(pet => pet.PetType == PetType.Dog));
         }
 
         //do not modify this method
