@@ -13,54 +13,66 @@ namespace ExercisesTests
         {
             var words = new List<string> { };
 
-            Assert.True(All.AreAllWordsOfTheSameLength_Refactored(words),
-                $"The test failed because the result was False, " +
-                $"and for an empty input List it should be True");
+            Assert.True(
+                All.AreAllWordsOfTheSameLength_Refactored(words),
+                $"The test failed because the result was False, "
+                    + $"and for an empty input List it should be True"
+            );
         }
 
         [Test]
         public void WordsOfTheSameLengthEmptyList()
         {
             var words = new List<string> { };
-            Assert.True(All.AreAllWordsOfTheSameLength(words),
-                $"The test failed because the result was False, " +
-                $"and for empty input List it should be True");
+            Assert.True(
+                All.AreAllWordsOfTheSameLength(words),
+                $"The test failed because the result was False, "
+                    + $"and for empty input List it should be True"
+            );
         }
 
         [Test]
         public void WordsOfTheSameLength_Refactored()
         {
             var words = new List<string> { "bee", "fox", "jay" };
-            Assert.True(All.AreAllWordsOfTheSameLength_Refactored(words),
-                $"The test failed because the result was False, " +
-                $"and all those words are of the same length: {EnumerableToString(words)}");
+            Assert.True(
+                All.AreAllWordsOfTheSameLength_Refactored(words),
+                $"The test failed because the result was False, "
+                    + $"and all those words are of the same length: {EnumerableToString(words)}"
+            );
         }
 
         [Test]
         public void WordsOfTheSameLength()
         {
             var words = new List<string> { "bee", "fox", "jay" };
-            Assert.True(All.AreAllWordsOfTheSameLength(words),
-                $"The test failed because the result was False, " +
-                $"and all those words are of the same length: {EnumerableToString(words)}");
+            Assert.True(
+                All.AreAllWordsOfTheSameLength(words),
+                $"The test failed because the result was False, "
+                    + $"and all those words are of the same length: {EnumerableToString(words)}"
+            );
         }
 
         [Test]
         public void WordsOfDifferentLengths_Refactored()
         {
             var words = new List<string> { "bee", "whale", "jay" };
-            Assert.False(All.AreAllWordsOfTheSameLength_Refactored(words),
-                $"The test failed because the result was True, " +
-                $"and those words are not of the same length: {EnumerableToString(words)}");
+            Assert.False(
+                All.AreAllWordsOfTheSameLength_Refactored(words),
+                $"The test failed because the result was True, "
+                    + $"and those words are not of the same length: {EnumerableToString(words)}"
+            );
         }
 
         [Test]
         public void WordsOfDifferentLengths()
         {
             var words = new List<string> { "bee", "whale", "jay" };
-            Assert.False(All.AreAllWordsOfTheSameLength(words),
-                $"The test failed because the result was True, " +
-                $"and those words are not of the same length: {EnumerableToString(words)}");
+            Assert.False(
+                All.AreAllWordsOfTheSameLength(words),
+                $"The test failed because the result was True, "
+                    + $"and those words are not of the same length: {EnumerableToString(words)}"
+            );
         }
     }
 }
