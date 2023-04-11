@@ -20,10 +20,12 @@ namespace ExercisesTests
                 new Pet(6, "Lucky", PetType.Dog, 5f)
             };
 
-            Assert.True(All.AreAllPetsOfTheSameType(pets),
-                $"The test failed because the result of " +
-                $"the AreAllPetsOfTheSameType was False, " +
-                $"and all those pets are of the same type: {EnumerableToString(pets)}");
+            Assert.True(
+                All.AreAllPetsOfTheSameType(pets),
+                $"The test failed because the result of "
+                    + $"the AreAllPetsOfTheSameType was False, "
+                    + $"and all those pets are of the same type: {EnumerableToString(pets)}"
+            );
         }
 
         [Test]
@@ -36,10 +38,12 @@ namespace ExercisesTests
                 new Pet(5, "Rex", PetType.Dog, 40f)
             };
 
-            Assert.False(All.AreAllPetsOfTheSameType(pets),
-                $"The test failed because the result of " +
-                $"the AreAllPetsOfTheSameType was True, " +
-                $"and those pets are not of the same type: {EnumerableToString(pets)}");
+            Assert.False(
+                All.AreAllPetsOfTheSameType(pets),
+                $"The test failed because the result of "
+                    + $"the AreAllPetsOfTheSameType was True, "
+                    + $"and those pets are not of the same type: {EnumerableToString(pets)}"
+            );
         }
     }
 }
