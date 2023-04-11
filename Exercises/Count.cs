@@ -18,8 +18,8 @@ namespace Exercises
 
         //Coding Exercise 2
         /*
-         Using LINQ, implement the AreThereFewerOddThanEvenNumbers method, 
-         which will check if in the collection of numbers 
+         Using LINQ, implement the AreThereFewerOddThanEvenNumbers method,
+         which will check if in the collection of numbers
          there are fewer odd than even numbers.
          For example:
          {2,3,4,5,6} -> will return true, because there are 3 even numbers (2,4,6) and 2 odd numbers (3,5)
@@ -40,14 +40,20 @@ namespace Exercises
 
         //Refactoring challenge
         //TODO implement this method
-        public static bool IsAnySequenceTooLong_Refactored(IEnumerable<IEnumerable<int>> numberSequences, int maxLength)
+        public static bool IsAnySequenceTooLong_Refactored(
+            IEnumerable<IEnumerable<int>> numberSequences,
+            int maxLength
+        )
         {
             //TODO your code goes here
             return numberSequences.Any(num => num.Count() > maxLength);
         }
 
         //do not modify this method
-        public static bool IsAnySequenceTooLong(IEnumerable<IEnumerable<int>> numberSequences, int maxLength)
+        public static bool IsAnySequenceTooLong(
+            IEnumerable<IEnumerable<int>> numberSequences,
+            int maxLength
+        )
         {
             foreach (var numberSequence in numberSequences)
             {
