@@ -14,7 +14,10 @@ namespace ExercisesTests
             var wordsAsString = string.Join(", ", words);
             var bannedWordsAsString = string.Join(", ", bannedWords);
             var result = Contains.ContainsBannedWords(words, bannedWords);
-            Assert.True(result, $"The test failed because the method result was False, yet words \"{wordsAsString}\" contain one or more of the banned words ({bannedWordsAsString})");
+            Assert.True(
+                result,
+                $"The test failed because the method result was False, yet words \"{wordsAsString}\" contain one or more of the banned words ({bannedWordsAsString})"
+            );
         }
 
         [Test]
@@ -25,7 +28,10 @@ namespace ExercisesTests
             var wordsAsString = string.Join(", ", words);
             var bannedWordsAsString = string.Join(", ", bannedWords);
             var result = Contains.ContainsBannedWords_Refactored(words, bannedWords);
-            Assert.True(result, $"The test failed because the method result was False, yet words \"{wordsAsString}\" contain one or more of the banned words ({bannedWordsAsString})");
+            Assert.True(
+                result,
+                $"The test failed because the method result was False, yet words \"{wordsAsString}\" contain one or more of the banned words ({bannedWordsAsString})"
+            );
         }
 
         [Test]
@@ -36,7 +42,10 @@ namespace ExercisesTests
             var wordsAsString = string.Join(", ", words);
             var bannedWordsAsString = string.Join(", ", bannedWords);
             var result = Contains.ContainsBannedWords(words, bannedWords);
-            Assert.False(result, $"The test failed because the method result was True, yet words \"{wordsAsString}\" do not contain any of the banned words ({bannedWordsAsString})");
+            Assert.False(
+                result,
+                $"The test failed because the method result was True, yet words \"{wordsAsString}\" do not contain any of the banned words ({bannedWordsAsString})"
+            );
         }
 
         [Test]
@@ -47,7 +56,10 @@ namespace ExercisesTests
             var wordsAsString = string.Join(", ", words);
             var bannedWordsAsString = string.Join(", ", bannedWords);
             var result = Contains.ContainsBannedWords_Refactored(words, bannedWords);
-            Assert.False(result, $"The test failed because the method result was True, yet words \"{wordsAsString}\" do not contain any of the banned words ({bannedWordsAsString})");
+            Assert.False(
+                result,
+                $"The test failed because the method result was True, yet words \"{wordsAsString}\" do not contain any of the banned words ({bannedWordsAsString})"
+            );
         }
     }
 }
