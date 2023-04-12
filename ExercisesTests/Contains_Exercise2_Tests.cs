@@ -16,15 +16,19 @@ namespace ExercisesTests
             var otherFriend = new Friend();
             var people = new List<Person>
             {
-                new Person("John", new [] {friend}),
-                new Person("Mary", new [] {friend, otherFriend}),
-                new Person("Jack", new [] {friend, otherFriend}),
-                new Person("Martin", new [] {otherFriend})
+                new Person("John", new[] { friend }),
+                new Person("Mary", new[] { friend, otherFriend }),
+                new Person("Jack", new[] { friend, otherFriend }),
+                new Person("Martin", new[] { otherFriend })
             };
 
             var result = Contains.CountFriendsOf(friend, people);
-            Assert.AreEqual(result, 3, $"The test failed, because the count of " +
-                $"fiends is 3, and te result of the CountFriendsOf method was {result}");
+            Assert.AreEqual(
+                result,
+                3,
+                $"The test failed, because the count of "
+                    + $"fiends is 3, and te result of the CountFriendsOf method was {result}"
+            );
         }
 
         [Test]
@@ -34,13 +38,17 @@ namespace ExercisesTests
             var otherFriend = new Friend();
             var people = new List<Person>
             {
-                new Person("Mary", new [] {friend, otherFriend}),
-                new Person("Martin", new [] {otherFriend})
+                new Person("Mary", new[] { friend, otherFriend }),
+                new Person("Martin", new[] { otherFriend })
             };
 
             var result = Contains.CountFriendsOf(friend, people);
-            Assert.AreEqual(result, 1, $"The test failed, because the count of " +
-                $"people is 1, and te result of the CountFriendsOf method was {result}");
+            Assert.AreEqual(
+                result,
+                1,
+                $"The test failed, because the count of "
+                    + $"people is 1, and te result of the CountFriendsOf method was {result}"
+            );
         }
     }
 }
