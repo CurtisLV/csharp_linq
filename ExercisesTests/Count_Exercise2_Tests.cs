@@ -12,8 +12,11 @@ namespace ExercisesTests
             var numbers = new[] { 2, 3, 4, 5, 6 };
             var numbersAsString = string.Join(", ", numbers);
             var result = Count.AreThereFewerOddThanEvenNumbers(numbers);
-            Assert.True(result, $"The test failed for numbers {numbersAsString}. " +
-                $"The method result was False, but it should be True");
+            Assert.True(
+                result,
+                $"The test failed for numbers {numbersAsString}. "
+                    + $"The method result was False, but it should be True"
+            );
         }
 
         [Test]
@@ -22,8 +25,11 @@ namespace ExercisesTests
             var numbers = new[] { 3, 4, 5 };
             var numbersAsString = string.Join(", ", numbers);
             var result = Count.AreThereFewerOddThanEvenNumbers(numbers);
-            Assert.False(result, $"The test failed for numbers {numbersAsString}. " +
-                $"The method result was True, but it should be False");
+            Assert.False(
+                result,
+                $"The test failed for numbers {numbersAsString}. "
+                    + $"The method result was True, but it should be False"
+            );
         }
 
         [Test]
@@ -32,8 +38,11 @@ namespace ExercisesTests
             var numbers = new[] { 2, 3, 4, 5 };
             var numbersAsString = string.Join(", ", numbers);
             var result = Count.AreThereFewerOddThanEvenNumbers(numbers);
-            Assert.False(result, $"The test failed for numbers {numbersAsString}. " +
-                $"The method result was True, but it should be False");
+            Assert.False(
+                result,
+                $"The test failed for numbers {numbersAsString}. "
+                    + $"The method result was True, but it should be False"
+            );
         }
     }
 }
