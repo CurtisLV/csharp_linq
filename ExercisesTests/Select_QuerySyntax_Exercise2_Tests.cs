@@ -3,7 +3,5 @@
 namespace ExercisesTests
 {
     [TestFixture]
-    public class Select_QuerySyntax_Exercise2_Tests
-    {
-    }
+    public class Select_QuerySyntax_Exercise2_Tests { }
 }
