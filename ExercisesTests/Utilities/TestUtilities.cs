@@ -5,8 +5,7 @@ namespace ExercisesTests.Utilities
 {
     public static class TestUtilities
     {
-        public static string EnumerableToString<T>(
-            IEnumerable<T> input, string separator = ", ")
+        public static string EnumerableToString<T>(IEnumerable<T> input, string separator = ", ")
         {
             return $"({string.Join(separator, input)})";
         }
