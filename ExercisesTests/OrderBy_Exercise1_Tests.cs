@@ -13,7 +13,11 @@ namespace ExercisesTests
             var result = OrderBy.OrderFromLongestToShortest(words);
 
             CollectionAssert.AreEqual(new[] { "ccc", "bb", "a" }, result);
-            Assert.AreEqual("bb", words[0], "The order of the original collection should not be changed");
+            Assert.AreEqual(
+                "bb",
+                words[0],
+                "The order of the original collection should not be changed"
+            );
         }
 
         [Test]
@@ -23,7 +27,11 @@ namespace ExercisesTests
             var result = OrderBy.OrderFromLongestToShortest(words);
 
             CollectionAssert.AreEqual(new[] { "ccc", "bb", "a" }, result);
-            Assert.AreEqual("ccc", words[0], "The order of the original collection should not be changed");
+            Assert.AreEqual(
+                "ccc",
+                words[0],
+                "The order of the original collection should not be changed"
+            );
         }
     }
 }
