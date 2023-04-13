@@ -14,8 +14,7 @@ namespace ExercisesTests
         [Test]
         public void MaxIs2_Refactored()
         {
-            var Pets =
-            new[]
+            var Pets = new[]
             {
                 new Pet(1, "Hannibal", PetType.Fish, 1.1f),
                 new Pet(2, "Anthony", PetType.Cat, 2f),
@@ -26,32 +25,30 @@ namespace ExercisesTests
 
             var owners = new List<Person>
             {
-             new Person(1, "John", new [] {
-                   Pets.ElementAt(0),
-                   Pets.ElementAt(1),
-                   Pets.ElementAt(2)
-               }),
-               new Person(2, "Jack", new [] {
-                   Pets.ElementAt(2)
-               }),
-               new Person(3, "Stephanie", new [] {
-                   Pets.ElementAt(3),
-                   Pets.ElementAt(4)
-               })
+                new Person(
+                    1,
+                    "John",
+                    new[] { Pets.ElementAt(0), Pets.ElementAt(1), Pets.ElementAt(2) }
+                ),
+                new Person(2, "Jack", new[] { Pets.ElementAt(2) }),
+                new Person(3, "Stephanie", new[] { Pets.ElementAt(3), Pets.ElementAt(4) })
             };
 
-            var petsData = string.Join(" --- ", owners.Select(o => $"OWNER: {o.Name}, PETS: {string.Join(",", o.Pets)}"));
+            var petsData = string.Join(
+                " --- ",
+                owners.Select(o => $"OWNER: {o.Name}, PETS: {string.Join(",", o.Pets)}")
+            );
 
             var result = MinMax.CountOfDogsOfTheOwnerWithMostDogs_Refactored(owners);
-            var message = $"The test failed, because Stephanie owns 2 dogs, and the result was {result}. Owners and pets data: {petsData}";
+            var message =
+                $"The test failed, because Stephanie owns 2 dogs, and the result was {result}. Owners and pets data: {petsData}";
             Assert.AreEqual(2, result, message);
         }
 
         [Test]
         public void MaxIs2()
         {
-            var Pets =
-            new[]
+            var Pets = new[]
             {
                 new Pet(1, "Hannibal", PetType.Fish, 1.1f),
                 new Pet(2, "Anthony", PetType.Cat, 2f),
@@ -62,37 +59,34 @@ namespace ExercisesTests
 
             var owners = new List<Person>
             {
-             new Person(1, "John", new [] {
-                   Pets.ElementAt(0),
-                   Pets.ElementAt(1),
-                   Pets.ElementAt(2)
-               }),
-               new Person(2, "Jack", new [] {
-                   Pets.ElementAt(2)
-               }),
-               new Person(3, "Stephanie", new [] {
-                   Pets.ElementAt(3),
-                   Pets.ElementAt(4)
-               })
+                new Person(
+                    1,
+                    "John",
+                    new[] { Pets.ElementAt(0), Pets.ElementAt(1), Pets.ElementAt(2) }
+                ),
+                new Person(2, "Jack", new[] { Pets.ElementAt(2) }),
+                new Person(3, "Stephanie", new[] { Pets.ElementAt(3), Pets.ElementAt(4) })
             };
 
-            var petsData = string.Join(" --- ", owners.Select(o => $"OWNER: {o.Name}, PETS: {string.Join(",", o.Pets)}"));
+            var petsData = string.Join(
+                " --- ",
+                owners.Select(o => $"OWNER: {o.Name}, PETS: {string.Join(",", o.Pets)}")
+            );
 
             var result = MinMax.CountOfDogsOfTheOwnerWithMostDogs(owners);
-            var message = $"The test failed, because Stephanie owns 2 dogs, and the result was {result}. Owners and pets data: {petsData}";
+            var message =
+                $"The test failed, because Stephanie owns 2 dogs, and the result was {result}. Owners and pets data: {petsData}";
             Assert.AreEqual(2, result, message);
         }
 
         [Test]
         public void EmptyCollection()
         {
-
-            var owners = new List<Person>
-            {
-            };
+            var owners = new List<Person> { };
 
             var result = MinMax.CountOfDogsOfTheOwnerWithMostDogs(owners);
-            var message = $"The test failed, because the owners list is empty, and the result should be 0, but it was {result}.";
+            var message =
+                $"The test failed, because the owners list is empty, and the result should be 0, but it was {result}.";
             Assert.AreEqual(0, result, message);
         }
     }
