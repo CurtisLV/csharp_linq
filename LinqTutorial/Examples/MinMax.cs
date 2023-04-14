@@ -26,7 +26,7 @@ namespace LinqTutorial
 
             var heaviestPetsWeight = Data.Pets.Max(pet => pet.Weight);
             Console.WriteLine($"heaviestPetsWeight: {heaviestPetsWeight}");
-            
+
             //if we don't pass the selector when finding
             //Min or Max of the collection that does not
             //implement the IComparable interface
