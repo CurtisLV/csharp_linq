@@ -15,7 +15,6 @@ namespace Exercises
          */
         public static IEnumerable<string> OrderFromLongestToShortest(IEnumerable<string> words)
         {
-            //TODO your code goes here
             return words.OrderByDescending(x => x.Length);
         }
 
@@ -30,7 +29,6 @@ namespace Exercises
          */
         public static IEnumerable<int> FirstEvenThenOddDescending(IEnumerable<int> numbers)
         {
-            //TODO your code goes here
             return numbers.Reverse().OrderByDescending(x => x % 2 == 0);
         }
 
@@ -38,7 +36,6 @@ namespace Exercises
         //TODO implement this method
         public static IEnumerable<DateTime> OrderByMonth_Refactored(List<DateTime> dates)
         {
-            //TODO your code goes here
             return dates.OrderBy(x => x.Month);
         }
 
