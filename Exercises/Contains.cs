@@ -32,7 +32,6 @@ namespace Exercises
             IEnumerable<DateTime> existingAppointmentDates
         )
         {
-            //TODO your code goes here
             return !existingAppointmentDates.Contains(date);
         }
 
@@ -56,7 +55,6 @@ namespace Exercises
          */
         public static int CountFriendsOf(Friend friend, IEnumerable<Person> people)
         {
-            //TODO your code goes here
             return people.Count(person => person.Friends.Contains(friend));
         }
 
@@ -67,7 +65,6 @@ namespace Exercises
             IEnumerable<string> bannedWords
         )
         {
-            //TODO your code goes here
             return bannedWords.Any(word => words.Contains(word));
         }
 
