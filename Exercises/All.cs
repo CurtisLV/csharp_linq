@@ -11,7 +11,6 @@ namespace Exercises
         //which checks if all numbers in the collection are divisible by 10.
         public static bool AreAllNumbersDivisibleBy10(int[] numbers)
         {
-            //TODO your code goes here
             return numbers.All(x => x % 10 == 0);
         }
 
@@ -20,7 +19,6 @@ namespace Exercises
         //if all Pets in the collection are of the same PetType.
         public static bool AreAllPetsOfTheSameType(IEnumerable<Pet> pets)
         {
-            //TODO your code goes here
             return pets.All(pet => pet.PetType == pets.First().PetType);
         }
 
@@ -28,7 +26,6 @@ namespace Exercises
         //TODO implement this method
         public static bool AreAllWordsOfTheSameLength_Refactored(List<string> words)
         {
-            //TODO your code goes here
             return words.All(word => word.Length == words.First().Length);
         }
 
